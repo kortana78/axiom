@@ -1,0 +1,10 @@
+[
+  {
+    "goal": "forall n >= 0: 30 | (n^5 + (-1 * n))",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "f(n) = f(n mod 30) mod 30, all residues checked",
+    "at_s": 0.073
+  }
+]

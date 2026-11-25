@@ -1,0 +1,21 @@
+{
+  "comment": "Work queue for the AXIOM swarm. The reviewer (human or Claude) edits this file to steer the search.",
+  "problems": [
+    {
+      "id": "erdos_straus",
+      "statement": "forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: 4/n = 1/x + 1/y + 1/z",
+      "active": true,
+      "start_modulus": 840,
+      "grammar": {"T": 40, "D": 24},
+      "notes": "open; blind 0.3 run reduced it to primes in 36 classes mod 2520"
+    },
+    {
+      "id": "sierpinski_5n",
+      "statement": "forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: 5/n = 1/x + 1/y + 1/z",
+      "active": true,
+      "start_modulus": 840,
+      "grammar": {"T": 40, "D": 24},
+      "notes": "open; blind 0.3 run reduced it to primes in 12 classes mod 2520"
+    }
+  ]
+}

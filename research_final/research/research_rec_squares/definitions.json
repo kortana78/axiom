@@ -1,0 +1,59 @@
+{
+  "given": {
+    "sequences": [
+      "a: a(0)=0, a(n+1) = (((2 * n) + x) + 1) [x=a(n)]"
+    ],
+    "terms": [],
+    "assumptions": []
+  },
+  "invented": [
+    {
+      "name": "Delta_a",
+      "kind": "term",
+      "body": "((((2 * n) + x) + 1) - x)",
+      "reason": "first difference often exposes hidden polynomial structure",
+      "parent": "a"
+    },
+    {
+      "name": "a_plus_-2",
+      "kind": "sequence",
+      "body": "a_plus_-2: a_plus_-2(0)=-2, a_plus_-2(n+1) = ((((2 * n) + (x - -2)) + 1) + -2) [x=a_plus_-2(n)]",
+      "reason": "mutation Q3: shifted copy of a discovered sequence",
+      "parent": "a"
+    },
+    {
+      "name": "a_plus_-1",
+      "kind": "sequence",
+      "body": "a_plus_-1: a_plus_-1(0)=-1, a_plus_-1(n+1) = ((((2 * n) + (x - -1)) + 1) + -1) [x=a_plus_-1(n)]",
+      "reason": "mutation Q3: shifted copy of a discovered sequence",
+      "parent": "a"
+    },
+    {
+      "name": "a_plus_1",
+      "kind": "sequence",
+      "body": "a_plus_1: a_plus_1(0)=1, a_plus_1(n+1) = ((((2 * n) + (x - 1)) + 1) + 1) [x=a_plus_1(n)]",
+      "reason": "mutation Q3: shifted copy of a discovered sequence",
+      "parent": "a"
+    },
+    {
+      "name": "a_plus_2",
+      "kind": "sequence",
+      "body": "a_plus_2: a_plus_2(0)=2, a_plus_2(n+1) = ((((2 * n) + (x - 2)) + 1) + 2) [x=a_plus_2(n)]",
+      "reason": "mutation Q3: shifted copy of a discovered sequence",
+      "parent": "a"
+    }
+  ],
+  "structure_found_by_analysis": {
+    "bound_variables": [],
+    "terms_to_study": [],
+    "sums_to_study": [],
+    "sequences_to_study": [
+      "a: a(0)=0, a(n+1) = (((2 * n) + x) + 1) [x=a(n)]"
+    ],
+    "inequalities_to_study": [],
+    "predicates": [],
+    "constants": [],
+    "discovered_moduli": [],
+    "discovered_offsets": []
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "statement": "forall n >= 0: 24 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "rule": "residue_divisibility",
+    "status": "derived",
+    "origin": "proof of invented conjecture"
+  },
+  {
+    "statement": "forall n >= 0: 8 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "rule": "residue_divisibility",
+    "status": "derived",
+    "origin": "proof of invented conjecture"
+  },
+  {
+    "statement": "forall n >= 0: 3 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "rule": "residue_divisibility",
+    "status": "derived",
+    "origin": "proof of invented conjecture"
+  },
+  {
+    "statement": "forall n >= 0: (24 | (((n * (n + 1)) * (n + 2)) * (n + 3)) and 8 | (((n * (n + 1)) * (n + 2)) * (n + 3)))",
+    "rule": "forall_and",
+    "status": "derived",
+    "origin": "mutation Q5: conjunction of observations"
+  },
+  {
+    "statement": "forall n >= 0: (8 | (((n * (n + 1)) * (n + 2)) * (n + 3)) and 3 | (((n * (n + 1)) * (n + 2)) * (n + 3)))",
+    "rule": "forall_and",
+    "status": "derived",
+    "origin": "mutation Q5: conjunction of observations"
+  }
+]

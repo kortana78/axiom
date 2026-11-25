@@ -1,0 +1,8 @@
+{
+  "name": "Problem_001",
+  "domain": "number_theory",
+  "formal_statement": "forall n >= 0: 6 | n^3 - n",
+  "definitions": [],
+  "assumptions": [],
+  "target": "prove"
+}

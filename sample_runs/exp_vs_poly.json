@@ -1,0 +1,49 @@
+{
+  "problem": "exp_vs_poly",
+  "title": "When does n^2 <= 2^n and n^3 <= 3^n hold?",
+  "known_status": "theorem",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.02,
+  "counts": {
+    "derived": 3
+  },
+  "statements": {
+    "derived": [
+      {
+        "statement": "forall n >= 4: n^2 <= 2^n",
+        "origin": "proof of invented conjecture",
+        "rule": "exp_induction",
+        "note": "a^(n+1) = a*a^n >= a*p(n) >= p(n+1)"
+      },
+      {
+        "statement": "forall n >= 0: n^3 <= 3^n",
+        "origin": "proof of invented conjecture",
+        "rule": "range_split",
+        "note": "finite range plus tail"
+      },
+      {
+        "statement": "forall n >= 16: n^4 <= 2^n",
+        "origin": "proof of invented conjecture",
+        "rule": "exp_induction",
+        "note": "a^(n+1) = a*a^n >= a*p(n) >= p(n+1)"
+      }
+    ]
+  },
+  "invented_and_proved": [
+    "forall n >= 4: n^2 <= 2^n",
+    "forall n >= 0: n^3 <= 3^n",
+    "forall n >= 16: n^4 <= 2^n"
+  ],
+  "definitions": [],
+  "findings": {},
+  "bounded_upto": null,
+  "graph": {
+    "nodes": 5,
+    "edges": 2,
+    "by_kind": {
+      "theorem": 5
+    }
+  }
+}

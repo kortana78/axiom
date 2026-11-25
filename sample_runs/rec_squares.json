@@ -1,0 +1,44 @@
+{
+  "problem": "rec_squares",
+  "title": "a(0)=0, a(n+1) = a(n) + 2n + 1: find what a(n) is",
+  "known_status": "theorem",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.11,
+  "counts": {
+    "derived": 2
+  },
+  "statements": {
+    "derived": [
+      {
+        "statement": "forall n >= 0: a(n) = n^2",
+        "origin": "proof of invented conjecture",
+        "rule": "sequence_closed_form",
+        "note": "g(0) = a(0) and g satisfies the recurrence"
+      },
+      {
+        "statement": "forall n >= 0: (n^2 + (-1 * a(n))) = 0",
+        "origin": "invariant synthesis",
+        "rule": "recurrence_invariant",
+        "note": "I(F(x,n), n+1) = I(x,n)"
+      }
+    ]
+  },
+  "invented_and_proved": [
+    "forall n >= 0: a(n) = n^2"
+  ],
+  "definitions": [
+    "Delta_a := ((((2 * n) + x) + 1) - x)   (term; first difference often exposes hidden polynomial structure)"
+  ],
+  "findings": {},
+  "bounded_upto": null,
+  "graph": {
+    "nodes": 3,
+    "edges": 0,
+    "by_kind": {
+      "theorem": 2,
+      "definition": 1
+    }
+  }
+}

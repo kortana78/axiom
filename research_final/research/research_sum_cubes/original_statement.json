@@ -1,0 +1,8 @@
+{
+  "name": "research_sum_cubes",
+  "domain": "number_theory",
+  "formal_statement": "study Sum[i=1..n](i^3)",
+  "definitions": [],
+  "assumptions": [],
+  "target": "discover"
+}

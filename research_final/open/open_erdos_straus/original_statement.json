@@ -1,0 +1,8 @@
+{
+  "name": "open_erdos_straus",
+  "domain": "number_theory",
+  "formal_statement": "forall n >= 2: es_rep(n)",
+  "definitions": [],
+  "assumptions": [],
+  "target": "prove"
+}

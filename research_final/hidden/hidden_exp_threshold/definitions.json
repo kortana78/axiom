@@ -1,0 +1,36 @@
+{
+  "given": {
+    "sequences": [],
+    "terms": [],
+    "assumptions": []
+  },
+  "invented": [],
+  "structure_found_by_analysis": {
+    "bound_variables": [
+      "n >= 16"
+    ],
+    "terms_to_study": [
+      "n^4",
+      "2^n"
+    ],
+    "sums_to_study": [],
+    "sequences_to_study": [],
+    "inequalities_to_study": [
+      "n^4 <= 2^n"
+    ],
+    "predicates": [],
+    "constants": [],
+    "discovered_moduli": [
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "discovered_offsets": [
+      0,
+      1
+    ]
+  }
+}

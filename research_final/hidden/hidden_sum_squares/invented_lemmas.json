@@ -1,0 +1,20 @@
+[
+  {
+    "statement": "forall n >= 0: Sum[i=1..n](i^2) = ((((1/6) * n) * (n + 1)) * ((2 * n) + 1))",
+    "rule": "sum_induction",
+    "status": "derived",
+    "origin": "direct proof search"
+  },
+  {
+    "statement": "forall n >= 1: Sum[i=1..n](i^2) = ((((1/3) * n^3) + ((1/2) * n^2)) + ((1/6) * n))",
+    "rule": "sum_induction",
+    "status": "derived",
+    "origin": "proof of invented conjecture"
+  },
+  {
+    "statement": "forall n in [0, 100]: Sum[i=1..n](i^2) = ((((1/6) * n) * (n + 1)) * ((2 * n) + 1))",
+    "rule": "finite_check",
+    "status": "derived",
+    "origin": "bounded verification up to 100"
+  }
+]

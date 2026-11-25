@@ -1,0 +1,76 @@
+{
+  "kernel_rejections": [
+    {
+      "goal": "forall n in [2, 100]: exists x >= 1: exists y >= 1: exists z >= 1: (4 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+      "tactic": "finite_check",
+      "reason": "kernel rejected: finite_check: ValueError: Exists not decided within search bound"
+    }
+  ],
+  "mutations_applied": [],
+  "failed_proof_routes": [
+    {
+      "goal": "forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (4 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+      "route": "direct",
+      "budget": 200,
+      "success": false,
+      "kernel_note": "",
+      "at_s": 1.526
+    },
+    {
+      "goal": "forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (4 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+      "route": "direct",
+      "budget": 400,
+      "success": false,
+      "kernel_note": "",
+      "at_s": 1.775
+    },
+    {
+      "goal": "forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (4 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+      "route": "direct",
+      "budget": 800,
+      "success": false,
+      "kernel_note": "",
+      "at_s": 1.775
+    },
+    {
+      "goal": "forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (4 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+      "route": "direct",
+      "budget": 1600,
+      "success": false,
+      "kernel_note": "",
+      "at_s": 1.945
+    },
+    {
+      "goal": "forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (4 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+      "route": "direct",
+      "budget": 3200,
+      "success": false,
+      "kernel_note": "",
+      "at_s": 1.946
+    },
+    {
+      "goal": "forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (4 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+      "route": "direct",
+      "budget": 6400,
+      "success": false,
+      "kernel_note": "",
+      "at_s": 1.946
+    },
+    {
+      "goal": "forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (4 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+      "route": "direct",
+      "budget": 12800,
+      "success": false,
+      "kernel_note": "",
+      "at_s": 2.852
+    },
+    {
+      "goal": "forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (4 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+      "route": "direct",
+      "budget": 25600,
+      "success": false,
+      "kernel_note": "",
+      "at_s": 2.853
+    }
+  ]
+}

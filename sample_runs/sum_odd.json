@@ -1,0 +1,35 @@
+{
+  "problem": "sum_odd",
+  "title": "Closed form of 1 + 3 + ... + (2n-1)",
+  "known_status": "theorem",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.01,
+  "counts": {
+    "derived": 1
+  },
+  "statements": {
+    "derived": [
+      {
+        "statement": "forall n >= 0: Sum[i=1..n](((2 * i) + -1)) = n^2",
+        "origin": "proof of invented conjecture",
+        "rule": "sum_induction",
+        "note": "base case and F(n+1) - F(n) = g(n+1)"
+      }
+    ]
+  },
+  "invented_and_proved": [
+    "forall n >= 0: Sum[i=1..n](((2 * i) + -1)) = n^2"
+  ],
+  "definitions": [],
+  "findings": {},
+  "bounded_upto": null,
+  "graph": {
+    "nodes": 1,
+    "edges": 0,
+    "by_kind": {
+      "theorem": 1
+    }
+  }
+}

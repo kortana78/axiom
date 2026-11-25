@@ -1,0 +1,98 @@
+[
+  {
+    "goal": "forall n >= 2: es_rep(n)",
+    "route": "direct",
+    "budget": 200,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.009
+  },
+  {
+    "goal": "forall n >= 2: es_rep(n)",
+    "route": "direct",
+    "budget": 400,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.958
+  },
+  {
+    "goal": "forall n >= 2: es_rep(n)",
+    "route": "direct",
+    "budget": 800,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.958
+  },
+  {
+    "goal": "forall n >= 2: es_rep(n)",
+    "route": "direct",
+    "budget": 1600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 1.051
+  },
+  {
+    "goal": "forall n >= 2: es_rep(n)",
+    "route": "direct",
+    "budget": 3200,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 1.053
+  },
+  {
+    "goal": "forall n >= 2: es_rep(n)",
+    "route": "direct",
+    "budget": 6400,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 1.053
+  },
+  {
+    "goal": "forall n >= 2: es_rep(n)",
+    "route": "direct",
+    "budget": 12800,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 1.053
+  },
+  {
+    "goal": "forall n >= 2: es_rep(n)",
+    "route": "direct",
+    "budget": 25600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 1.054
+  },
+  {
+    "goal": "forall m >= 0: es_rep((m + 1))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 1.062
+  },
+  {
+    "goal": "forall m >= 0: es_rep((m + 2))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 1.063
+  },
+  {
+    "goal": "forall m >= 0: es_rep((m + 3))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 1.063
+  },
+  {
+    "goal": "forall m >= 0: es_rep((m + 4))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 1.064
+  }
+]

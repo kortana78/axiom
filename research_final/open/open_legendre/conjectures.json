@@ -1,0 +1,23 @@
+[
+  {
+    "statement": "forall n >= 1: prime_between_squares(n)",
+    "status": "undecided_within_budget",
+    "origin": "controller",
+    "note": "search ended without proof or counterexample; this is NOT a refutation; verified for all cases up to 200",
+    "rule": null
+  },
+  {
+    "statement": "forall n in [1, 100]: prime_between_squares(n)",
+    "status": "derived",
+    "origin": "bounded verification up to 100",
+    "note": "checked all 100 cases",
+    "rule": "finite_check"
+  },
+  {
+    "statement": "forall n in [1, 200]: prime_between_squares(n)",
+    "status": "derived",
+    "origin": "bounded verification up to 200",
+    "note": "checked all 200 cases",
+    "rule": "finite_check"
+  }
+]

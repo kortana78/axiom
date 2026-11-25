@@ -1,0 +1,8 @@
+{
+  "name": "hidden_sum_cubes",
+  "domain": "number_theory",
+  "formal_statement": "forall n >= 0: Sum[i=1..n](i^3) = (n*(n+1)/2)^2",
+  "definitions": [],
+  "assumptions": [],
+  "target": "prove"
+}

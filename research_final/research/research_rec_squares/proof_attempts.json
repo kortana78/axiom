@@ -1,0 +1,42 @@
+[
+  {
+    "goal": "forall n >= 0: a(n) = n^2",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "g(0) = a(0) and g satisfies the recurrence",
+    "at_s": 0.173
+  },
+  {
+    "goal": "forall n >= 0: a_plus_-2(n) = (n^2 + -2)",
+    "route": "conjecture_proof",
+    "budget": 400,
+    "success": true,
+    "kernel_note": "g(0) = a(0) and g satisfies the recurrence",
+    "at_s": 1.717
+  },
+  {
+    "goal": "forall n >= 0: a_plus_-1(n) = (n^2 + -1)",
+    "route": "conjecture_proof",
+    "budget": 400,
+    "success": true,
+    "kernel_note": "g(0) = a(0) and g satisfies the recurrence",
+    "at_s": 1.727
+  },
+  {
+    "goal": "forall n >= 0: a_plus_1(n) = (n^2 + 1)",
+    "route": "conjecture_proof",
+    "budget": 400,
+    "success": true,
+    "kernel_note": "g(0) = a(0) and g satisfies the recurrence",
+    "at_s": 1.736
+  },
+  {
+    "goal": "forall n >= 0: a_plus_2(n) = (n^2 + 2)",
+    "route": "conjecture_proof",
+    "budget": 800,
+    "success": true,
+    "kernel_note": "g(0) = a(0) and g satisfies the recurrence",
+    "at_s": 2.242
+  }
+]

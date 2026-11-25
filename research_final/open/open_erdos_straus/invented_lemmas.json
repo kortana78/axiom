@@ -1,0 +1,14 @@
+[
+  {
+    "statement": "forall n in [2, 100]: es_rep(n)",
+    "rule": "finite_check",
+    "status": "derived",
+    "origin": "bounded verification up to 100"
+  },
+  {
+    "statement": "forall n in [2, 200]: es_rep(n)",
+    "rule": "finite_check",
+    "status": "derived",
+    "origin": "bounded verification up to 200"
+  }
+]

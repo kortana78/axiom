@@ -1,0 +1,35 @@
+{
+  "problem": "sum_fifth",
+  "title": "Closed form of 1^5 + ... + n^5",
+  "known_status": "theorem",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.04,
+  "counts": {
+    "derived": 1
+  },
+  "statements": {
+    "derived": [
+      {
+        "statement": "forall n >= 0: Sum[i=1..n](i^5) = (((((1/6) * n^6) + ((1/2) * n^5)) + ((5/12) * n^4)) + ((-1/12) * n^2))",
+        "origin": "proof of invented conjecture",
+        "rule": "sum_induction",
+        "note": "base case and F(n+1) - F(n) = g(n+1)"
+      }
+    ]
+  },
+  "invented_and_proved": [
+    "forall n >= 0: Sum[i=1..n](i^5) = (((((1/6) * n^6) + ((1/2) * n^5)) + ((5/12) * n^4)) + ((-1/12) * n^2))"
+  ],
+  "definitions": [],
+  "findings": {},
+  "bounded_upto": null,
+  "graph": {
+    "nodes": 1,
+    "edges": 0,
+    "by_kind": {
+      "theorem": 1
+    }
+  }
+}

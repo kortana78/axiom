@@ -1,0 +1,23 @@
+{
+  "given": {
+    "sequences": [],
+    "terms": [],
+    "assumptions": []
+  },
+  "invented": [],
+  "structure_found_by_analysis": {
+    "bound_variables": [
+      "n >= 0"
+    ],
+    "terms_to_study": [],
+    "sums_to_study": [
+      "Sum[i=1..n](i^2)"
+    ],
+    "sequences_to_study": [],
+    "inequalities_to_study": [],
+    "predicates": [],
+    "constants": [],
+    "discovered_moduli": [],
+    "discovered_offsets": []
+  }
+}

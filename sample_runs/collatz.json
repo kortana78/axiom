@@ -1,0 +1,4831 @@
+{
+  "problem": "collatz",
+  "title": "Collatz: every n >= 1 reaches 1",
+  "known_status": "open",
+  "goal": "forall n >= 1: collatz_reaches_one(n)",
+  "goal_status": "undecided_within_budget",
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 3.27,
+  "counts": {
+    "undecided_within_budget": 1,
+    "derived": 795
+  },
+  "statements": {
+    "undecided_within_budget": [
+      {
+        "statement": "forall n >= 1: collatz_reaches_one(n)",
+        "origin": "controller",
+        "rule": null,
+        "note": "search ended without proof or counterexample; this is NOT a refutation; verified for all cases up to 100000"
+      }
+    ],
+    "derived": [
+      {
+        "statement": "forall n in [1, 100]: collatz_reaches_one(n)",
+        "origin": "bounded verification up to 100",
+        "rule": "finite_check",
+        "note": "checked all 100 cases"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((2 * j) + 0))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 1 steps, value drops"
+      },
+      {
+        "statement": "forall n in [1, 1000]: collatz_reaches_one(n)",
+        "origin": "bounded verification up to 1000",
+        "rule": "finite_check",
+        "note": "checked all 1000 cases"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4 * j) + 1))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 3 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((16 * j) + 3))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 6 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32 * j) + 11))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 8 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32 * j) + 23))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 8 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((128 * j) + 59))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 11 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((128 * j) + 7))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 11 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((128 * j) + 15))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 11 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((256 * j) + 219))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 13 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((256 * j) + 123))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 13 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((256 * j) + 199))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 13 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((256 * j) + 39))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 13 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((256 * j) + 79))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 13 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((256 * j) + 175))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 13 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((256 * j) + 95))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 13 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 923))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 347))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 507))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 583))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 423))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 999))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 975))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 815))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 367))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 287))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 735))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((1024 * j) + 575))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 16 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 2587))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 2203))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 1435))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 3675))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 2907))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 1787))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 1019))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 3143))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 3911))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 1703))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 935))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 615))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 231))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 3559))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 1231))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 463))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 3119))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 2351))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 1647))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 879))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 2031))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 2591))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 1823))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 2975))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 3295))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 4063))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 1087))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 1855))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 2239))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((4096 * j) + 383))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 19 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 2075))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 539))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 1563))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 2331))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 4251))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5275))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5787))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 4507))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 3483))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 7259))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 6747))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5723))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 4955))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5979))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5371))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 4859))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 3835))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 3067))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 4091))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 6215))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5191))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 7495))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 6983))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5959))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 1191))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 679))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 7847))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 7079))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 8103))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 4199))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 2663))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 3687))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 4455))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 6375))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 7399))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 7911))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 6631))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5607))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 207))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 7375))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 719))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 6607))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 7631))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 2095))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 1071))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 2607))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 303))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 1327))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 1135))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 623))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 7791))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 7023))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 8047))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5871))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5615))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5103))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 4079))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 2079))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 543))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 1567))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 799))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 7967))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 6815))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 6559))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5023))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 6047))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 2271))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 1247))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 3551))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 3039))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 2015))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 4159))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 3135))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 5439))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 4927))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 3903))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 191))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 1215))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 1727))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 1983))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 4223))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 2431))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 3455))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 3967))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((8192 * j) + 255))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 21 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 20507))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 30747))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 31771))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 12827))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 13851))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 3611))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 12571))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 22811))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 23835))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 29467))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 8347))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 9371))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 31899))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 27291))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 26267))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 16027))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 411))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 22939))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 32155))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 4187))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 25691))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 3163))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 8795))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 19035))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 18011))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 9051))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 10075))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 32603))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 2299))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 1275))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 23803))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 17147))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 6907))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 16123))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 7163))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 30715))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 8187))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 24647))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 2119))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 1095))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 28999))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 17735))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 27975))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 839))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 11079))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 10055))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 30887))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 29863))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 19623))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 12967))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 2727))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 11943))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 2983))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 26535))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 4007))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 24679))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 14439))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 25703))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 6759))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 30311))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 7783))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 16743))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 6503))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 17767))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 23399))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 2279))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 25831))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 3303))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 21223))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 9959))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 20199))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 16871))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 27111))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 26087))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 28879))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 18639))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 27855))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 13007))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 2767))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 14031))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 18895))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 9679))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 19919))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 20527))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 30767))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 29743))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 4655))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 14895))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 15919))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 20783))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 21807))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 11567))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 6255))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 5231))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 27759))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 21103))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 10863))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 20079))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 11119))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 1903))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 12143))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 8431))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 2799))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 1775))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 24303))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 10735))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 9711))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 32239))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 25583))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 15343))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 24559))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 28703))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 6175))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 7199))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 21023))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 22047))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 11807))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 13087))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 2847))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 12063))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 9375))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 25247))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 2719))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 3743))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 415))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 10655))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 11679))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 25503))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 26527))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 16287))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 12511))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 22751))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 21727))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 16863))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 5599))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 15839))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 21471))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 31711))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 30687))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 24639))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 14399))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 23615))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 18751))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 17727))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 7487))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 831))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 23359))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 32575))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 4287))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 5311))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 27839))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 23231))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 22207))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 11967))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 20927))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 15295))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 14271))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 4031))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 127))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 22655))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 1151))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 6783))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 22911))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 13695))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 23935))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 9087))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 30591))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 8063))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 12543))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 2303))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 13567))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 19199))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((32768 * j) + 5631))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 24 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 16411))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 36891))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 45083))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 22555))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 14363))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 13339))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 27675))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 56347))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 48155))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 4635))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 61979))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 38427))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 30235))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 52763))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 60955))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 32283))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 41243))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 4379))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 61723))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 39195))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 47387))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 38171))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 52507))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 7451))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 15643))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 25371))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 54043))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 45851))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 11035))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 36635))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 32923))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 24731))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 1179))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 58523))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 60571))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 23707))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 15515))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 41627))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 19099))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 10907))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 55963))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 50843))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 42651))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 44699))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 7835))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 65179))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 49563))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 57755))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 51611))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 6555))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 14747))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 23963))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 15771))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 32859))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 53339))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 61531))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 18523))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 50267))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 42075))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 21595))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 19547))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 27739))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 603))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 57947))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 37467))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 35419))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 43611))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 1627))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 9819))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 859))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 58203))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 34651))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 26459))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 28507))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 57179))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 48987))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 16635))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 51451))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 59643))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 30971))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 17659))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 25851))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 19707))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 40187))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 48379))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 33531))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall n in [1, 10000]: collatz_reaches_one(n)",
+        "origin": "bounded verification up to 10000",
+        "rule": "finite_check",
+        "note": "checked all 10000 cases"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 41723))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 35579))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 56059))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 64251))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 7931))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 65275))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 56315))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 64507))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 26619))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 55291))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 47099))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 24571))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 32763))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 16455))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 8263))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 53319))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 51271))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 59463))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 17479))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 25671))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 57671))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 20807))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 12615))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 43335))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 1351))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 9543))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 46407))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 52551))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 44359))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 17223))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 25415))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 62279))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 2887))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 60231))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 34631))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 26439))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 45223))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 59559))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 22695))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 14503))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 54439))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 46247))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 3239))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 11431))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 48295))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 4775))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 62119))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 19111))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 27303))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 64167))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 36519))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 28327))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 19367))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 27559))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 18343))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 10151))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 55207))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 53159))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 61351))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 49255))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 41063))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 43111))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 6247))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 63591))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 17511))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 9319))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 54375))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 40039))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 23143))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 31335))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 58983))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 22119))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 13927))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 56935))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 65127))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 359))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 8551))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 2407))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 22887))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 31079))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 34151))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 42343))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 13671))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 64871))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 37735))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 52071))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 7015))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 15207))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 63335))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 51431))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 59623))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 50407))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 42215))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 21735))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 19687))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 27879))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 17127))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 37607))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 45799))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 2791))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 34535))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 26343))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 5863))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 3815))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 12007))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 33255))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 41447))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 12775))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 18919))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 10727))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 50663))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 42471))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 20687))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 12495))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 35023))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 43215))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 14543))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 52431))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 44239))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 4815))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 62159))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 19151))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 27343))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 64207))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 9935))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 38607))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 30415))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 61135))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 35279))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 43471))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 34255))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 26063))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 5583))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 3535))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 11727))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 16431))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 36911))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 45103))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 22575))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 14383))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 54319))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 46127))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 559))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 21039))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 29231))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 6703))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 64047))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 63023))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 11823))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 40495))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 32303))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 37167))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 45359))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 5423))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 13615))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 36143))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 27951))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 7471))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 20591))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 34927))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 55407))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 63599))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 21615))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 29807))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 52335))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 44143))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 23663))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 37487))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 45679))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 2671))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 60015))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 39535))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 3695))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 11887))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 2927))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 60271))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 51055))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 59247))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 30575))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 36719))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 28527))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 33007))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 24815))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 4335))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 55535))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 15599))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 17135))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 51951))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 60143))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 31471))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 18159))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 26351))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 20207))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 40687))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 48879))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 57839))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 35311))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 27119))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 6639))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 1519))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 58863))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 60911))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 24047))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 15855))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 17391))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 9199))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 11247))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 39919))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 31727))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 40943))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 49135))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 57375))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 20511))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 12319))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 55327))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 63519))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 54303))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 3103))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 23583))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 31775))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 37407))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 45599))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 5663))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 13855))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 36383))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 28191))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 7711))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 4895))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 62239))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 19231))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 27423))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 64287))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 36639))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 28447))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 49311))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 1183))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 58527))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 38047))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 23711))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 17055))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 8863))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 53919))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 51871))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 60063))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 50847))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 20127))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 28319))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 65183))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 49567))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 57759))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 29087))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 35231))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 27039))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 26015))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 3487))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 60831))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 40351))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 17311))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 9119))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 51103))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 42911))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 44959))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 8095))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 65439))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 41183))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 4319))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 61663))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 39135))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 47327))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 5343))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 13535))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 479))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 8671))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 45535))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 31199))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 34271))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 54751))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 62943))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 40415))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 32223))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 50143))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 5087))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 13279))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 56287))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 48095))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 22495))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 14303))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 49215))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 41023))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 43071))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 6207))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 63551))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 7231))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 15423))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 33087))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 2367))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 10559))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 47423))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 34111))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 42303))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 36159))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 56639))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 64831))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 49983))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 58175))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 52031))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 6975))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 15167))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 24383))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 16191))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 53439))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 61631))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 21695))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 29887))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 52415))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 44223))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 23743))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 4799))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 19135))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 39615))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 47807))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 5823))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 14015))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 36543))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 28351))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 7871))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 16831))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 37311))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 45503))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 2495))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 28095))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 29631))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 43967))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 7103))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 64447))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 38847))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 30655))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 53183))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 61375))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 32703))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 16511))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 24703))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 18559))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 39039))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 47231))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 50303))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 58495))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 29823))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 15487))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 53887))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 2687))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 23167))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 31359))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 13951))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 39295))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 47487))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 9599))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 38271))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 30079))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 7551))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 15743))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 33663))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 25471))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 4991))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 56191))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 59263))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 22399))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 14207))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 57215))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 65407))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 37119))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 28927))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 51455))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 59647))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 30975))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 42239))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 5375))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 62719))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 27903))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 767))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 35583))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 43775))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 15103))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 26367))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 12799))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 1535))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 22015))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 30207))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 52735))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall j >= 1: collatz_descends(((65536 * j) + 25599))",
+        "origin": "parity-vector descent class",
+        "rule": "collatz_descent",
+        "note": "parity determined for 26 steps, value drops"
+      },
+      {
+        "statement": "forall n in [1, 100000]: collatz_reaches_one(n)",
+        "origin": "bounded verification up to 100000",
+        "rule": "finite_check",
+        "note": "checked all 100000 cases"
+      }
+    ]
+  },
+  "invented_and_proved": [],
+  "definitions": [],
+  "findings": {
+    "collatz_k": 16,
+    "collatz_open": 2114,
+    "collatz_open_sample": [
+      27,
+      32795,
+      49179,
+      8219,
+      40987,
+      24603,
+      57371,
+      4123,
+      12315,
+      28699,
+      61467,
+      6171,
+      38939,
+      55323,
+      47131,
+      1051,
+      33819,
+      17435,
+      50203,
+      9243
+    ]
+  },
+  "bounded_upto": 100000,
+  "graph": {
+    "nodes": 795,
+    "edges": 0,
+    "by_kind": {
+      "theorem": 795
+    }
+  }
+}

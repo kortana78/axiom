@@ -1,0 +1,106 @@
+[
+  {
+    "goal": "forall n >= 1: prime_between_squares(n)",
+    "route": "direct",
+    "budget": 200,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.068
+  },
+  {
+    "goal": "forall n >= 1: prime_between_squares(n)",
+    "route": "direct",
+    "budget": 400,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.117
+  },
+  {
+    "goal": "forall n >= 1: prime_between_squares(n)",
+    "route": "direct",
+    "budget": 800,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.117
+  },
+  {
+    "goal": "forall n >= 1: prime_between_squares(n)",
+    "route": "direct",
+    "budget": 1600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.151
+  },
+  {
+    "goal": "forall n >= 1: prime_between_squares(n)",
+    "route": "direct",
+    "budget": 3200,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.151
+  },
+  {
+    "goal": "forall n >= 1: prime_between_squares(n)",
+    "route": "direct",
+    "budget": 6400,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.151
+  },
+  {
+    "goal": "forall n >= 1: prime_between_squares(n)",
+    "route": "direct",
+    "budget": 12800,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.154
+  },
+  {
+    "goal": "forall n >= 1: prime_between_squares(n)",
+    "route": "direct",
+    "budget": 25600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.154
+  },
+  {
+    "goal": "forall m >= 0: prime_between_squares((m + 0))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.158
+  },
+  {
+    "goal": "forall m >= 0: prime_between_squares((m + 1))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.16
+  },
+  {
+    "goal": "forall m >= 0: prime_between_squares((m + 2))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.16
+  },
+  {
+    "goal": "forall m >= 0: prime_between_squares((m + 3))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.162
+  },
+  {
+    "goal": "forall m >= 0: prime_between_squares((m + 4))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.162
+  }
+]

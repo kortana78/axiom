@@ -1,0 +1,10 @@
+[
+  {
+    "goal": "forall n >= 16: n^4 <= 2^n",
+    "route": "direct",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "a^(n+1) = a*a^n >= a*p(n) >= p(n+1)",
+    "at_s": 0.029
+  }
+]

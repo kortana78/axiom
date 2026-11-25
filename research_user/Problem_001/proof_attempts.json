@@ -1,0 +1,10 @@
+[
+  {
+    "goal": "forall n >= 0: 6 | (n^3 + (-1 * n))",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "f(n) = f(n mod 6) mod 6, all residues checked",
+    "at_s": 0.053
+  }
+]

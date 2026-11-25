@@ -1,0 +1,70 @@
+{
+  "problem": "div_mixed",
+  "title": "Find divisors of n(n+1)(n+2)(n+3) and n^4 + 2n^3 + 11n^2 + 10n",
+  "known_status": "theorem",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.13,
+  "counts": {
+    "derived": 6
+  },
+  "statements": {
+    "derived": [
+      {
+        "statement": "forall n >= 0: 24 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+        "origin": "proof of invented conjecture",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 24) mod 24, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 8 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+        "origin": "proof of invented conjecture",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 8) mod 8, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 3 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+        "origin": "proof of invented conjecture",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 3) mod 3, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 24 | (((n^4 + (2 * n^3)) + (11 * n^2)) + (10 * n))",
+        "origin": "proof of invented conjecture",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 24) mod 24, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 8 | (((n^4 + (2 * n^3)) + (11 * n^2)) + (10 * n))",
+        "origin": "proof of invented conjecture",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 8) mod 8, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 3 | (((n^4 + (2 * n^3)) + (11 * n^2)) + (10 * n))",
+        "origin": "proof of invented conjecture",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 3) mod 3, all residues checked"
+      }
+    ]
+  },
+  "invented_and_proved": [
+    "forall n >= 0: 24 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "forall n >= 0: 8 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "forall n >= 0: 3 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "forall n >= 0: 24 | (((n^4 + (2 * n^3)) + (11 * n^2)) + (10 * n))",
+    "forall n >= 0: 8 | (((n^4 + (2 * n^3)) + (11 * n^2)) + (10 * n))",
+    "forall n >= 0: 3 | (((n^4 + (2 * n^3)) + (11 * n^2)) + (10 * n))"
+  ],
+  "definitions": [],
+  "findings": {},
+  "bounded_upto": null,
+  "graph": {
+    "nodes": 6,
+    "edges": 0,
+    "by_kind": {
+      "theorem": 6
+    }
+  }
+}

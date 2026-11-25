@@ -1,0 +1,18 @@
+{
+  "kernel_rejections": [],
+  "mutations_applied": [
+    {
+      "question": 3,
+      "name": "new_object",
+      "rationale": "introduce shifted sequences and prime-power objects from discovered data",
+      "at_round": 5
+    },
+    {
+      "question": 5,
+      "name": "combine_observations",
+      "rationale": "combine established divisibilities, closed forms and facts",
+      "at_round": 5
+    }
+  ],
+  "failed_proof_routes": []
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "goal": "forall n >= 0: 42 | (n^7 + (-1 * n))",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "f(n) = f(n mod 42) mod 42, all residues checked",
+    "at_s": 0.029
+  },
+  {
+    "goal": "forall n >= 0: 2 | (n^7 + (-1 * n))",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "f(n) = f(n mod 2) mod 2, all residues checked",
+    "at_s": 0.052
+  },
+  {
+    "goal": "forall n >= 0: 3 | (n^7 + (-1 * n))",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "f(n) = f(n mod 3) mod 3, all residues checked",
+    "at_s": 0.06
+  },
+  {
+    "goal": "forall n >= 0: 7 | (n^7 + (-1 * n))",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "f(n) = f(n mod 7) mod 7, all residues checked",
+    "at_s": 0.062
+  }
+]

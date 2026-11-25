@@ -1,0 +1,43 @@
+{
+  "given": {
+    "sequences": [],
+    "terms": [],
+    "assumptions": []
+  },
+  "invented": [
+    {
+      "name": "factor_2^3",
+      "kind": "term",
+      "body": "8",
+      "reason": "mutation Q3: prime-power part of a discovered divisor",
+      "parent": null
+    },
+    {
+      "name": "factor_3^1",
+      "kind": "term",
+      "body": "3",
+      "reason": "mutation Q3: prime-power part of a discovered divisor",
+      "parent": null
+    }
+  ],
+  "structure_found_by_analysis": {
+    "bound_variables": [],
+    "terms_to_study": [
+      "(((n * (n + 1)) * (n + 2)) * (n + 3))"
+    ],
+    "sums_to_study": [],
+    "sequences_to_study": [],
+    "inequalities_to_study": [],
+    "predicates": [],
+    "constants": [],
+    "discovered_moduli": [
+      2,
+      4,
+      8,
+      3
+    ],
+    "discovered_offsets": [
+      1
+    ]
+  }
+}

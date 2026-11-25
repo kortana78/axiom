@@ -1,0 +1,74 @@
+{
+  "problem": "div_n7",
+  "title": "Find and prove the best constant divisor of n^7 - n",
+  "known_status": "theorem",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.01,
+  "counts": {
+    "derived": 7
+  },
+  "statements": {
+    "derived": [
+      {
+        "statement": "forall n >= 0: 42 | (n^7 + (-1 * n))",
+        "origin": "proof of invented conjecture",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 42) mod 42, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 2 | (n^7 + (-1 * n))",
+        "origin": "proof of invented conjecture",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 2) mod 2, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 3 | (n^7 + (-1 * n))",
+        "origin": "proof of invented conjecture",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 3) mod 3, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 7 | (n^7 + (-1 * n))",
+        "origin": "proof of invented conjecture",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 7) mod 7, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 6 | (n^7 + (-1 * n))",
+        "origin": "forward: combine coprime divisors",
+        "rule": "divisibility_combine",
+        "note": "coprime divisors multiply"
+      },
+      {
+        "statement": "forall n >= 0: 14 | (n^7 + (-1 * n))",
+        "origin": "forward: combine coprime divisors",
+        "rule": "divisibility_combine",
+        "note": "coprime divisors multiply"
+      },
+      {
+        "statement": "forall n >= 0: 21 | (n^7 + (-1 * n))",
+        "origin": "forward: combine coprime divisors",
+        "rule": "divisibility_combine",
+        "note": "coprime divisors multiply"
+      }
+    ]
+  },
+  "invented_and_proved": [
+    "forall n >= 0: 42 | (n^7 + (-1 * n))",
+    "forall n >= 0: 2 | (n^7 + (-1 * n))",
+    "forall n >= 0: 3 | (n^7 + (-1 * n))",
+    "forall n >= 0: 7 | (n^7 + (-1 * n))"
+  ],
+  "definitions": [],
+  "findings": {},
+  "bounded_upto": null,
+  "graph": {
+    "nodes": 7,
+    "edges": 6,
+    "by_kind": {
+      "theorem": 7
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "research_geometric",
+  "domain": "number_theory",
+  "formal_statement": "study Sum[i=0..n](2^i)",
+  "definitions": [],
+  "assumptions": [],
+  "target": "discover"
+}

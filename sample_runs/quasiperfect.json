@@ -1,0 +1,67 @@
+{
+  "problem": "quasiperfect",
+  "title": "No n has sigma(n) = 2n + 1",
+  "known_status": "open",
+  "goal": "forall n >= 1: not_quasiperfect(n)",
+  "goal_status": "undecided_within_budget",
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.42,
+  "counts": {
+    "undecided_within_budget": 2,
+    "derived": 4
+  },
+  "statements": {
+    "undecided_within_budget": [
+      {
+        "statement": "forall n >= 1: not_quasiperfect(n)",
+        "origin": "controller",
+        "rule": null,
+        "note": "search ended without proof or counterexample; this is NOT a refutation; verified for all cases up to 20000"
+      },
+      {
+        "statement": "forall n >= 1: (sigma_odd(n) -> square_or_twice_square(n))",
+        "origin": "controller",
+        "rule": null,
+        "note": "proof budget exhausted"
+      }
+    ],
+    "derived": [
+      {
+        "statement": "forall n in [1, 100]: not_quasiperfect(n)",
+        "origin": "bounded verification up to 100",
+        "rule": "finite_check",
+        "note": "checked all 100 cases"
+      },
+      {
+        "statement": "forall n in [1, 1000]: not_quasiperfect(n)",
+        "origin": "bounded verification up to 1000",
+        "rule": "finite_check",
+        "note": "checked all 1000 cases"
+      },
+      {
+        "statement": "forall n in [1, 10000]: not_quasiperfect(n)",
+        "origin": "bounded verification up to 10000",
+        "rule": "finite_check",
+        "note": "checked all 10000 cases"
+      },
+      {
+        "statement": "forall n in [1, 20000]: not_quasiperfect(n)",
+        "origin": "bounded verification up to 20000",
+        "rule": "finite_check",
+        "note": "checked all 20000 cases"
+      }
+    ]
+  },
+  "invented_and_proved": [],
+  "definitions": [],
+  "findings": {},
+  "bounded_upto": 20000,
+  "graph": {
+    "nodes": 5,
+    "edges": 0,
+    "by_kind": {
+      "conjecture": 1,
+      "theorem": 4
+    }
+  }
+}

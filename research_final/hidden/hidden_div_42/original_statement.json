@@ -1,0 +1,8 @@
+{
+  "name": "hidden_div_42",
+  "domain": "number_theory",
+  "formal_statement": "forall n >= 0: 42 | n^7 - n",
+  "definitions": [],
+  "assumptions": [],
+  "target": "prove"
+}

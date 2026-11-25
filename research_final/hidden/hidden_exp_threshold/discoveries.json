@@ -1,0 +1,27 @@
+{
+  "problem": "hidden_exp_threshold",
+  "goal": "forall n >= 16: n^4 <= 2^n",
+  "goal_status": "derived",
+  "stop_reason": "stopped_by_controller",
+  "elapsed_s": 0.88,
+  "established": [
+    {
+      "statement": "forall n >= 16: n^4 <= 2^n",
+      "rule": "exp_induction",
+      "status": "derived",
+      "origin": "direct proof search"
+    },
+    {
+      "statement": "forall n in [16, 100]: n^4 <= 2^n",
+      "rule": "finite_check",
+      "status": "derived",
+      "origin": "bounded verification up to 100"
+    }
+  ],
+  "invented_and_proved": [],
+  "findings": {},
+  "bounded_upto": 100,
+  "counts": {
+    "derived": 2
+  }
+}

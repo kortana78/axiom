@@ -1,0 +1,23 @@
+{
+  "problem": "research_sum_cubes",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.23,
+  "established": [
+    {
+      "statement": "forall n >= 1: Sum[i=1..n](i^3) = ((((1/4) * n^4) + ((1/2) * n^3)) + ((1/4) * n^2))",
+      "rule": "sum_induction",
+      "status": "derived",
+      "origin": "proof of invented conjecture"
+    }
+  ],
+  "invented_and_proved": [
+    "forall n >= 1: Sum[i=1..n](i^3) = ((((1/4) * n^4) + ((1/2) * n^3)) + ((1/4) * n^2))"
+  ],
+  "findings": {},
+  "bounded_upto": null,
+  "counts": {
+    "derived": 1
+  }
+}

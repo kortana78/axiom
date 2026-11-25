@@ -1,0 +1,23 @@
+{
+  "problem": "research_geometric",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 3.2,
+  "established": [
+    {
+      "statement": "forall n >= 0: Sum[i=0..n](2^i) = ((2 * 2^n) + -1)",
+      "rule": "sum_induction",
+      "status": "derived",
+      "origin": "proof of invented conjecture"
+    }
+  ],
+  "invented_and_proved": [
+    "forall n >= 0: Sum[i=0..n](2^i) = ((2 * 2^n) + -1)"
+  ],
+  "findings": {},
+  "bounded_upto": null,
+  "counts": {
+    "derived": 1
+  }
+}

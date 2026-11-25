@@ -1,0 +1,8 @@
+{
+  "name": "sierpinski_5n",
+  "domain": "number_theory",
+  "formal_statement": "forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: 5/n = 1/x + 1/y + 1/z",
+  "definitions": [],
+  "assumptions": [],
+  "target": "prove"
+}

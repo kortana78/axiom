@@ -1,0 +1,63 @@
+{
+  "problem": "research_rec_squares",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 4.25,
+  "established": [
+    {
+      "statement": "forall n >= 0: (n^2 + (-1 * a(n))) = 0",
+      "rule": "recurrence_invariant",
+      "status": "derived",
+      "origin": "invariant synthesis"
+    },
+    {
+      "statement": "forall n >= 0: a(n) = n^2",
+      "rule": "sequence_closed_form",
+      "status": "derived",
+      "origin": "proof of invented conjecture"
+    },
+    {
+      "statement": "forall n >= 0: ((n^2 + (-1 * a(n))) = 0 and a(n) = n^2)",
+      "rule": "forall_and",
+      "status": "derived",
+      "origin": "mutation Q5: conjunction of observations"
+    },
+    {
+      "statement": "forall n >= 0: a_plus_-2(n) = (n^2 + -2)",
+      "rule": "sequence_closed_form",
+      "status": "derived",
+      "origin": "proof of invented conjecture"
+    },
+    {
+      "statement": "forall n >= 0: a_plus_-1(n) = (n^2 + -1)",
+      "rule": "sequence_closed_form",
+      "status": "derived",
+      "origin": "proof of invented conjecture"
+    },
+    {
+      "statement": "forall n >= 0: a_plus_1(n) = (n^2 + 1)",
+      "rule": "sequence_closed_form",
+      "status": "derived",
+      "origin": "proof of invented conjecture"
+    },
+    {
+      "statement": "forall n >= 0: a_plus_2(n) = (n^2 + 2)",
+      "rule": "sequence_closed_form",
+      "status": "derived",
+      "origin": "proof of invented conjecture"
+    }
+  ],
+  "invented_and_proved": [
+    "forall n >= 0: a(n) = n^2",
+    "forall n >= 0: a_plus_-2(n) = (n^2 + -2)",
+    "forall n >= 0: a_plus_-1(n) = (n^2 + -1)",
+    "forall n >= 0: a_plus_1(n) = (n^2 + 1)",
+    "forall n >= 0: a_plus_2(n) = (n^2 + 2)"
+  ],
+  "findings": {},
+  "bounded_upto": null,
+  "counts": {
+    "derived": 7
+  }
+}

@@ -1,0 +1,16 @@
+# systemd unit: copy to /etc/systemd/system/, edit paths, then
+#   sudo systemctl enable --now axiom-swarm
+[Unit]
+Description=AXIOM swarm
+After=network-online.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/axiom
+Environment=PUSH=1 MINUTES=50
+ExecStart=/home/ubuntu/axiom/deploy/run_swarm.sh
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

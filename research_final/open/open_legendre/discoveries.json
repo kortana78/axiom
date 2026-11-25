@@ -1,0 +1,34 @@
+{
+  "problem": "open_legendre",
+  "goal": "forall n >= 1: prime_between_squares(n)",
+  "goal_status": "undecided_within_budget",
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.15,
+  "established": [
+    {
+      "statement": "forall n in [1, 100]: prime_between_squares(n)",
+      "rule": "finite_check",
+      "status": "derived",
+      "origin": "bounded verification up to 100"
+    },
+    {
+      "statement": "forall n in [1, 200]: prime_between_squares(n)",
+      "rule": "finite_check",
+      "status": "derived",
+      "origin": "bounded verification up to 200"
+    }
+  ],
+  "invented_and_proved": [],
+  "findings": {
+    "difficulty_scan": {
+      "sampled": 60,
+      "failing_instances": [],
+      "diagnosis": "no small failing instance: obstruction is structural"
+    }
+  },
+  "bounded_upto": 200,
+  "counts": {
+    "undecided_within_budget": 1,
+    "derived": 2
+  }
+}

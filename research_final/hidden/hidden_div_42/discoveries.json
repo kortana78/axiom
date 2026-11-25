@@ -1,0 +1,36 @@
+{
+  "problem": "hidden_div_42",
+  "goal": "forall n >= 0: 42 | (n^7 + (-1 * n))",
+  "goal_status": "derived",
+  "stop_reason": "stopped_by_controller",
+  "elapsed_s": 0.08,
+  "established": [
+    {
+      "statement": "forall n >= 0: 42 | (n^7 + (-1 * n))",
+      "rule": "residue_divisibility",
+      "status": "derived",
+      "origin": "proof of invented conjecture"
+    },
+    {
+      "statement": "forall n in [0, 100]: 42 | (n^7 + (-1 * n))",
+      "rule": "finite_check",
+      "status": "derived",
+      "origin": "bounded verification up to 100"
+    },
+    {
+      "statement": "forall k >= 0: 42 | (((2 * k) + 0)^7 + (-1 * ((2 * k) + 0)))",
+      "rule": "residue_divisibility",
+      "status": "derived",
+      "origin": "class 0 mod 2"
+    }
+  ],
+  "invented_and_proved": [
+    "forall n >= 0: 42 | (n^7 + (-1 * n))"
+  ],
+  "findings": {},
+  "bounded_upto": 100,
+  "counts": {
+    "derived": 3,
+    "conjectured": 3
+  }
+}

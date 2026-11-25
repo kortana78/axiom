@@ -1,0 +1,23 @@
+[
+  {
+    "statement": "forall n >= 0: Sum[i=1..n](i^3) = (((1/4) * n^2) * (n + 1)^2)",
+    "status": "derived",
+    "origin": "direct proof search",
+    "note": "base case and F(n+1) - F(n) = g(n+1)",
+    "rule": "sum_induction"
+  },
+  {
+    "statement": "forall n >= 1: Sum[i=1..n](i^3) = ((((1/4) * n^4) + ((1/2) * n^3)) + ((1/4) * n^2))",
+    "status": "derived",
+    "origin": "proof of invented conjecture",
+    "note": "base case and F(n+1) - F(n) = g(n+1)",
+    "rule": "sum_induction"
+  },
+  {
+    "statement": "forall n in [0, 100]: Sum[i=1..n](i^3) = (((1/4) * n^2) * (n + 1)^2)",
+    "status": "derived",
+    "origin": "bounded verification up to 100",
+    "note": "checked all 101 cases",
+    "rule": "finite_check"
+  }
+]

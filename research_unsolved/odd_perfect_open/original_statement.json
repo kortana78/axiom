@@ -1,0 +1,8 @@
+{
+  "name": "odd_perfect_open",
+  "domain": "number_theory",
+  "formal_statement": "forall n >= 1: not ((is_odd(n)) and (is_perfect(n)))",
+  "definitions": [],
+  "assumptions": [],
+  "target": "prove"
+}

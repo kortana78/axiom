@@ -1,0 +1,37 @@
+[
+  {
+    "statement": "forall n >= 0: 24 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "status": "derived",
+    "origin": "proof of invented conjecture",
+    "note": "f(n) = f(n mod 24) mod 24, all residues checked",
+    "rule": "residue_divisibility"
+  },
+  {
+    "statement": "forall n >= 0: 8 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "status": "derived",
+    "origin": "proof of invented conjecture",
+    "note": "f(n) = f(n mod 8) mod 8, all residues checked",
+    "rule": "residue_divisibility"
+  },
+  {
+    "statement": "forall n >= 0: 3 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "status": "derived",
+    "origin": "proof of invented conjecture",
+    "note": "f(n) = f(n mod 3) mod 3, all residues checked",
+    "rule": "residue_divisibility"
+  },
+  {
+    "statement": "forall n >= 0: (24 | (((n * (n + 1)) * (n + 2)) * (n + 3)) and 8 | (((n * (n + 1)) * (n + 2)) * (n + 3)))",
+    "status": "derived",
+    "origin": "mutation Q5: conjunction of observations",
+    "note": "pointwise conjunction",
+    "rule": "forall_and"
+  },
+  {
+    "statement": "forall n >= 0: (8 | (((n * (n + 1)) * (n + 2)) * (n + 3)) and 3 | (((n * (n + 1)) * (n + 2)) * (n + 3)))",
+    "status": "derived",
+    "origin": "mutation Q5: conjunction of observations",
+    "note": "pointwise conjunction",
+    "rule": "forall_and"
+  }
+]

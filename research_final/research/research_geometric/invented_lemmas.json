@@ -1,0 +1,8 @@
+[
+  {
+    "statement": "forall n >= 0: Sum[i=0..n](2^i) = ((2 * 2^n) + -1)",
+    "rule": "sum_induction",
+    "status": "derived",
+    "origin": "proof of invented conjecture"
+  }
+]

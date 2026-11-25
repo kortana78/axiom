@@ -1,0 +1,106 @@
+[
+  {
+    "goal": "forall n >= 1: not_quasiperfect(n)",
+    "route": "direct",
+    "budget": 200,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.004
+  },
+  {
+    "goal": "forall n >= 1: not_quasiperfect(n)",
+    "route": "direct",
+    "budget": 400,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.016
+  },
+  {
+    "goal": "forall n >= 1: not_quasiperfect(n)",
+    "route": "direct",
+    "budget": 800,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.017
+  },
+  {
+    "goal": "forall n >= 1: not_quasiperfect(n)",
+    "route": "direct",
+    "budget": 1600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.025
+  },
+  {
+    "goal": "forall n >= 1: not_quasiperfect(n)",
+    "route": "direct",
+    "budget": 3200,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.025
+  },
+  {
+    "goal": "forall n >= 1: not_quasiperfect(n)",
+    "route": "direct",
+    "budget": 6400,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.025
+  },
+  {
+    "goal": "forall n >= 1: not_quasiperfect(n)",
+    "route": "direct",
+    "budget": 12800,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.027
+  },
+  {
+    "goal": "forall n >= 1: not_quasiperfect(n)",
+    "route": "direct",
+    "budget": 25600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.027
+  },
+  {
+    "goal": "forall m >= 0: not_quasiperfect((m + 0))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.03
+  },
+  {
+    "goal": "forall m >= 0: not_quasiperfect((m + 1))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.031
+  },
+  {
+    "goal": "forall m >= 0: not_quasiperfect((m + 2))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.035
+  },
+  {
+    "goal": "forall m >= 0: not_quasiperfect((m + 3))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.035
+  },
+  {
+    "goal": "forall m >= 0: not_quasiperfect((m + 4))",
+    "route": "equivalent_shift",
+    "budget": 600,
+    "success": false,
+    "kernel_note": "",
+    "at_s": 0.037
+  }
+]

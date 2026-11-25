@@ -1,0 +1,63 @@
+{
+  "problem": "div_n5",
+  "title": "Prove 30 | n^5 - n",
+  "known_status": "theorem",
+  "goal": "forall n >= 0: 30 | (n^5 + (-1 * n))",
+  "goal_status": "derived",
+  "stop_reason": "stopped_by_controller",
+  "elapsed_s": 0.05,
+  "counts": {
+    "derived": 2,
+    "conjectured": 3
+  },
+  "statements": {
+    "derived": [
+      {
+        "statement": "forall n >= 0: 30 | (n^5 + (-1 * n))",
+        "origin": "proof of invented conjecture",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 30) mod 30, all residues checked"
+      },
+      {
+        "statement": "forall n in [0, 100]: 30 | (n^5 + (-1 * n))",
+        "origin": "bounded verification up to 100",
+        "rule": "finite_check",
+        "note": "checked all 101 cases"
+      }
+    ],
+    "conjectured": [
+      {
+        "statement": "forall n >= 0: 2 | (n^5 + (-1 * n))",
+        "origin": "prime power part of gcd",
+        "rule": null,
+        "note": ""
+      },
+      {
+        "statement": "forall n >= 0: 3 | (n^5 + (-1 * n))",
+        "origin": "prime power part of gcd",
+        "rule": null,
+        "note": ""
+      },
+      {
+        "statement": "forall n >= 0: 5 | (n^5 + (-1 * n))",
+        "origin": "prime power part of gcd",
+        "rule": null,
+        "note": ""
+      }
+    ]
+  },
+  "invented_and_proved": [
+    "forall n >= 0: 30 | (n^5 + (-1 * n))"
+  ],
+  "definitions": [],
+  "findings": {},
+  "bounded_upto": 100,
+  "graph": {
+    "nodes": 5,
+    "edges": 0,
+    "by_kind": {
+      "theorem": 2,
+      "conjecture": 3
+    }
+  }
+}

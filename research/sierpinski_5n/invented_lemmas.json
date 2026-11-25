@@ -1,0 +1,170 @@
+[
+  {
+    "statement": "forall k >= 1: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((5 * k) + 0)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 0 mod 5"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((5 * k) + 3)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 3 mod 5"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((5 * k) + 4)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 4 mod 5"
+  },
+  {
+    "statement": "((forall k >= 1: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((5 * k) + 1)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((5 * k) + 2)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "residue_cover",
+    "status": "derived",
+    "origin": "reduction: target follows from 2 open classes mod 5"
+  },
+  {
+    "statement": "(forall q_prime >= 2: ((is_prime(q_prime) and (5 | (q_prime - 1) or 5 | (q_prime - 2))) -> exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / q_prime^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "prime_reduction",
+    "status": "derived",
+    "origin": "prime reduction mod 5 via scaling symmetry"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((10 * k) + 6)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 6 mod 10"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((10 * k) + 2)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 2 mod 10"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((10 * k) + 7)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 7 mod 10"
+  },
+  {
+    "statement": "((forall k >= 1: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((10 * k) + 1)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "residue_cover",
+    "status": "derived",
+    "origin": "reduction: target follows from 1 open classes mod 10"
+  },
+  {
+    "statement": "(forall q_prime >= 2: ((is_prime(q_prime) and (10 | (q_prime - 1))) -> exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / q_prime^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "prime_reduction",
+    "status": "derived",
+    "origin": "prime reduction mod 10 via scaling symmetry"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((30 * k) + 11)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 11 mod 30"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((30 * k) + 21)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 21 mod 30"
+  },
+  {
+    "statement": "((forall k >= 1: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((30 * k) + 1)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "residue_cover",
+    "status": "derived",
+    "origin": "reduction: target follows from 1 open classes mod 30"
+  },
+  {
+    "statement": "(forall q_prime >= 2: ((is_prime(q_prime) and (30 | (q_prime - 1))) -> exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / q_prime^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "prime_reduction",
+    "status": "derived",
+    "origin": "prime reduction mod 30 via scaling symmetry"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((60 * k) + 31)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 31 mod 60"
+  },
+  {
+    "statement": "((forall k >= 1: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((60 * k) + 1)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "residue_cover",
+    "status": "derived",
+    "origin": "reduction: target follows from 1 open classes mod 60"
+  },
+  {
+    "statement": "(forall q_prime >= 2: ((is_prime(q_prime) and (60 | (q_prime - 1))) -> exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / q_prime^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "prime_reduction",
+    "status": "derived",
+    "origin": "prime reduction mod 60 via scaling symmetry"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((420 * k) + 61)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 61 mod 420"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((420 * k) + 121)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 121 mod 420"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((420 * k) + 241)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 241 mod 420"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((420 * k) + 301)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 301 mod 420"
+  },
+  {
+    "statement": "forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((420 * k) + 361)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))",
+    "rule": "forall_exists_witness",
+    "status": "derived",
+    "origin": "witness construction: class 361 mod 420"
+  },
+  {
+    "statement": "((forall k >= 1: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((420 * k) + 1)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((420 * k) + 181)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "residue_cover",
+    "status": "derived",
+    "origin": "reduction: target follows from 2 open classes mod 420"
+  },
+  {
+    "statement": "(forall q_prime >= 2: ((is_prime(q_prime) and (420 | (q_prime - 1) or 420 | (q_prime - 181))) -> exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / q_prime^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "prime_reduction",
+    "status": "derived",
+    "origin": "prime reduction mod 420 via scaling symmetry"
+  },
+  {
+    "statement": "((forall k >= 1: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((840 * k) + 1)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((840 * k) + 421)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((840 * k) + 181)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((840 * k) + 601)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "residue_cover",
+    "status": "derived",
+    "origin": "reduction: target follows from 4 open classes mod 840"
+  },
+  {
+    "statement": "(forall q_prime >= 2: ((is_prime(q_prime) and (840 | (q_prime - 1) or 840 | (q_prime - 421) or 840 | (q_prime - 181) or 840 | (q_prime - 601))) -> exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / q_prime^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "prime_reduction",
+    "status": "derived",
+    "origin": "prime reduction mod 840 via scaling symmetry"
+  },
+  {
+    "statement": "((forall k >= 1: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 1)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 841)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 1681)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 421)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 1261)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 2101)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 181)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 1021)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 1861)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 601)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 1441)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)) and forall k >= 0: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / ((2520 * k) + 2281)^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "residue_cover",
+    "status": "derived",
+    "origin": "reduction: target follows from 12 open classes mod 2520"
+  },
+  {
+    "statement": "(forall q_prime >= 2: ((is_prime(q_prime) and (2520 | (q_prime - 1) or 2520 | (q_prime - 841) or 2520 | (q_prime - 1681) or 2520 | (q_prime - 421) or 2520 | (q_prime - 1261) or 2520 | (q_prime - 2101) or 2520 | (q_prime - 181) or 2520 | (q_prime - 1021) or 2520 | (q_prime - 1861) or 2520 | (q_prime - 601) or 2520 | (q_prime - 1441) or 2520 | (q_prime - 2281))) -> exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / q_prime^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1))) -> forall n >= 2: exists x >= 1: exists y >= 1: exists z >= 1: (5 * (1 / n^1)) = (((1 / z^1) + (1 / y^1)) + (1 / x^1)))",
+    "rule": "prime_reduction",
+    "status": "derived",
+    "origin": "prime reduction mod 2520 via scaling symmetry"
+  }
+]

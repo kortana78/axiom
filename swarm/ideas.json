@@ -1,0 +1,63 @@
+{
+  "comment": "Hand-written ideas (by Claude or a human). Same format as generated ideas. These are tried before generated ones. Fields: order (variable names, last one is solved exactly), atoms (subset of n, n2, n3, v, nv, n2v, vv, nvv), mult (coefficients for the atom), T (offset range), D (divisor range), note.",
+  "ideas": [
+    {
+      "order": [
+        "y",
+        "z",
+        "x"
+      ],
+      "atoms": [
+        "n",
+        "v",
+        "nv",
+        "vv"
+      ],
+      "mult": [
+        1,
+        2,
+        3
+      ],
+      "T": 80,
+      "D": 60,
+      "note": "solve the smallest unknown last; allow 2n and 3n type atoms"
+    },
+    {
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "atoms": [
+        "n",
+        "nv",
+        "n2v",
+        "nvv"
+      ],
+      "mult": [
+        1
+      ],
+      "T": 120,
+      "D": 120,
+      "note": "larger products as building blocks for the middle unknown"
+    },
+    {
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "atoms": [
+        "n",
+        "nv"
+      ],
+      "mult": [
+        1
+      ],
+      "T": 130,
+      "D": 24,
+      "note": "Claude: x = (n + t)/d with large t, then y = (n x + s)/t; narrow atoms so a deep search is affordable",
+      "tie": true
+    }
+  ]
+}

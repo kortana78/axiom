@@ -1,0 +1,10 @@
+[
+  {
+    "goal": "forall n >= 0: Sum[i=0..n](2^i) = ((2 * 2^n) + -1)",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "base case and F(n+1) - F(n) = g(n+1)",
+    "at_s": 1.192
+  }
+]

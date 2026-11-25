@@ -1,0 +1,14 @@
+[
+  {
+    "statement": "forall n in [1, 100]: prime_between_squares(n)",
+    "rule": "finite_check",
+    "status": "derived",
+    "origin": "bounded verification up to 100"
+  },
+  {
+    "statement": "forall n in [1, 200]: prime_between_squares(n)",
+    "rule": "finite_check",
+    "status": "derived",
+    "origin": "bounded verification up to 200"
+  }
+]

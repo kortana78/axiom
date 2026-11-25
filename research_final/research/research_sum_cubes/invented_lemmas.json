@@ -1,0 +1,8 @@
+[
+  {
+    "statement": "forall n >= 1: Sum[i=1..n](i^3) = ((((1/4) * n^4) + ((1/2) * n^3)) + ((1/4) * n^2))",
+    "rule": "sum_induction",
+    "status": "derived",
+    "origin": "proof of invented conjecture"
+  }
+]

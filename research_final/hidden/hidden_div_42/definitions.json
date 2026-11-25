@@ -1,0 +1,31 @@
+{
+  "given": {
+    "sequences": [],
+    "terms": [],
+    "assumptions": []
+  },
+  "invented": [],
+  "structure_found_by_analysis": {
+    "bound_variables": [
+      "n >= 0"
+    ],
+    "terms_to_study": [
+      "(n^7 + (-1 * n))"
+    ],
+    "sums_to_study": [],
+    "sequences_to_study": [],
+    "inequalities_to_study": [],
+    "predicates": [],
+    "constants": [
+      42
+    ],
+    "discovered_moduli": [
+      2,
+      3,
+      7
+    ],
+    "discovered_offsets": [
+      3
+    ]
+  }
+}

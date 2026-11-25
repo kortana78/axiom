@@ -1,0 +1,97 @@
+{
+  "problem": "fermat_scan",
+  "title": "For which p does p | n^p - n always hold?",
+  "known_status": "theorem",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.16,
+  "counts": {
+    "undecided_within_budget": 1,
+    "derived": 10
+  },
+  "statements": {
+    "undecided_within_budget": [
+      {
+        "statement": "forall p >= 2: forall n >= 0: (is_prime(p) -> p | (n^p - n))",
+        "origin": "controller",
+        "rule": null,
+        "note": "general case needs a rule beyond residue checking; instances proved"
+      }
+    ],
+    "derived": [
+      {
+        "statement": "forall n >= 0: 2 | (n^2 - n)",
+        "origin": "instance p = 2 of the generalisation",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 2) mod 2, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 3 | (n^3 - n)",
+        "origin": "instance p = 3 of the generalisation",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 3) mod 3, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 5 | (n^5 - n)",
+        "origin": "instance p = 5 of the generalisation",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 5) mod 5, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 7 | (n^7 - n)",
+        "origin": "instance p = 7 of the generalisation",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 7) mod 7, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 11 | (n^11 - n)",
+        "origin": "instance p = 11 of the generalisation",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 11) mod 11, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 13 | (n^13 - n)",
+        "origin": "instance p = 13 of the generalisation",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 13) mod 13, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 17 | (n^17 - n)",
+        "origin": "instance p = 17 of the generalisation",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 17) mod 17, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 19 | (n^19 - n)",
+        "origin": "instance p = 19 of the generalisation",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 19) mod 19, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 23 | (n^23 - n)",
+        "origin": "instance p = 23 of the generalisation",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 23) mod 23, all residues checked"
+      },
+      {
+        "statement": "forall n >= 0: 29 | (n^29 - n)",
+        "origin": "instance p = 29 of the generalisation",
+        "rule": "residue_divisibility",
+        "note": "f(n) = f(n mod 29) mod 29, all residues checked"
+      }
+    ]
+  },
+  "invented_and_proved": [],
+  "definitions": [],
+  "findings": {},
+  "bounded_upto": null,
+  "graph": {
+    "nodes": 11,
+    "edges": 0,
+    "by_kind": {
+      "conjecture": 1,
+      "theorem": 10
+    }
+  }
+}

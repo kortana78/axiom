@@ -1,0 +1,51 @@
+[
+  {
+    "statement": "forall n >= 0: a(n) = n^2",
+    "status": "derived",
+    "origin": "proof of invented conjecture",
+    "note": "g(0) = a(0) and g satisfies the recurrence",
+    "rule": "sequence_closed_form"
+  },
+  {
+    "statement": "forall n >= 0: (n^2 + (-1 * a(n))) = 0",
+    "status": "derived",
+    "origin": "invariant synthesis",
+    "note": "I(F(x,n), n+1) = I(x,n)",
+    "rule": "recurrence_invariant"
+  },
+  {
+    "statement": "forall n >= 0: a_plus_-2(n) = (n^2 + -2)",
+    "status": "derived",
+    "origin": "proof of invented conjecture",
+    "note": "g(0) = a(0) and g satisfies the recurrence",
+    "rule": "sequence_closed_form"
+  },
+  {
+    "statement": "forall n >= 0: a_plus_-1(n) = (n^2 + -1)",
+    "status": "derived",
+    "origin": "proof of invented conjecture",
+    "note": "g(0) = a(0) and g satisfies the recurrence",
+    "rule": "sequence_closed_form"
+  },
+  {
+    "statement": "forall n >= 0: a_plus_1(n) = (n^2 + 1)",
+    "status": "derived",
+    "origin": "proof of invented conjecture",
+    "note": "g(0) = a(0) and g satisfies the recurrence",
+    "rule": "sequence_closed_form"
+  },
+  {
+    "statement": "forall n >= 0: ((n^2 + (-1 * a(n))) = 0 and a(n) = n^2)",
+    "status": "derived",
+    "origin": "mutation Q5: conjunction of observations",
+    "note": "pointwise conjunction",
+    "rule": "forall_and"
+  },
+  {
+    "statement": "forall n >= 0: a_plus_2(n) = (n^2 + 2)",
+    "status": "derived",
+    "origin": "proof of invented conjecture",
+    "note": "g(0) = a(0) and g satisfies the recurrence",
+    "rule": "sequence_closed_form"
+  }
+]

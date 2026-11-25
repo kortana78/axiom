@@ -1,0 +1,10 @@
+[
+  {
+    "goal": "forall n >= 0: 42 | (n^7 + (-1 * n))",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "f(n) = f(n mod 42) mod 42, all residues checked",
+    "at_s": 0.04
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "name": "research_prod4",
+  "domain": "number_theory",
+  "formal_statement": "study n*(n+1)*(n+2)*(n+3)",
+  "definitions": [],
+  "assumptions": [],
+  "target": "discover"
+}

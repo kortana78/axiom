@@ -1,0 +1,23 @@
+{
+  "problem": "research_sum_squares",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.2,
+  "established": [
+    {
+      "statement": "forall n >= 1: Sum[i=1..n](i^2) = ((((1/3) * n^3) + ((1/2) * n^2)) + ((1/6) * n))",
+      "rule": "sum_induction",
+      "status": "derived",
+      "origin": "proof of invented conjecture"
+    }
+  ],
+  "invented_and_proved": [
+    "forall n >= 1: Sum[i=1..n](i^2) = ((((1/3) * n^3) + ((1/2) * n^2)) + ((1/6) * n))"
+  ],
+  "findings": {},
+  "bounded_upto": null,
+  "counts": {
+    "derived": 1
+  }
+}

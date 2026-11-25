@@ -1,0 +1,8 @@
+# Render: free static site showing the swarm dashboard (results/index.html).
+# Render's free compute is far too small for the workers themselves.
+services:
+  - type: web
+    name: axiom-dashboard
+    runtime: static
+    buildCommand: echo "static dashboard"
+    staticPublishPath: ./results

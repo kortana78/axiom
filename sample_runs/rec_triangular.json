@@ -1,0 +1,44 @@
+{
+  "problem": "rec_triangular",
+  "title": "b(0)=0, b(n+1) = b(n) + n",
+  "known_status": "theorem",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.03,
+  "counts": {
+    "derived": 2
+  },
+  "statements": {
+    "derived": [
+      {
+        "statement": "forall n >= 0: b(n) = (((1/2) * n^2) + ((-1/2) * n))",
+        "origin": "proof of invented conjecture",
+        "rule": "sequence_closed_form",
+        "note": "g(0) = a(0) and g satisfies the recurrence"
+      },
+      {
+        "statement": "forall n >= 0: ((n^2 + (-1 * n)) + (-2 * b(n))) = 0",
+        "origin": "invariant synthesis",
+        "rule": "recurrence_invariant",
+        "note": "I(F(x,n), n+1) = I(x,n)"
+      }
+    ]
+  },
+  "invented_and_proved": [
+    "forall n >= 0: b(n) = (((1/2) * n^2) + ((-1/2) * n))"
+  ],
+  "definitions": [
+    "Delta_b := ((n + x) - x)   (term; first difference often exposes hidden polynomial structure)"
+  ],
+  "findings": {},
+  "bounded_upto": null,
+  "graph": {
+    "nodes": 3,
+    "edges": 0,
+    "by_kind": {
+      "theorem": 2,
+      "definition": 1
+    }
+  }
+}

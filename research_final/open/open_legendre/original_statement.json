@@ -1,0 +1,8 @@
+{
+  "name": "open_legendre",
+  "domain": "number_theory",
+  "formal_statement": "forall n >= 1: prime_between_squares(n)",
+  "definitions": [],
+  "assumptions": [],
+  "target": "prove"
+}

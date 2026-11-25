@@ -1,0 +1,10 @@
+{
+  "name": "research_rec_squares",
+  "domain": "number_theory",
+  "formal_statement": "",
+  "definitions": [
+    "a(0) = 0; a(n+1) = a(n) + 2*n + 1"
+  ],
+  "assumptions": [],
+  "target": "discover"
+}

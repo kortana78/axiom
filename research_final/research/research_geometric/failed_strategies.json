@@ -1,0 +1,12 @@
+{
+  "kernel_rejections": [],
+  "mutations_applied": [
+    {
+      "question": 5,
+      "name": "combine_observations",
+      "rationale": "combine established divisibilities, closed forms and facts",
+      "at_round": 4
+    }
+  ],
+  "failed_proof_routes": []
+}

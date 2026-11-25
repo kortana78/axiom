@@ -1,0 +1,8 @@
+{
+  "name": "research_sum_squares",
+  "domain": "number_theory",
+  "formal_statement": "study Sum[i=1..n](i^2)",
+  "definitions": [],
+  "assumptions": [],
+  "target": "discover"
+}

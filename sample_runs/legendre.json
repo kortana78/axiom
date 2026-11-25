@@ -1,0 +1,54 @@
+{
+  "problem": "legendre",
+  "title": "Legendre: a prime lies between n^2 and (n+1)^2",
+  "known_status": "open",
+  "goal": "forall n >= 1: prime_between_squares(n)",
+  "goal_status": "undecided_within_budget",
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.26,
+  "counts": {
+    "undecided_within_budget": 1,
+    "derived": 3
+  },
+  "statements": {
+    "undecided_within_budget": [
+      {
+        "statement": "forall n >= 1: prime_between_squares(n)",
+        "origin": "controller",
+        "rule": null,
+        "note": "search ended without proof or counterexample; this is NOT a refutation; verified for all cases up to 3000"
+      }
+    ],
+    "derived": [
+      {
+        "statement": "forall n in [1, 100]: prime_between_squares(n)",
+        "origin": "bounded verification up to 100",
+        "rule": "finite_check",
+        "note": "checked all 100 cases"
+      },
+      {
+        "statement": "forall n in [1, 1000]: prime_between_squares(n)",
+        "origin": "bounded verification up to 1000",
+        "rule": "finite_check",
+        "note": "checked all 1000 cases"
+      },
+      {
+        "statement": "forall n in [1, 3000]: prime_between_squares(n)",
+        "origin": "bounded verification up to 3000",
+        "rule": "finite_check",
+        "note": "checked all 3000 cases"
+      }
+    ]
+  },
+  "invented_and_proved": [],
+  "definitions": [],
+  "findings": {},
+  "bounded_upto": 3000,
+  "graph": {
+    "nodes": 3,
+    "edges": 0,
+    "by_kind": {
+      "theorem": 3
+    }
+  }
+}

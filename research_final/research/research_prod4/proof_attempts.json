@@ -1,0 +1,26 @@
+[
+  {
+    "goal": "forall n >= 0: 24 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "f(n) = f(n mod 24) mod 24, all residues checked",
+    "at_s": 0.036
+  },
+  {
+    "goal": "forall n >= 0: 8 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "f(n) = f(n mod 8) mod 8, all residues checked",
+    "at_s": 0.058
+  },
+  {
+    "goal": "forall n >= 0: 3 | (((n * (n + 1)) * (n + 2)) * (n + 3))",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "f(n) = f(n mod 3) mod 3, all residues checked",
+    "at_s": 0.07
+  }
+]

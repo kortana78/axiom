@@ -1,0 +1,18 @@
+[
+  {
+    "goal": "forall n >= 1: Sum[i=1..n](i^3) = ((((1/4) * n^4) + ((1/2) * n^3)) + ((1/4) * n^2))",
+    "route": "conjecture_proof",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "base case and F(n+1) - F(n) = g(n+1)",
+    "at_s": 1.793
+  },
+  {
+    "goal": "forall n >= 0: Sum[i=1..n](i^3) = (((1/4) * n^2) * (n + 1)^2)",
+    "route": "direct",
+    "budget": 200,
+    "success": true,
+    "kernel_note": "base case and F(n+1) - F(n) = g(n+1)",
+    "at_s": 1.819
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "problem": "rec_mod",
+  "title": "d(0)=1, d(n+1) = d(n)^2 + 3 d(n) + 3: find invariants",
+  "known_status": "theorem",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "time_budget_exhausted",
+  "elapsed_s": 4.0,
+  "counts": {
+    "derived": 3
+  },
+  "statements": {
+    "derived": [
+      {
+        "statement": "forall n >= 0: 2 | (d(n) - 1)",
+        "origin": "proof of invented conjecture",
+        "rule": "recurrence_mod_invariant",
+        "note": "a(n) = 1 mod 2 is preserved by the rule"
+      },
+      {
+        "statement": "forall n >= 0: 3 | (d(n) - 1)",
+        "origin": "proof of invented conjecture",
+        "rule": "recurrence_mod_invariant",
+        "note": "a(n) = 1 mod 3 is preserved by the rule"
+      },
+      {
+        "statement": "forall n >= 0: 6 | (d(n) - 1)",
+        "origin": "proof of invented conjecture",
+        "rule": "recurrence_mod_invariant",
+        "note": "a(n) = 1 mod 6 is preserved by the rule"
+      }
+    ]
+  },
+  "invented_and_proved": [
+    "forall n >= 0: 2 | (d(n) - 1)",
+    "forall n >= 0: 3 | (d(n) - 1)",
+    "forall n >= 0: 6 | (d(n) - 1)"
+  ],
+  "definitions": [
+    "Delta_d := (((x^2 + (3 * x)) + 3) - x)   (term; first difference often exposes hidden polynomial structure)"
+  ],
+  "findings": {},
+  "bounded_upto": null,
+  "graph": {
+    "nodes": 4,
+    "edges": 0,
+    "by_kind": {
+      "definition": 1,
+      "theorem": 3
+    }
+  }
+}

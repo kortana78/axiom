@@ -1,0 +1,37 @@
+[
+  {
+    "statement": "forall n >= 1: not ((is_odd(n) and is_perfect(n)))",
+    "status": "undecided_within_budget",
+    "origin": "controller",
+    "note": "search ended without proof or counterexample; this is NOT a refutation; verified for all cases up to 2000",
+    "rule": null
+  },
+  {
+    "statement": "forall n in [1, 100]: not ((is_odd(n) and is_perfect(n)))",
+    "status": "derived",
+    "origin": "bounded verification up to 100",
+    "note": "checked all 100 cases",
+    "rule": "finite_check"
+  },
+  {
+    "statement": "forall n >= 1: (is_odd(n) -> is_odd(n))",
+    "status": "undecided_within_budget",
+    "origin": "controller",
+    "note": "proof budget exhausted",
+    "rule": null
+  },
+  {
+    "statement": "forall n in [1, 1000]: not ((is_odd(n) and is_perfect(n)))",
+    "status": "derived",
+    "origin": "bounded verification up to 1000",
+    "note": "checked all 1000 cases",
+    "rule": "finite_check"
+  },
+  {
+    "statement": "forall n in [1, 2000]: not ((is_odd(n) and is_perfect(n)))",
+    "status": "derived",
+    "origin": "bounded verification up to 2000",
+    "note": "checked all 2000 cases",
+    "rule": "finite_check"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "statement": "forall n in [1, 100]: not ((is_odd(n) and is_perfect(n)))",
+    "rule": "finite_check",
+    "status": "derived",
+    "origin": "bounded verification up to 100"
+  },
+  {
+    "statement": "forall n in [1, 1000]: not ((is_odd(n) and is_perfect(n)))",
+    "rule": "finite_check",
+    "status": "derived",
+    "origin": "bounded verification up to 1000"
+  },
+  {
+    "statement": "forall n in [1, 2000]: not ((is_odd(n) and is_perfect(n)))",
+    "rule": "finite_check",
+    "status": "derived",
+    "origin": "bounded verification up to 2000"
+  }
+]

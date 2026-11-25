@@ -1,0 +1,38 @@
+{
+  "problem": "rec_mersenne",
+  "title": "c(0)=0, c(n+1) = 2c(n) + 1",
+  "known_status": "theorem",
+  "goal": null,
+  "goal_status": null,
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.48,
+  "counts": {
+    "derived": 1
+  },
+  "statements": {
+    "derived": [
+      {
+        "statement": "forall n >= 0: c(n) = (2^n + -1)",
+        "origin": "proof of invented conjecture",
+        "rule": "sequence_closed_form",
+        "note": "g(0) = a(0) and g satisfies the recurrence"
+      }
+    ]
+  },
+  "invented_and_proved": [
+    "forall n >= 0: c(n) = (2^n + -1)"
+  ],
+  "definitions": [
+    "Delta_c := (((2 * x) + 1) - x)   (term; first difference often exposes hidden polynomial structure)"
+  ],
+  "findings": {},
+  "bounded_upto": null,
+  "graph": {
+    "nodes": 2,
+    "edges": 0,
+    "by_kind": {
+      "theorem": 1,
+      "definition": 1
+    }
+  }
+}

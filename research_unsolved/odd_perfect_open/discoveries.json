@@ -1,0 +1,40 @@
+{
+  "problem": "odd_perfect_open",
+  "goal": "forall n >= 1: not ((is_odd(n) and is_perfect(n)))",
+  "goal_status": "undecided_within_budget",
+  "stop_reason": "all_strategies_finished",
+  "elapsed_s": 2.08,
+  "established": [
+    {
+      "statement": "forall n in [1, 100]: not ((is_odd(n) and is_perfect(n)))",
+      "rule": "finite_check",
+      "status": "derived",
+      "origin": "bounded verification up to 100"
+    },
+    {
+      "statement": "forall n in [1, 1000]: not ((is_odd(n) and is_perfect(n)))",
+      "rule": "finite_check",
+      "status": "derived",
+      "origin": "bounded verification up to 1000"
+    },
+    {
+      "statement": "forall n in [1, 2000]: not ((is_odd(n) and is_perfect(n)))",
+      "rule": "finite_check",
+      "status": "derived",
+      "origin": "bounded verification up to 2000"
+    }
+  ],
+  "invented_and_proved": [],
+  "findings": {
+    "difficulty_scan": {
+      "sampled": 60,
+      "failing_instances": [],
+      "diagnosis": "no small failing instance: obstruction is structural"
+    }
+  },
+  "bounded_upto": 2000,
+  "counts": {
+    "undecided_within_budget": 2,
+    "derived": 3
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "statement": "forall n >= 0: 42 | (n^7 + (-1 * n))",
+    "status": "derived",
+    "origin": "proof of invented conjecture",
+    "note": "f(n) = f(n mod 42) mod 42, all residues checked",
+    "rule": "residue_divisibility"
+  },
+  {
+    "statement": "forall n >= 0: 2 | (n^7 + (-1 * n))",
+    "status": "conjectured",
+    "origin": "prime power part of gcd",
+    "note": "",
+    "rule": null
+  },
+  {
+    "statement": "forall n >= 0: 3 | (n^7 + (-1 * n))",
+    "status": "conjectured",
+    "origin": "prime power part of gcd",
+    "note": "",
+    "rule": null
+  },
+  {
+    "statement": "forall n >= 0: 7 | (n^7 + (-1 * n))",
+    "status": "conjectured",
+    "origin": "prime power part of gcd",
+    "note": "",
+    "rule": null
+  },
+  {
+    "statement": "forall n in [0, 100]: 42 | (n^7 + (-1 * n))",
+    "status": "derived",
+    "origin": "bounded verification up to 100",
+    "note": "checked all 101 cases",
+    "rule": "finite_check"
+  },
+  {
+    "statement": "forall k >= 0: 42 | (((2 * k) + 0)^7 + (-1 * ((2 * k) + 0)))",
+    "status": "derived",
+    "origin": "class 0 mod 2",
+    "note": "f(n) = f(n mod 42) mod 42, all residues checked",
+    "rule": "residue_divisibility"
+  }
+]
