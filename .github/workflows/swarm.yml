@@ -131,10 +131,14 @@ jobs:
         run: |
           curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - name: mathlib with cached build
+      - name: mathlib with cached build (pinned)
         run: |
-          git clone --depth 1 https://github.com/leanprover-community/mathlib4 "$RUNNER_TEMP/mathlib4"
-          cd "$RUNNER_TEMP/mathlib4" && lake exe cache get
+          git init "$RUNNER_TEMP/mathlib4"
+          cd "$RUNNER_TEMP/mathlib4"
+          git remote add origin https://github.com/leanprover-community/mathlib4
+          git fetch --depth 1 origin cf28751adfc7f48c0f7c6c0954a61c38cd957439
+          git checkout --detach FETCH_HEAD
+          lake exe cache get
       - run: python -m axiom.swarm.lean_check --mathlib "$RUNNER_TEMP/mathlib4" && python -m axiom.swarm.dashboard
       - name: commit Lean results
         run: |
