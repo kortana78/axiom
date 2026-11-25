@@ -1,0 +1,11 @@
+{
+  "file": "results/sierpinski_5n/lean/sierpinski_5n.lean",
+  "theorems": 9,
+  "accepted": 9,
+  "failed": [],
+  "returncode": 0,
+  "sorry_present": false,
+  "seconds": 2.9,
+  "log_tail": "",
+  "summary": "Lean accepted 9/9 class lemmas"
+}
