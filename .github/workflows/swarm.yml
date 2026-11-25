@@ -1,0 +1,146 @@
+name: axiom-swarm
+
+# Runs a batch of parallel AXIOM workers, merges and re-checks their results
+# with the kernel, checks exported lemmas with Lean, and commits results/.
+# Defaults are deliberately moderate (10 shards x 45 min every 6 hours).
+# GitHub's terms forbid Actions use that burdens their servers
+# disproportionately, so raise these numbers with care.
+
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      shards:
+        description: "parallel worker jobs (max 20 on the free plan)"
+        default: "10"
+      minutes:
+        description: "minutes per worker"
+        default: "45"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: axiom-swarm
+  cancel-in-progress: false
+
+env:
+  SHARDS: ${{ github.event.inputs.shards || '10' }}
+  MINUTES: ${{ github.event.inputs.minutes || '45' }}
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.p.outputs.matrix }}
+      problems: ${{ steps.p.outputs.problems }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - id: p
+        run: |
+          echo "matrix=$(python -m axiom.swarm.plan --shards $SHARDS)" >> "$GITHUB_OUTPUT"
+          echo "problems=$(python -m axiom.swarm.plan --problems)" >> "$GITHUB_OUTPUT"
+
+  work:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: worker
+        run: python -m axiom.swarm.worker --problem ${{ matrix.problem }} --shard ${{ matrix.shard }} --of ${{ matrix.of }} --time $((MINUTES*60))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shard-${{ matrix.problem }}-${{ matrix.shard }}
+          path: results/${{ matrix.problem }}/shards/*.json
+          retention-days: 3
+
+  ideas:
+    # idea generator: one runner per problem proposes and tests search ideas
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    strategy:
+      fail-fast: false
+      matrix:
+        problem: ${{ fromJson(needs.plan.outputs.problems) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: idea generator
+        run: python -m axiom.ideas.run --problem ${{ matrix.problem }} --time $((MINUTES*60))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ideas-${{ matrix.problem }}
+          path: |
+            results/${{ matrix.problem }}/shards/*.json
+            results/${{ matrix.problem }}/ideas_log.json
+          retention-days: 3
+
+  merge:
+    needs: [work, ideas]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: "*-*"
+          path: incoming
+      - name: place shard files
+        run: python -m axiom.swarm.place incoming results
+      - run: python -m axiom.swarm.merge && python -m axiom.swarm.dashboard
+      - name: commit results
+        run: |
+          git config user.name "axiom-swarm"
+          git config user.email "axiom-swarm@users.noreply.github.com"
+          git add results
+          git commit -m "swarm: merge batch [skip ci]" || exit 0
+          git pull --rebase
+          git push
+
+  lean:
+    needs: merge
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: mathlib with cached build
+        run: |
+          git clone --depth 1 https://github.com/leanprover-community/mathlib4 "$RUNNER_TEMP/mathlib4"
+          cd "$RUNNER_TEMP/mathlib4" && lake exe cache get
+      - run: python -m axiom.swarm.lean_check --mathlib "$RUNNER_TEMP/mathlib4" && python -m axiom.swarm.dashboard
+      - name: commit Lean results
+        run: |
+          git config user.name "axiom-swarm"
+          git config user.email "axiom-swarm@users.noreply.github.com"
+          git add results
+          git commit -m "swarm: Lean check [skip ci]" || exit 0
+          git pull --rebase
+          git push
