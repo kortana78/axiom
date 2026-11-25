@@ -321,3 +321,21 @@ theorem cls_840_769 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z
   · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
   · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
   · ring
+
+/-- class n = 840k + 481, k = m + 0. Witnesses: ['88200*k**2 + 103425*k + 30303', '210*k + 126', '8400*k**2 + 9850*k + 2886'] -/
+theorem cls_840_481 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(840*(m:ℤ) + 481)*x*y - (840*(m:ℤ) + 481)*x*z - (840*(m:ℤ) + 481)*y*z + 4*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(88200*(m:ℤ)^2 + 103425*(m:ℤ) + 30303), (210*(m:ℤ) + 126), (8400*(m:ℤ)^2 + 9850*(m:ℤ) + 2886), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
+
+/-- class n = 840k + 649, k = m + 0. Witnesses: ['88200*k**2 + 138705*k + 54516', '210*k + 168', '8400*k**2 + 13210*k + 5192'] -/
+theorem cls_840_649 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(840*(m:ℤ) + 649)*x*y - (840*(m:ℤ) + 649)*x*z - (840*(m:ℤ) + 649)*y*z + 4*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(88200*(m:ℤ)^2 + 138705*(m:ℤ) + 54516), (210*(m:ℤ) + 168), (8400*(m:ℤ)^2 + 13210*(m:ℤ) + 5192), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
