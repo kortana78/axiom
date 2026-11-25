@@ -104,6 +104,34 @@
       "seconds": 658.2,
       "source": "generated",
       "note": "enumerated"
+    },
+    "order=yzx|atoms=n,n2,nv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 8,
+      "seconds": 493.8,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xyz|atoms=n,n2,nv,v,vv|mult=1|T=60|D=36": {
+      "hits": 0,
+      "tested": 8,
+      "seconds": 907.3,
+      "source": "mutated",
+      "note": "mutation of order=xyz|atoms=n,n2,nv,v,vv|mult=1|T=40|D=24"
+    },
+    "order=xyz|atoms=n,n2v,nv,nvv|mult=1,4|T=120|D=120": {
+      "hits": 2,
+      "tested": 8,
+      "seconds": 1036.1,
+      "source": "mutated",
+      "note": "mutation of order=xyz|atoms=n,n2v,nv,nvv|mult=1|T=120|D=120"
+    },
+    "order=zxy|atoms=n,n2,n3,nv,nvv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 6,
+      "seconds": 262.7,
+      "source": "generated",
+      "note": "enumerated"
     }
   },
   "families": {
@@ -123,7 +151,7 @@
       "hits": 11
     },
     "order=xyz|atoms=n,n2,nv,v,vv|mult=1": {
-      "tries": 1,
+      "tries": 2,
       "reward": 0.75,
       "hits": 9
     },
@@ -178,6 +206,21 @@
       "hits": 0
     },
     "order=yzx|atoms=n,n2,n3,nv,nvv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=yzx|atoms=n,n2,nv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xyz|atoms=n,n2v,nv,nvv|mult=2": {
+      "tries": 1,
+      "reward": 0.25,
+      "hits": 2
+    },
+    "order=zxy|atoms=n,n2,n3,nv,nvv,v,vv|mult=1": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0
@@ -413,6 +456,28 @@
       "D": 24,
       "note": "enumerated",
       "source": "generated",
+      "tie": false
+    },
+    {
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "atoms": [
+        "n",
+        "nv",
+        "n2v",
+        "nvv"
+      ],
+      "mult": [
+        1,
+        4
+      ],
+      "T": 120,
+      "D": 120,
+      "note": "mutation of order=xyz|atoms=n,n2v,nv,nvv|mult=1|T=120|D=120",
+      "source": "mutated",
       "tie": false
     }
   ]

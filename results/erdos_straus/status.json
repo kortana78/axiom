@@ -5,25 +5,23 @@
   "modulus": 840,
   "mode": "prime_reduction",
   "relevant_classes": 196,
-  "open_classes": 8,
+  "open_classes": 6,
   "open_sample": [
     1,
     121,
     169,
-    241,
     289,
     361,
-    409,
     529
   ],
-  "families_verified": 37,
-  "reduction_kernel_check": "reduced to primes in 8 classes mod 840 by scaling symmetry",
+  "families_verified": 39,
+  "reduction_kernel_check": "reduced to primes in 6 classes mod 840 by scaling symmetry",
   "reduction_statement": "target holds for all n >= 2 if it holds for every prime in the open classes mod 840",
   "next_frontier": {
     "modulus": 840,
     "T": 40,
     "D": 24,
-    "open": 8
+    "open": 6
   },
   "history": [
     {
@@ -52,6 +50,17 @@
       "utc": "2026-11-25T11:34:51Z",
       "modulus": 840,
       "open": 8,
+      "relevant": 196,
+      "T": 40,
+      "D": 24,
+      "shards_merged": 6,
+      "rejected_families": 0,
+      "note": "progress at current grammar"
+    },
+    {
+      "utc": "2026-11-25T22:36:58Z",
+      "modulus": 840,
+      "open": 6,
       "relevant": 196,
       "T": 40,
       "D": 24,
