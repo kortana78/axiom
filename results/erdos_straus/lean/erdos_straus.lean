@@ -294,3 +294,30 @@ theorem cls_840_829 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z
   · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
   · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
   · ring
+
+/-- class n = 420k + 181, k = m + 0. Witnesses: ['840*k + 362', '50400*k**2 + 43560*k + 9412', '120*k + 52'] -/
+theorem cls_420_181 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(420*(m:ℤ) + 181)*x*y - (420*(m:ℤ) + 181)*x*z - (420*(m:ℤ) + 181)*y*z + 4*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(840*(m:ℤ) + 362), (50400*(m:ℤ)^2 + 43560*(m:ℤ) + 9412), (120*(m:ℤ) + 52), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
+
+/-- class n = 840k + 601, k = m + 0. Witnesses: ['210*k + 154', '176400*k**2 + 255570*k + 92554', '12600*k**2 + 18255*k + 6611'] -/
+theorem cls_840_601 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(840*(m:ℤ) + 601)*x*y - (840*(m:ℤ) + 601)*x*z - (840*(m:ℤ) + 601)*y*z + 4*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(210*(m:ℤ) + 154), (176400*(m:ℤ)^2 + 255570*(m:ℤ) + 92554), (12600*(m:ℤ)^2 + 18255*(m:ℤ) + 6611), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
+
+/-- class n = 840k + 769, k = m + 0. Witnesses: ['210*k + 196', '176400*k**2 + 326130*k + 150724', '12600*k**2 + 23295*k + 10766'] -/
+theorem cls_840_769 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(840*(m:ℤ) + 769)*x*y - (840*(m:ℤ) + 769)*x*z - (840*(m:ℤ) + 769)*y*z + 4*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(210*(m:ℤ) + 196), (176400*(m:ℤ)^2 + 326130*(m:ℤ) + 150724), (12600*(m:ℤ)^2 + 23295*(m:ℤ) + 10766), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring

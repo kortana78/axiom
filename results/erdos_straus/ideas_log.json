@@ -55,6 +55,27 @@
       "seconds": 48.8,
       "source": "generated",
       "note": "enumerated"
+    },
+    "order=xzy|atoms=n,n2,nv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 12,
+      "seconds": 119.2,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xzy|atoms=n,n2,n3,nv,nvv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 12,
+      "seconds": 147.4,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xzy|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24": {
+      "hits": 1,
+      "tested": 12,
+      "seconds": 38.2,
+      "source": "generated",
+      "note": "enumerated"
     }
   },
   "families": {
@@ -97,6 +118,21 @@
       "tries": 1,
       "reward": 0.4166666666666667,
       "hits": 5
+    },
+    "order=xzy|atoms=n,n2,nv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xzy|atoms=n,n2,n3,nv,nvv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xzy|atoms=n,n2,n2v,nv,v,vv|mult=2": {
+      "tries": 1,
+      "reward": 0.08333333333333333,
+      "hits": 1
     }
   },
   "winners": [
@@ -278,6 +314,30 @@
         1,
         2,
         3
+      ],
+      "T": 40,
+      "D": 24,
+      "note": "enumerated",
+      "source": "generated",
+      "tie": false
+    },
+    {
+      "order": [
+        "x",
+        "z",
+        "y"
+      ],
+      "atoms": [
+        "n",
+        "n2",
+        "v",
+        "nv",
+        "vv",
+        "n2v"
+      ],
+      "mult": [
+        1,
+        2
       ],
       "T": 40,
       "D": 24,
