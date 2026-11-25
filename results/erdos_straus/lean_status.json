@@ -1,11 +1,11 @@
 {
   "file": "results/erdos_straus/lean/erdos_straus.lean",
-  "theorems": 35,
-  "accepted": 35,
+  "theorems": 37,
+  "accepted": 37,
   "failed": [],
   "returncode": 0,
   "sorry_present": false,
-  "seconds": 5.9,
+  "seconds": 6.8,
   "log_tail": "",
-  "summary": "Lean accepted 35/35 class lemmas"
+  "summary": "Lean accepted 37/37 class lemmas"
 }
