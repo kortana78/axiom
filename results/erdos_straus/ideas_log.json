@@ -1,0 +1,289 @@
+{
+  "tried": {
+    "order=yzx|atoms=n,nv,v,vv|mult=1,2,3|T=80|D=60": {
+      "hits": 11,
+      "tested": 12,
+      "seconds": 60.3,
+      "source": "hand",
+      "note": "solve the smallest unknown last; allow 2n and 3n type atoms"
+    },
+    "order=xyz|atoms=n,n2v,nv,nvv|mult=1|T=120|D=120": {
+      "hits": 12,
+      "tested": 12,
+      "seconds": 22.2,
+      "source": "hand",
+      "note": "larger products as building blocks for the middle unknown"
+    },
+    "order=xyz|atoms=n,nv|mult=1|T=130|D=24|tie": {
+      "hits": 11,
+      "tested": 12,
+      "seconds": 32.9,
+      "source": "hand",
+      "note": "Claude: x = (n + t)/d with large t, then y = (n x + s)/t; narrow atoms so a deep search is affordable"
+    },
+    "order=xyz|atoms=n,n2,nv,v,vv|mult=1|T=40|D=24": {
+      "hits": 9,
+      "tested": 12,
+      "seconds": 30.7,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xyz|atoms=n,n2,n3,nv,nvv,v,vv|mult=1|T=40|D=24": {
+      "hits": 11,
+      "tested": 12,
+      "seconds": 23.1,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xyz|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24": {
+      "hits": 10,
+      "tested": 12,
+      "seconds": 53.3,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xyz|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=1,2|T=40|D=24": {
+      "hits": 10,
+      "tested": 12,
+      "seconds": 34.8,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xyz|atoms=n,n2,n2v,n3,nv,v,vv|mult=1,2,3|T=40|D=24": {
+      "hits": 5,
+      "tested": 12,
+      "seconds": 48.8,
+      "source": "generated",
+      "note": "enumerated"
+    }
+  },
+  "families": {
+    "order=yzx|atoms=n,nv,v,vv|mult=3": {
+      "tries": 1,
+      "reward": 0.9166666666666666,
+      "hits": 11
+    },
+    "order=xyz|atoms=n,n2v,nv,nvv|mult=1": {
+      "tries": 1,
+      "reward": 1.0,
+      "hits": 12
+    },
+    "order=xyz|atoms=n,nv|mult=1|tie": {
+      "tries": 1,
+      "reward": 0.9166666666666666,
+      "hits": 11
+    },
+    "order=xyz|atoms=n,n2,nv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.75,
+      "hits": 9
+    },
+    "order=xyz|atoms=n,n2,n3,nv,nvv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.9166666666666666,
+      "hits": 11
+    },
+    "order=xyz|atoms=n,n2,n2v,nv,v,vv|mult=2": {
+      "tries": 1,
+      "reward": 0.8333333333333334,
+      "hits": 10
+    },
+    "order=xyz|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=2": {
+      "tries": 1,
+      "reward": 0.8333333333333334,
+      "hits": 10
+    },
+    "order=xyz|atoms=n,n2,n2v,n3,nv,v,vv|mult=3": {
+      "tries": 1,
+      "reward": 0.4166666666666667,
+      "hits": 5
+    }
+  },
+  "winners": [
+    {
+      "order": [
+        "y",
+        "z",
+        "x"
+      ],
+      "atoms": [
+        "n",
+        "v",
+        "nv",
+        "vv"
+      ],
+      "mult": [
+        1,
+        2,
+        3
+      ],
+      "T": 80,
+      "D": 60,
+      "note": "solve the smallest unknown last; allow 2n and 3n type atoms",
+      "source": "hand",
+      "tie": false
+    },
+    {
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "atoms": [
+        "n",
+        "nv",
+        "n2v",
+        "nvv"
+      ],
+      "mult": [
+        1
+      ],
+      "T": 120,
+      "D": 120,
+      "note": "larger products as building blocks for the middle unknown",
+      "source": "hand",
+      "tie": false
+    },
+    {
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "atoms": [
+        "n",
+        "nv"
+      ],
+      "mult": [
+        1
+      ],
+      "T": 130,
+      "D": 24,
+      "note": "Claude: x = (n + t)/d with large t, then y = (n x + s)/t; narrow atoms so a deep search is affordable",
+      "source": "hand",
+      "tie": true
+    },
+    {
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "atoms": [
+        "n",
+        "n2",
+        "v",
+        "nv",
+        "vv"
+      ],
+      "mult": [
+        1
+      ],
+      "T": 40,
+      "D": 24,
+      "note": "enumerated",
+      "source": "generated",
+      "tie": false
+    },
+    {
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "atoms": [
+        "n",
+        "n2",
+        "v",
+        "nv",
+        "vv",
+        "n3",
+        "nvv"
+      ],
+      "mult": [
+        1
+      ],
+      "T": 40,
+      "D": 24,
+      "note": "enumerated",
+      "source": "generated",
+      "tie": false
+    },
+    {
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "atoms": [
+        "n",
+        "n2",
+        "v",
+        "nv",
+        "vv",
+        "n2v"
+      ],
+      "mult": [
+        1,
+        2
+      ],
+      "T": 40,
+      "D": 24,
+      "note": "enumerated",
+      "source": "generated",
+      "tie": false
+    },
+    {
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "atoms": [
+        "n",
+        "n2",
+        "v",
+        "nv",
+        "vv",
+        "n3",
+        "n2v",
+        "nvv"
+      ],
+      "mult": [
+        1,
+        2
+      ],
+      "T": 40,
+      "D": 24,
+      "note": "enumerated",
+      "source": "generated",
+      "tie": false
+    },
+    {
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "atoms": [
+        "n",
+        "n2",
+        "v",
+        "nv",
+        "vv",
+        "n3",
+        "n2v"
+      ],
+      "mult": [
+        1,
+        2,
+        3
+      ],
+      "T": 40,
+      "D": 24,
+      "note": "enumerated",
+      "source": "generated",
+      "tie": false
+    }
+  ]
+}
