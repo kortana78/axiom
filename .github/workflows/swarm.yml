@@ -66,8 +66,38 @@ jobs:
           path: results/${{ matrix.problem }}/shards/*.json
           retention-days: 3
 
+  llm-ideas:
+    # Free-LLM proposals only.  No key means skip, not failure.  The job is
+    # capped and writes validated proposals; it never marks anything proved.
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: propose ideas (skips without a key)
+        env:
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          LLM_PROVIDERS: ${{ secrets.LLM_PROVIDERS }}
+          LLM_MAX_REQUESTS_PER_RUN: "2"
+          LLM_MAX_REQUESTS_PER_DAY: "20"
+          LLM_TOTAL_TIMEOUT: "180"
+        run: python -m axiom.llm.ideas --all --max-problems 10 --time 300
+      - name: commit validated proposals
+        run: |
+          git config user.name "axiom-swarm"
+          git config user.email "axiom-swarm@users.noreply.github.com"
+          git add swarm/llm_ideas.json swarm/sunit_ideas.json swarm/abc_ideas.json results/llm_usage.json 2>/dev/null || true
+          git commit -m "llm: ideas [skip ci]" || exit 0
+          git pull --rebase
+          git push
+
   ideas:
-    # idea generator: one runner per problem proposes and tests search ideas
+    # idea generator: one runner per witness problem proposes and tests ideas
     needs: plan
     runs-on: ubuntu-latest
     timeout-minutes: 100
@@ -91,7 +121,7 @@ jobs:
           retention-days: 3
 
   merge:
-    needs: [work, ideas]
+    needs: [work, ideas, llm-ideas]
     if: always()
     runs-on: ubuntu-latest
     steps:
