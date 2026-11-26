@@ -2,7 +2,7 @@
 
 **abc conjecture: OPEN. No result here proves it.**
 
-updated 2026-11-26 21:05 UTC
+updated 2026-11-26 21:07 UTC
 
 ## Witness reductions
 
