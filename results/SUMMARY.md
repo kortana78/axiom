@@ -2,14 +2,14 @@
 
 **abc conjecture: OPEN. No result here proves it.**
 
-updated 2026-11-26 22:30 UTC
+updated 2026-11-26 22:32 UTC
 
 ## Witness reductions
 
 | problem | status | modulus | open / relevant | families | last note | Lean |
 |---|---|---|---|---|---|---|
 | erdos_straus | open: reduction certified | 840 | 6 / 196 | 39 | no progress: grammar enlarged | Lean accepted 39/39 lemmas |
-| sierpinski_5n | open: reduction certified | 2520 | 4 / 580 | 23 | progress at current grammar | Lean accepted 15/15 lemmas |
+| sierpinski_5n | open: reduction certified | 2520 | 4 / 580 | 23 | progress at current grammar | Lean accepted 23/23 lemmas |
 
 ## ABC triple hunter (search only)
 
