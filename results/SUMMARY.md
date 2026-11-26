@@ -1,6 +1,6 @@
 # AXIOM swarm summary
 
-updated 2026-11-26 09:24 UTC
+updated 2026-11-26 09:26 UTC
 
 | problem | status | modulus | open / relevant | families | last note |
 |---|---|---|---|---|---|
