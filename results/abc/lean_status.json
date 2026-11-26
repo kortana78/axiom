@@ -1,0 +1,11 @@
+{
+  "file": "results/abc/lean/abc.lean",
+  "theorems": 200,
+  "accepted": 200,
+  "failed": [],
+  "returncode": 0,
+  "sorry_present": false,
+  "seconds": 2.8,
+  "log_tail": "",
+  "summary": "Lean accepted 200/200 lemmas"
+}

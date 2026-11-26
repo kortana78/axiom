@@ -5,7 +5,7 @@
   "failed": [],
   "returncode": 0,
   "sorry_present": false,
-  "seconds": 8.4,
+  "seconds": 6.2,
   "log_tail": "",
-  "summary": "Lean accepted 39/39 class lemmas"
+  "summary": "Lean accepted 39/39 lemmas"
 }
