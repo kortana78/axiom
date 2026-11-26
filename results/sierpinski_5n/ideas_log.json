@@ -160,6 +160,34 @@
       "seconds": 411.8,
       "source": "generated",
       "note": "enumerated"
+    },
+    "order=zxy|atoms=n,n2,nv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 320.7,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=zxy|atoms=n,n2,n3,nv,nvv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 762.6,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=zxy|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 1195.1,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=yxz|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=1,2|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 427.8,
+      "source": "mutated",
+      "note": "mutation of order=xyz|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=1,2|T=40|D=24"
     }
   },
   "families": {
@@ -274,6 +302,26 @@
       "hits": 0
     },
     "order=xzy|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=2": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=zxy|atoms=n,n2,nv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=zxy|atoms=n,n2,n3,nv,nvv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=zxy|atoms=n,n2,n2v,nv,v,vv|mult=2": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=yxz|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=2": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0
