@@ -209,6 +209,27 @@
       "seconds": 76.4,
       "source": "mutated",
       "note": "mutation of order=xzy|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24"
+    },
+    "order=xzy|atoms=n,n2,n3,nv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 6,
+      "seconds": 128.5,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=yxz|atoms=n,n2,n2v,nv,nvv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 6,
+      "seconds": 128.2,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=zxy|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24": {
+      "hits": 0,
+      "tested": 6,
+      "seconds": 47.3,
+      "source": "generated",
+      "note": "enumerated"
     }
   },
   "families": {
@@ -348,6 +369,21 @@
       "hits": 0
     },
     "order=xzy|atoms=n,n2,n2v,nv,v,vv|mult=3": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xzy|atoms=n,n2,n3,nv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=yxz|atoms=n,n2,n2v,nv,nvv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=zxy|atoms=n,n2,n2v,nv,v,vv|mult=2": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0

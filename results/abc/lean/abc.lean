@@ -216,194 +216,194 @@ theorem rec_050_coprime : Nat.Coprime 1487 67108864 := by decide
 theorem rec_051_add : 289 + 6272 = 6561 := by norm_num
 theorem rec_051_coprime : Nat.Coprime 289 6272 := by decide
 
+/-- a=1953125, b=10367643, c=12320768, rad(abc)=201630, q=1.336707. -/
+theorem rec_052_add : 1953125 + 10367643 = 12320768 := by norm_num
+theorem rec_052_coprime : Nat.Coprime 1953125 10367643 := by decide
+
 /-- a=1, b=3499199, c=3499200, rad(abc)=78870, q=1.336346. -/
-theorem rec_052_add : 1 + 3499199 = 3499200 := by norm_num
-theorem rec_052_coprime : Nat.Coprime 1 3499199 := by decide
+theorem rec_053_add : 1 + 3499199 = 3499200 := by norm_num
+theorem rec_053_coprime : Nat.Coprime 1 3499199 := by decide
 
 /-- a=1058, b=36924979, c=36926037, rad(abc)=464646, q=1.335304. -/
-theorem rec_053_add : 1058 + 36924979 = 36926037 := by norm_num
-theorem rec_053_coprime : Nat.Coprime 1058 36924979 := by decide
+theorem rec_054_add : 1058 + 36924979 = 36926037 := by norm_num
+theorem rec_054_coprime : Nat.Coprime 1058 36924979 := by decide
 
 /-- a=119232, b=40234375, c=40353607, rad(abc)=497490, q=1.335119. -/
-theorem rec_054_add : 119232 + 40234375 = 40353607 := by norm_num
-theorem rec_054_coprime : Nat.Coprime 119232 40234375 := by decide
+theorem rec_055_add : 119232 + 40234375 = 40353607 := by norm_num
+theorem rec_055_coprime : Nat.Coprime 119232 40234375 := by decide
 
 /-- a=729, b=29984039, c=29984768, rad(abc)=402798, q=1.333949. -/
-theorem rec_055_add : 729 + 29984039 = 29984768 := by norm_num
-theorem rec_055_coprime : Nat.Coprime 729 29984039 := by decide
+theorem rec_056_add : 729 + 29984039 = 29984768 := by norm_num
+theorem rec_056_coprime : Nat.Coprime 729 29984039 := by decide
 
 /-- a=4508, b=1948617, c=1953125, rad(abc)=53130, q=1.331276. -/
-theorem rec_056_add : 4508 + 1948617 = 1953125 := by norm_num
-theorem rec_056_coprime : Nat.Coprime 4508 1948617 := by decide
+theorem rec_057_add : 4508 + 1948617 = 1953125 := by norm_num
+theorem rec_057_coprime : Nat.Coprime 4508 1948617 := by decide
 
 /-- a=164025, b=40353607, c=40517632, rad(abc)=519330, q=1.331068. -/
-theorem rec_057_add : 164025 + 40353607 = 40517632 := by norm_num
-theorem rec_057_coprime : Nat.Coprime 164025 40353607 := by decide
+theorem rec_058_add : 164025 + 40353607 = 40517632 := by norm_num
+theorem rec_058_coprime : Nat.Coprime 164025 40353607 := by decide
 
 /-- a=9583, b=524288, c=533871, rad(abc)=20202, q=1.330293. -/
-theorem rec_058_add : 9583 + 524288 = 533871 := by norm_num
-theorem rec_058_coprime : Nat.Coprime 9583 524288 := by decide
+theorem rec_059_add : 9583 + 524288 = 533871 := by norm_num
+theorem rec_059_coprime : Nat.Coprime 9583 524288 := by decide
 
 /-- a=2367, b=5764801, c=5767168, rad(abc)=121506, q=1.329695. -/
-theorem rec_059_add : 2367 + 5764801 = 5767168 := by norm_num
-theorem rec_059_coprime : Nat.Coprime 2367 5764801 := by decide
+theorem rec_060_add : 2367 + 5764801 = 5767168 := by norm_num
+theorem rec_060_coprime : Nat.Coprime 2367 5764801 := by decide
 
 /-- a=131072, b=221875, c=352947, rad(abc)=14910, q=1.329277. -/
-theorem rec_060_add : 131072 + 221875 = 352947 := by norm_num
-theorem rec_060_coprime : Nat.Coprime 131072 221875 := by decide
+theorem rec_061_add : 131072 + 221875 = 352947 := by norm_num
+theorem rec_061_coprime : Nat.Coprime 131072 221875 := by decide
 
 /-- a=7, b=32761, c=32768, rad(abc)=2534, q=1.326588. -/
-theorem rec_061_add : 7 + 32761 = 32768 := by norm_num
-theorem rec_061_coprime : Nat.Coprime 7 32761 := by decide
+theorem rec_062_add : 7 + 32761 = 32768 := by norm_num
+theorem rec_062_coprime : Nat.Coprime 7 32761 := by decide
 
 /-- a=2048, b=97970133, c=97972181, rad(abc)=1081506, q=1.324339. -/
-theorem rec_062_add : 2048 + 97970133 = 97972181 := by norm_num
-theorem rec_062_coprime : Nat.Coprime 2048 97970133 := by decide
+theorem rec_063_add : 2048 + 97970133 = 97972181 := by norm_num
+theorem rec_063_coprime : Nat.Coprime 2048 97970133 := by decide
 
 /-- a=1, b=59048, c=59049, rad(abc)=4026, q=1.323545. -/
-theorem rec_063_add : 1 + 59048 = 59049 := by norm_num
-theorem rec_063_coprime : Nat.Coprime 1 59048 := by decide
+theorem rec_064_add : 1 + 59048 = 59049 := by norm_num
+theorem rec_064_coprime : Nat.Coprime 1 59048 := by decide
 
 /-- a=95, b=279841, c=279936, rad(abc)=13110, q=1.322871. -/
-theorem rec_064_add : 95 + 279841 = 279936 := by norm_num
-theorem rec_064_coprime : Nat.Coprime 95 279841 := by decide
+theorem rec_065_add : 95 + 279841 = 279936 := by norm_num
+theorem rec_065_coprime : Nat.Coprime 95 279841 := by decide
 
 /-- a=4375, b=4782969, c=4787344, rad(abc)=114870, q=1.320123. -/
-theorem rec_065_add : 4375 + 4782969 = 4787344 := by norm_num
-theorem rec_065_coprime : Nat.Coprime 4375 4782969 := by decide
+theorem rec_066_add : 4375 + 4782969 = 4787344 := by norm_num
+theorem rec_066_coprime : Nat.Coprime 4375 4782969 := by decide
 
 /-- a=1024, b=48828125, c=48829149, rad(abc)=669810, q=1.319729. -/
-theorem rec_066_add : 1024 + 48828125 = 48829149 := by norm_num
-theorem rec_066_coprime : Nat.Coprime 1024 48828125 := by decide
+theorem rec_067_add : 1024 + 48828125 = 48829149 := by norm_num
+theorem rec_067_coprime : Nat.Coprime 1024 48828125 := by decide
 
 /-- a=1, b=5831, c=5832, rad(abc)=714, q=1.319627. -/
-theorem rec_067_add : 1 + 5831 = 5832 := by norm_num
-theorem rec_067_coprime : Nat.Coprime 1 5831 := by decide
+theorem rec_068_add : 1 + 5831 = 5832 := by norm_num
+theorem rec_068_coprime : Nat.Coprime 1 5831 := by decide
 
 /-- a=211, b=5000000, c=5000211, rad(abc)=120270, q=1.318658. -/
-theorem rec_068_add : 211 + 5000000 = 5000211 := by norm_num
-theorem rec_068_coprime : Nat.Coprime 211 5000000 := by decide
+theorem rec_069_add : 211 + 5000000 = 5000211 := by norm_num
+theorem rec_069_coprime : Nat.Coprime 211 5000000 := by decide
 
 /-- a=1, b=512, c=513, rad(abc)=114, q=1.317571. -/
-theorem rec_069_add : 1 + 512 = 513 := by norm_num
-theorem rec_069_coprime : Nat.Coprime 1 512 := by decide
+theorem rec_070_add : 1 + 512 = 513 := by norm_num
+theorem rec_070_coprime : Nat.Coprime 1 512 := by decide
 
 /-- a=49, b=5767119, c=5767168, rad(abc)=135366, q=1.317539. -/
-theorem rec_070_add : 49 + 5767119 = 5767168 := by norm_num
-theorem rec_070_coprime : Nat.Coprime 49 5767119 := by decide
+theorem rec_071_add : 49 + 5767119 = 5767168 := by norm_num
+theorem rec_071_coprime : Nat.Coprime 49 5767119 := by decide
 
 /-- a=19321, b=17915904, c=17935225, rad(abc)=321090, q=1.317269. -/
-theorem rec_071_add : 19321 + 17915904 = 17935225 := by norm_num
-theorem rec_071_coprime : Nat.Coprime 19321 17915904 := by decide
+theorem rec_072_add : 19321 + 17915904 = 17935225 := by norm_num
+theorem rec_072_coprime : Nat.Coprime 19321 17915904 := by decide
 
 /-- a=2476099, b=5451776, c=7927875, rad(abc)=181830, q=1.311710. -/
-theorem rec_072_add : 2476099 + 5451776 = 7927875 := by norm_num
-theorem rec_072_coprime : Nat.Coprime 2476099 5451776 := by decide
+theorem rec_073_add : 2476099 + 5451776 = 7927875 := by norm_num
+theorem rec_073_coprime : Nat.Coprime 2476099 5451776 := by decide
 
 /-- a=729, b=6864896, c=6865625, rad(abc)=163410, q=1.311397. -/
-theorem rec_073_add : 729 + 6864896 = 6865625 := by norm_num
-theorem rec_073_coprime : Nat.Coprime 729 6864896 := by decide
+theorem rec_074_add : 729 + 6864896 = 6865625 := by norm_num
+theorem rec_074_coprime : Nat.Coprime 729 6864896 := by decide
 
 /-- a=1, b=242, c=243, rad(abc)=66, q=1.311101. -/
-theorem rec_074_add : 1 + 242 = 243 := by norm_num
-theorem rec_074_coprime : Nat.Coprime 1 242 := by decide
+theorem rec_075_add : 1 + 242 = 243 := by norm_num
+theorem rec_075_coprime : Nat.Coprime 1 242 := by decide
 
 /-- a=371293, b=28588707, c=28960000, rad(abc)=494130, q=1.310503. -/
-theorem rec_075_add : 371293 + 28588707 = 28960000 := by norm_num
-theorem rec_075_coprime : Nat.Coprime 371293 28588707 := by decide
+theorem rec_076_add : 371293 + 28588707 = 28960000 := by norm_num
+theorem rec_076_coprime : Nat.Coprime 371293 28588707 := by decide
 
 /-- a=12005, b=161051, c=173056, rad(abc)=10010, q=1.309405. -/
-theorem rec_076_add : 12005 + 161051 = 173056 := by norm_num
-theorem rec_076_coprime : Nat.Coprime 12005 161051 := by decide
+theorem rec_077_add : 12005 + 161051 = 173056 := by norm_num
+theorem rec_077_coprime : Nat.Coprime 12005 161051 := by decide
 
 /-- a=203125, b=38336139, c=38539264, rad(abc)=643110, q=1.306049. -/
-theorem rec_077_add : 203125 + 38336139 = 38539264 := by norm_num
-theorem rec_077_coprime : Nat.Coprime 203125 38336139 := by decide
+theorem rec_078_add : 203125 + 38336139 = 38539264 := by norm_num
+theorem rec_078_coprime : Nat.Coprime 203125 38336139 := by decide
 
 /-- a=7424, b=1586899, c=1594323, rad(abc)=56202, q=1.305874. -/
-theorem rec_078_add : 7424 + 1586899 = 1594323 := by norm_num
-theorem rec_078_coprime : Nat.Coprime 7424 1586899 := by decide
+theorem rec_079_add : 7424 + 1586899 = 1594323 := by norm_num
+theorem rec_079_coprime : Nat.Coprime 7424 1586899 := by decide
 
 /-- a=768, b=1127357, c=1128125, rad(abc)=43890, q=1.303723. -/
-theorem rec_079_add : 768 + 1127357 = 1128125 := by norm_num
-theorem rec_079_coprime : Nat.Coprime 768 1127357 := by decide
+theorem rec_080_add : 768 + 1127357 = 1128125 := by norm_num
+theorem rec_080_coprime : Nat.Coprime 768 1127357 := by decide
 
 /-- a=2744, b=2476099, c=2478843, rad(abc)=80598, q=1.303267. -/
-theorem rec_080_add : 2744 + 2476099 = 2478843 := by norm_num
-theorem rec_080_coprime : Nat.Coprime 2744 2476099 := by decide
+theorem rec_081_add : 2744 + 2476099 = 2478843 := by norm_num
+theorem rec_081_coprime : Nat.Coprime 2744 2476099 := by decide
 
 /-- a=5120, b=47293129, c=47298249, rad(abc)=798330, q=1.300340. -/
-theorem rec_081_add : 5120 + 47293129 = 47298249 := by norm_num
-theorem rec_081_coprime : Nat.Coprime 5120 47293129 := by decide
+theorem rec_082_add : 5120 + 47293129 = 47298249 := by norm_num
+theorem rec_082_coprime : Nat.Coprime 5120 47293129 := by decide
 
 /-- a=874577, b=2250423, c=3125000, rad(abc)=99330, q=1.299729. -/
-theorem rec_082_add : 874577 + 2250423 = 3125000 := by norm_num
-theorem rec_082_coprime : Nat.Coprime 874577 2250423 := by decide
+theorem rec_083_add : 874577 + 2250423 = 3125000 := by norm_num
+theorem rec_083_coprime : Nat.Coprime 874577 2250423 := by decide
 
 /-- a=5, b=1024, c=1029, rad(abc)=210, q=1.297214. -/
-theorem rec_083_add : 5 + 1024 = 1029 := by norm_num
-theorem rec_083_coprime : Nat.Coprime 5 1024 := by decide
+theorem rec_084_add : 5 + 1024 = 1029 := by norm_num
+theorem rec_084_coprime : Nat.Coprime 5 1024 := by decide
 
 /-- a=12672, b=117649, c=130321, rad(abc)=8778, q=1.297109. -/
-theorem rec_084_add : 12672 + 117649 = 130321 := by norm_num
-theorem rec_084_coprime : Nat.Coprime 12672 117649 := by decide
+theorem rec_085_add : 12672 + 117649 = 130321 := by norm_num
+theorem rec_085_coprime : Nat.Coprime 12672 117649 := by decide
 
 /-- a=81, b=134375, c=134456, rad(abc)=9030, q=1.296508. -/
-theorem rec_085_add : 81 + 134375 = 134456 := by norm_num
-theorem rec_085_coprime : Nat.Coprime 81 134375 := by decide
+theorem rec_086_add : 81 + 134375 = 134456 := by norm_num
+theorem rec_086_coprime : Nat.Coprime 81 134375 := by decide
 
 /-- a=8, b=4826809, c=4826817, rad(abc)=143754, q=1.295881. -/
-theorem rec_086_add : 8 + 4826809 = 4826817 := by norm_num
-theorem rec_086_coprime : Nat.Coprime 8 4826809 := by decide
+theorem rec_087_add : 8 + 4826809 = 4826817 := by norm_num
+theorem rec_087_coprime : Nat.Coprime 8 4826809 := by decide
+
+/-- a=331157, b=14348907, c=14680064, rad(abc)=339234, q=1.295855. -/
+theorem rec_088_add : 331157 + 14348907 = 14680064 := by norm_num
+theorem rec_088_coprime : Nat.Coprime 331157 14348907 := by decide
 
 /-- a=32768, b=859375, c=892143, rad(abc)=39270, q=1.295245. -/
-theorem rec_087_add : 32768 + 859375 = 892143 := by norm_num
-theorem rec_087_coprime : Nat.Coprime 32768 859375 := by decide
+theorem rec_089_add : 32768 + 859375 = 892143 := by norm_num
+theorem rec_089_coprime : Nat.Coprime 32768 859375 := by decide
 
 /-- a=8107, b=5242880, c=5250987, rad(abc)=154770, q=1.294922. -/
-theorem rec_088_add : 8107 + 5242880 = 5250987 := by norm_num
-theorem rec_088_coprime : Nat.Coprime 8107 5242880 := by decide
+theorem rec_090_add : 8107 + 5242880 = 5250987 := by norm_num
+theorem rec_090_coprime : Nat.Coprime 8107 5242880 := by decide
 
 /-- a=36864, b=48828125, c=48864989, rad(abc)=872070, q=1.294324. -/
-theorem rec_089_add : 36864 + 48828125 = 48864989 := by norm_num
-theorem rec_089_coprime : Nat.Coprime 36864 48828125 := by decide
+theorem rec_091_add : 36864 + 48828125 = 48864989 := by norm_num
+theorem rec_091_coprime : Nat.Coprime 36864 48828125 := by decide
 
 /-- a=23040, b=1419857, c=1442897, rad(abc)=57630, q=1.293781. -/
-theorem rec_090_add : 23040 + 1419857 = 1442897 := by norm_num
-theorem rec_090_coprime : Nat.Coprime 23040 1419857 := by decide
+theorem rec_092_add : 23040 + 1419857 = 1442897 := by norm_num
+theorem rec_092_coprime : Nat.Coprime 23040 1419857 := by decide
 
 /-- a=10125, b=1075648, c=1085773, rad(abc)=46410, q=1.293388. -/
-theorem rec_091_add : 10125 + 1075648 = 1085773 := by norm_num
-theorem rec_091_coprime : Nat.Coprime 10125 1075648 := by decide
+theorem rec_093_add : 10125 + 1075648 = 1085773 := by norm_num
+theorem rec_093_coprime : Nat.Coprime 10125 1075648 := by decide
 
 /-- a=1, b=80, c=81, rad(abc)=30, q=1.292030. -/
-theorem rec_092_add : 1 + 80 = 81 := by norm_num
-theorem rec_092_coprime : Nat.Coprime 1 80 := by decide
+theorem rec_094_add : 1 + 80 = 81 := by norm_num
+theorem rec_094_coprime : Nat.Coprime 1 80 := by decide
 
 /-- a=81, b=123823, c=123904, rad(abc)=8778, q=1.291548. -/
-theorem rec_093_add : 81 + 123823 = 123904 := by norm_num
-theorem rec_093_coprime : Nat.Coprime 81 123823 := by decide
+theorem rec_095_add : 81 + 123823 = 123904 := by norm_num
+theorem rec_095_coprime : Nat.Coprime 81 123823 := by decide
 
 /-- a=625, b=4091904, c=4092529, rad(abc)=132090, q=1.291185. -/
-theorem rec_094_add : 625 + 4091904 = 4092529 := by norm_num
-theorem rec_094_coprime : Nat.Coprime 625 4091904 := by decide
+theorem rec_096_add : 625 + 4091904 = 4092529 := by norm_num
+theorem rec_096_coprime : Nat.Coprime 625 4091904 := by decide
 
 /-- a=10, b=2187, c=2197, rad(abc)=390, q=1.289752. -/
-theorem rec_095_add : 10 + 2187 = 2197 := by norm_num
-theorem rec_095_coprime : Nat.Coprime 10 2187 := by decide
+theorem rec_097_add : 10 + 2187 = 2197 := by norm_num
+theorem rec_097_coprime : Nat.Coprime 10 2187 := by decide
 
 /-- a=163840, b=1771561, c=1935401, rad(abc)=75790, q=1.288375. -/
-theorem rec_096_add : 163840 + 1771561 = 1935401 := by norm_num
-theorem rec_096_coprime : Nat.Coprime 163840 1771561 := by decide
+theorem rec_098_add : 163840 + 1771561 = 1935401 := by norm_num
+theorem rec_098_coprime : Nat.Coprime 163840 1771561 := by decide
 
 /-- a=2197, b=583443, c=585640, rad(abc)=30030, q=1.288120. -/
-theorem rec_097_add : 2197 + 583443 = 585640 := by norm_num
-theorem rec_097_coprime : Nat.Coprime 2197 583443 := by decide
-
-/-- a=3, b=65533, c=65536, rad(abc)=5538, q=1.286675. -/
-theorem rec_098_add : 3 + 65533 = 65536 := by norm_num
-theorem rec_098_coprime : Nat.Coprime 3 65533 := by decide
-
-/-- a=121, b=12167, c=12288, rad(abc)=1518, q=1.285486. -/
-theorem rec_099_add : 121 + 12167 = 12288 := by norm_num
-theorem rec_099_coprime : Nat.Coprime 121 12167 := by decide
+theorem rec_099_add : 2197 + 583443 = 585640 := by norm_num
+theorem rec_099_coprime : Nat.Coprime 2197 583443 := by decide

@@ -17,8 +17,8 @@
   "reduction_statement": "target holds for all n >= 2 if it holds for every prime in the open classes mod 840",
   "next_frontier": {
     "modulus": 840,
-    "T": 303,
-    "D": 181,
+    "T": 454,
+    "D": 271,
     "open": 4
   },
   "history": [
@@ -96,6 +96,17 @@
       "T": 202,
       "D": 121,
       "shards_merged": 4,
+      "rejected_families": 0,
+      "note": "no progress: grammar enlarged"
+    },
+    {
+      "utc": "2026-11-26T21:05:39Z",
+      "modulus": 840,
+      "open": 4,
+      "relevant": 196,
+      "T": 303,
+      "D": 181,
+      "shards_merged": 3,
       "rejected_families": 0,
       "note": "no progress: grammar enlarged"
     }

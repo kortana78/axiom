@@ -1,0 +1,8 @@
+{
+  "problem": "abc_route_stewart_yu",
+  "kind": "abc_route",
+  "route": "Stewart-Yu",
+  "status": "unproved idea",
+  "note": "partial result; far weaker than abc; see swarm/abc_routes.md for citations",
+  "abc_status": "abc conjecture: OPEN. No result here proves it."
+}

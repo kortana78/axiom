@@ -1,0 +1,8 @@
+{
+  "problem": "abc_route_mason_stothers",
+  "kind": "abc_route",
+  "route": "Mason-Stothers",
+  "status": "unproved idea",
+  "note": "polynomial analogue only; Mathlib Polynomial.abc; not a route to the integer statement",
+  "abc_status": "abc conjecture: OPEN. No result here proves it."
+}

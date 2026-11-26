@@ -1,0 +1,8 @@
+{
+  "problem": "abc_route_szpiro",
+  "kind": "abc_route",
+  "route": "Szpiro",
+  "status": "unproved idea",
+  "note": "unproved idea; any candidate argument must be Lean against lean/Abc/Statement.lean, no sorry, no new axioms",
+  "abc_status": "abc conjecture: OPEN. No result here proves it."
+}

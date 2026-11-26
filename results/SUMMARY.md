@@ -2,7 +2,7 @@
 
 **abc conjecture: OPEN. No result here proves it.**
 
-updated 2026-11-26 20:54 UTC
+updated 2026-11-26 21:05 UTC
 
 ## Witness reductions
 
@@ -15,7 +15,7 @@ updated 2026-11-26 20:54 UTC
 
 | problem | status | c max | best q | records | last note | Lean |
 |---|---|---|---|---|---|---|
-| abc | search only: 200 verified triples; best q=1.629912; no proof of abc | 100,000,000 | 1.629912 | 200 | best 2 + 6436341 = 6436343 (rad 15042); c_smooth advanced to 168001; legs_smooth advanced to 600000000 | Lean accepted 200/200 lemmas |
+| abc | search only: 200 verified triples; best q=1.629912; no proof of abc | 100,000,000 | 1.629912 | 200 | best 2 + 6436341 = 6436343 (rad 15042); c_smooth incomplete; width 201600 -> 141120; legs_smooth advanced to 960000000 | Lean accepted 200/200 lemmas |
 
 ## S-unit certificates (finite completeness, not abc)
 

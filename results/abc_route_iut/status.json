@@ -1,0 +1,8 @@
+{
+  "problem": "abc_route_iut",
+  "kind": "abc_route",
+  "route": "IUT",
+  "status": "unproved idea",
+  "note": "disputed; described neutrally; no IUT claim is used by this repository",
+  "abc_status": "abc conjecture: OPEN. No result here proves it."
+}
