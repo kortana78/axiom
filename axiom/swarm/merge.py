@@ -26,6 +26,9 @@ T_MAX = 400
 
 def run(pid, queue_path="swarm/queue.json", root="results"):
     entry = find_problem(load_queue(queue_path), pid)
+    if entry.get("kind") == "abc":
+        from ..abc.merge import run as run_abc
+        return run_abc(entry, root)
     st = Setup(entry)
     K = Kernel()
     out = results_dir(root, pid)

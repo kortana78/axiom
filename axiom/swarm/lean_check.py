@@ -41,7 +41,7 @@ def check_file(path, mathlib, timeout=5400):
             "failed": sorted(x for x in failed if x), "returncode": code,
             "sorry_present": "sorry" in src, "seconds": round(time.time() - t0, 1),
             "log_tail": out[-3000:],
-            "summary": (f"Lean accepted {len(ok)}/{len(names)} class lemmas" if code != -1 else "Lean timed out")}
+            "summary": (f"Lean accepted {len(ok)}/{len(names)} lemmas" if code != -1 else "Lean timed out")}
 
 
 def main(argv=None):

@@ -19,6 +19,28 @@
 - Memory: `results/<id>/classes.json` keeps every verified family, so each batch starts where
   the last one stopped.
 
+## ABC triple hunter (search mode)
+
+`swarm/queue.json` also supports search-only entries with `"kind": "abc"`.
+They do not fit the witness grammar: the target is not an equation to prove.
+
+- Workers search coprime positive integers `a + b = c` for a high quality
+  `q = log(c) / log(rad(a*b*c))`, where `rad` is the product of the distinct
+  primes dividing `a*b*c`.
+- Two families alternate: `c_smooth` (smooth `c`, window of `a`) and
+  `legs_smooth` (both legs smooth). A rad sieve supplies exact radicals; no
+  candidate is trusted.
+- Merge recomputes `gcd(a,b)`, `a+b=c`, the prime factorizations, the radical
+  and `q` from scratch. Invalid or non-coprime triples are rejected. Records
+  live in `results/abc/records.json`; the dashboard labels the mode
+  "search only".
+- The exported Lean file checks only `a+b=c` and `Nat.Coprime a b` for each
+  record. The radical/quality computations are exact Python integer checks,
+  not Lean proofs, and nothing here proves the abc conjecture.
+- Cursors for both families are in `results/abc/frontier.json`. Merge advances
+  a cursor only when every shard of the batch finished its slice; unfinished
+  slices shrink on the next batch.
+
 ## The idea generator (`axiom/ideas/`)
 
 AXIOM searches; the idea generator decides what to search. An idea is plain data

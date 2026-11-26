@@ -16,6 +16,23 @@
       "start_modulus": 840,
       "grammar": {"T": 40, "D": 24},
       "notes": "open; blind 0.3 run reduced it to primes in 12 classes mod 2520"
+    },
+    {
+      "id": "abc",
+      "kind": "abc",
+      "statement": "abc conjecture (Masser-Oesterle): for every eps > 0 there is K(eps) such that for all coprime positive integers a + b = c, c <= K(eps) * rad(a*b*c)^(1+eps). This queue entry runs the triple hunter, not a proof.",
+      "active": true,
+      "search": {
+        "c_max": 100000000,
+        "smooth_bound": 23,
+        "min_quality": 1.2,
+        "max_records": 200,
+        "families": {
+          "c_smooth": {"width": 240000},
+          "legs_smooth": {"width": 300000000}
+        }
+      },
+      "notes": "search-only: coprime a+b=c maximizing q=log(c)/log(rad(abc)); merge re-verifies every triple exactly"
     }
   ]
 }

@@ -1,7 +1,8 @@
 # AXIOM 0.4: Swarm, Idea Generator, Certified Reductions
 
 0.4 adds the swarm (parallel workers on GitHub Actions or a free VM, kernel-checked merge,
-Lean check job, dashboard) and the idea generator. See SWARM.md.
+Lean check job, dashboard) and the idea generator. It also includes a search-only ABC
+triple hunter whose records are re-verified exactly at merge time. See SWARM.md.
 
 # (0.3 notes) Blind Mathematical Discovery with Certified Reductions
 

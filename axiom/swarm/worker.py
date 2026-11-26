@@ -18,6 +18,9 @@ from .common import Setup, find_problem, load_json, load_queue, results_dir, sav
 
 def run(pid, shard, of, seconds, queue_path, root, per_class=None):
     entry = find_problem(load_queue(queue_path), pid)
+    if entry.get("kind") == "abc":
+        from ..abc.worker import run as run_abc
+        return run_abc(entry, shard, of, seconds, root)
     st = Setup(entry)
     out_dir = results_dir(root, pid)
     frontier = load_json(os.path.join(out_dir, "frontier.json"), None)

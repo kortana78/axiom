@@ -35,6 +35,9 @@ def _ucb(stats, family, total):
 def run(pid, seconds, queue_path="swarm/queue.json", root="results", ideas_path="swarm/ideas.json",
         per_idea=None, sample=12, seed=None, tag="ideas", only=None):
     entry = find_problem(load_queue(queue_path), pid)
+    if entry.get("kind") == "abc":
+        from ..abc.ideas import run as run_abc_ideas
+        return run_abc_ideas(entry, seconds, root, tag=tag)
     st = Setup(entry)
     out = results_dir(root, pid)
     frontier = load_json(os.path.join(out, "frontier.json"), None)
