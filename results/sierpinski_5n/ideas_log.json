@@ -300,6 +300,13 @@
       "seconds": 624.7,
       "source": "mutated",
       "note": "mutation of order=xyz|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24"
+    },
+    "order=yzx|atoms=n,n2,n3,nv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 60.2,
+      "source": "generated",
+      "note": "enumerated"
     }
   },
   "families": {
@@ -494,6 +501,11 @@
       "hits": 0
     },
     "order=yxz|atoms=n,n2,n2v,nv,nvv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=yzx|atoms=n,n2,n3,nv,v,vv|mult=1": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0
