@@ -258,6 +258,20 @@
       "seconds": 50.0,
       "source": "generated",
       "note": "enumerated"
+    },
+    "order=xzy|atoms=n,n2,n3,nv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 108.1,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xzy|atoms=n,n2,n2v,nv,nvv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 73.2,
+      "source": "generated",
+      "note": "enumerated"
     }
   },
   "families": {
@@ -427,6 +441,16 @@
       "hits": 0
     },
     "order=xyz|atoms=n,n2,nv,nvv,v,vv|mult=2": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xzy|atoms=n,n2,n3,nv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xzy|atoms=n,n2,n2v,nv,nvv,v,vv|mult=1": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0

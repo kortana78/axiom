@@ -18,14 +18,14 @@
   "families": {
     "c_smooth": {
       "next": 168001,
-      "width": 141120,
+      "width": 98784,
       "exhausted": false
     },
     "legs_smooth": {
-      "next": 960000000,
+      "next": 1320000000,
       "width": 360000000,
       "exhausted": false
     }
   },
-  "batch": 3
+  "batch": 4
 }

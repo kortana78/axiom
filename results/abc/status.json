@@ -33,16 +33,16 @@
   "cursors": {
     "c_smooth": {
       "next": 168001,
-      "width": 141120,
+      "width": 98784,
       "exhausted": false
     },
     "legs_smooth": {
-      "next": 960000000,
+      "next": 1320000000,
       "width": 360000000,
       "exhausted": false
     }
   },
-  "batch": 3,
+  "batch": 4,
   "history": [
     {
       "utc": "2026-11-26T15:51:10Z",
@@ -73,6 +73,16 @@
       "new_records": 6,
       "best_q": 1.6299116841270482,
       "note": "c_smooth incomplete; width 201600 -> 141120; legs_smooth advanced to 960000000"
+    },
+    {
+      "utc": "2026-11-26T21:18:32Z",
+      "shards_merged": 3,
+      "candidates": 81,
+      "rejected": 0,
+      "records": 200,
+      "new_records": 4,
+      "best_q": 1.6299116841270482,
+      "note": "c_smooth incomplete; width 141120 -> 98784; legs_smooth advanced to 1320000000"
     }
   ],
   "next_frontier": {
