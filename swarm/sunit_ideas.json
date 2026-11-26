@@ -1,5 +1,60 @@
 {
-  "comment": "LLM S-unit solver heuristics only. Untrusted proposals; no entry proves anything.",
+  "comment": "LLM proposals only. Untrusted; validate through the swarm. No entry proves anything.",
+  "heuristics": [
+    {
+      "S": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "method": "p_adic_log",
+      "parameters": {
+        "max_iterations": 2000,
+        "precision": 40
+      },
+      "priority": 2,
+      "q": 2,
+      "rationale": "p-adic logarithms give linear forms in logs for larger S; adding 7 tests scalability.",
+      "source": "llm:openai/gpt-oss-120b"
+    },
+    {
+      "S": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "method": "sieving",
+      "parameters": {
+        "batch_size": 10000,
+        "max_exponent": 500,
+        "modulus": 2310
+      },
+      "priority": 3,
+      "q": null,
+      "rationale": "A combined modulus sieve reduces candidate exponent vectors before lattice reduction.",
+      "source": "llm:openai/gpt-oss-120b"
+    },
+    {
+      "S": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "method": "banding",
+      "parameters": {
+        "band_width": 0.5,
+        "height_increment": 10
+      },
+      "priority": 1,
+      "q": null,
+      "rationale": "Banding refines the height bound region, focusing LLL searches on promising strips.",
+      "source": "llm:openai/gpt-oss-120b"
+    }
+  ],
   "kind": "sunit",
-  "heuristics": []
+  "updated_utc": "2026-11-26T22:44:25Z"
 }

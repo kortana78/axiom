@@ -1,5 +1,133 @@
 {
-  "comment": "LLM proposals only. Untrusted; validated against the swarm/ideas.json schema. No entry proves anything.",
+  "comment": "LLM proposals only. Untrusted; validate through the swarm. No entry proves anything.",
+  "ideas": [
+    {
+      "D": 150,
+      "T": 250,
+      "atoms": [
+        "n",
+        "n3",
+        "v"
+      ],
+      "mult": [
+        1,
+        3
+      ],
+      "note": "include cubic term to enlarge search space",
+      "order": [
+        "x",
+        "z",
+        "y"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
+    },
+    {
+      "D": 180,
+      "T": 300,
+      "atoms": [
+        "n2",
+        "nv",
+        "nvv"
+      ],
+      "mult": [
+        2
+      ],
+      "note": "use n2 and nvv to capture composite structures",
+      "order": [
+        "y",
+        "x",
+        "z"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
+    },
+    {
+      "D": 120,
+      "T": 200,
+      "atoms": [
+        "n",
+        "n2v",
+        "vv"
+      ],
+      "mult": [
+        1,
+        2,
+        4
+      ],
+      "note": "mixed multiples to explore scaling symmetry",
+      "order": [
+        "z",
+        "y",
+        "x"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
+    },
+    {
+      "D": 48,
+      "T": 80,
+      "atoms": [
+        "n2v",
+        "nvv",
+        "vv"
+      ],
+      "mult": [
+        1
+      ],
+      "note": "use higher\u2011power n2v and nvv atoms to capture extra divisibility patterns",
+      "order": [
+        "y",
+        "z",
+        "x"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
+    },
+    {
+      "D": 60,
+      "T": 100,
+      "atoms": [
+        "n",
+        "n3",
+        "nv",
+        "v"
+      ],
+      "mult": [
+        1,
+        2
+      ],
+      "note": "combine linear and cubic atoms with a double multiplier to broaden the search space",
+      "order": [
+        "z",
+        "x",
+        "y"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
+    },
+    {
+      "D": 72,
+      "T": 120,
+      "atoms": [
+        "n2",
+        "nvv",
+        "vv"
+      ],
+      "mult": [
+        1,
+        3
+      ],
+      "note": "include triple multiplier to explore scaling symmetry across the remaining open classes",
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": true
+    }
+  ],
   "kind": "witness",
-  "ideas": []
+  "updated_utc": "2026-11-26T22:44:14Z"
 }

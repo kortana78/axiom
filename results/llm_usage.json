@@ -2,11 +2,11 @@
   "date": "2026-11-26",
   "providers": {
     "default": {
-      "completion_tokens": 599,
-      "failures": 0,
-      "last_error": "",
-      "prompt_tokens": 1618,
-      "requests": 1
+      "completion_tokens": 3195,
+      "failures": 4,
+      "last_error": "LLM request failed after retries: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k2jaj0tkffyv99vdq2rk4m48` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6972, Requested 1625. Please try again in 4.4775s. Need more tokens? Upgrade to Dev Tier today at https://con",
+      "prompt_tokens": 8534,
+      "requests": 17
     }
   },
   "runs": [
@@ -18,6 +18,78 @@
       "provider": "default",
       "requests": 1,
       "utc": "2026-11-26T22:29:57Z"
+    },
+    {
+      "completion_tokens": 900,
+      "ok": true,
+      "problem": "erdos_straus",
+      "prompt_tokens": 1930,
+      "provider": "default",
+      "requests": 1,
+      "utc": "2026-11-26T22:44:08Z"
+    },
+    {
+      "completion_tokens": 541,
+      "ok": true,
+      "problem": "erdos_straus",
+      "prompt_tokens": 1962,
+      "provider": "default",
+      "requests": 1,
+      "utc": "2026-11-26T22:44:10Z"
+    },
+    {
+      "completion_tokens": 614,
+      "ok": true,
+      "problem": "sierpinski_5n",
+      "prompt_tokens": 1940,
+      "provider": "default",
+      "requests": 1,
+      "utc": "2026-11-26T22:44:11Z"
+    },
+    {
+      "completion_tokens": 0,
+      "ok": false,
+      "problem": "sierpinski_5n",
+      "prompt_tokens": 0,
+      "provider": "default",
+      "requests": 3,
+      "utc": "2026-11-26T22:44:14Z"
+    },
+    {
+      "completion_tokens": 0,
+      "ok": false,
+      "problem": "abc",
+      "prompt_tokens": 0,
+      "provider": "default",
+      "requests": 3,
+      "utc": "2026-11-26T22:44:17Z"
+    },
+    {
+      "completion_tokens": 0,
+      "ok": false,
+      "problem": "abc",
+      "prompt_tokens": 0,
+      "provider": "default",
+      "requests": 3,
+      "utc": "2026-11-26T22:44:21Z"
+    },
+    {
+      "completion_tokens": 541,
+      "ok": true,
+      "problem": "sunit_2_3_5",
+      "prompt_tokens": 1084,
+      "provider": "default",
+      "requests": 1,
+      "utc": "2026-11-26T22:44:22Z"
+    },
+    {
+      "completion_tokens": 0,
+      "ok": false,
+      "problem": "sunit_2_3_5",
+      "prompt_tokens": 0,
+      "provider": "default",
+      "requests": 3,
+      "utc": "2026-11-26T22:44:25Z"
     }
   ]
 }
