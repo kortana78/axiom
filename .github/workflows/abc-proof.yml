@@ -1,0 +1,116 @@
+name: abc-proof-alarm
+
+# Lean decides.  This workflow is the only path that can set
+# results/abc_proof/status.json to LEAN_ACCEPTED.  It runs on every push and on
+# the same six-hour cadence as the swarm.  A missing Proof.lean is OPEN; a
+# changed Statement.lean, a sorry/admit, an extra axiom, or a Lean error is
+# REJECTED.  On LEAN_ACCEPTED it opens one GitHub issue so the owner is emailed.
+
+on:
+  push:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: abc-proof-alarm
+  cancel-in-progress: false
+
+jobs:
+  abc-proof-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      - name: quick check (frozen hash, proof slot, source)
+        id: quick
+        run: |
+          python -m axiom.abc_proof.check --no-fail
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          s = json.load(open("results/abc_proof/status.json", encoding="utf-8"))
+          source_ok = bool((s.get("proof_source") or {}).get("ok"))
+          print("verdict=" + s["verdict"])
+          print("need_lean=" + str(bool(
+              s["proof_present"] and s["statement_hash_ok"] and source_ok)).lower())
+          PY
+
+      - name: install elan
+        if: steps.quick.outputs.need_lean == 'true'
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: mathlib with cached build (pinned)
+        if: steps.quick.outputs.need_lean == 'true'
+        run: |
+          git init "$RUNNER_TEMP/mathlib4"
+          cd "$RUNNER_TEMP/mathlib4"
+          git remote add origin https://github.com/leanprover-community/mathlib4
+          git fetch --depth 1 origin cf28751adfc7f48c0f7c6c0954a61c38cd957439
+          git checkout --detach FETCH_HEAD
+          lake exe cache get
+
+      - name: full Lean check
+        if: steps.quick.outputs.need_lean == 'true'
+        run: python -m axiom.abc_proof.check --mathlib "$RUNNER_TEMP/mathlib4" --no-fail
+
+      - name: commit proof status
+        if: always() && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "axiom-swarm"
+          git config user.email "axiom-swarm@users.noreply.github.com"
+          git add results/abc_proof/status.json
+          git commit -m "abc: proof alarm status [skip ci]" || exit 0
+          git pull --rebase
+          git push
+
+      - name: gate on REJECTED
+        run: python -m axiom.abc_proof.check --gate results/abc_proof/status.json
+
+      - name: open issue on Lean acceptance
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          import sys
+          from axiom.abc_proof import LEAN_ACCEPTED
+
+          status = json.load(open("results/abc_proof/status.json", encoding="utf-8"))
+          if status.get("verdict") != LEAN_ACCEPTED:
+              sys.exit(0)
+
+          title = "Lean accepted a proof of abc"
+          listed = subprocess.run(
+              ["gh", "issue", "list", "--state", "open", "--limit", "100",
+               "--json", "title"],
+              capture_output=True, text=True)
+          if listed.returncode == 0:
+              try:
+                  titles = [x.get("title") for x in json.loads(listed.stdout)]
+              except Exception:
+                  titles = []
+              if title in titles:
+                  print("issue already open")
+                  sys.exit(0)
+
+          body = ("# Lean accepted a proof of abc\n\n"
+                  "Human review is required before any announcement.\n\n"
+                  "```json\n" + json.dumps(status, indent=2) + "\n```\n")
+          with open("/tmp/abc_issue.md", "w", encoding="utf-8") as fh:
+              fh.write(body)
+          subprocess.run(
+              ["gh", "issue", "create", "--title", title,
+               "--body-file", "/tmp/abc_issue.md"],
+              check=True)
+          PY
