@@ -19,9 +19,10 @@ Method (three stages)
 
     Since ``h(a/c) = log c`` for ``0 < a < c``, this bounds ``c``.  It is an
     explicit effective bound of the same logical role as the classical
-    linear-forms-in-logarithms bound of Gyory--Yu (2006), and is sharper for
-    the small supports treated here.  The LLF alternative is recorded in the
-    certificate.  All logarithms are evaluated with 80-digit decimal
+    linear-forms-in-logarithms bounds of Baker--Wustholz and Matveev (2000),
+    in the explicit S-unit form of Gyory--Yu (2006), and is sharper for the
+    small supports treated here.  The Gyory--Yu LLF alternative is recorded
+    in the certificate.  All logarithms are evaluated with 80-digit decimal
     arithmetic and rounded outwards.
 
 (b) Congruence lattice and LLL.  Fix ``q in S`` and suppose ``q | c``.

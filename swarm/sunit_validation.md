@@ -21,8 +21,11 @@ only here and in `tests/test_sunit.py`.
   supports.
 - Height bound used by the solver: Matschke–von Känel, Proposition 10.2,
   `max(h(x),h(y)) <= (5/2) N_S log N_S + 9 N_S`, with `N_S = prod(S)`.
-  The Győry–Yu linear-forms alternative is recorded in every certificate but
-  is weaker for these small supports.
+  The Győry–Yu (2006) linear-forms alternative is recorded in every
+  certificate but is weaker for these small supports.  The general
+  linear-forms engine behind such bounds is Baker–Wüstholz and Matveev,
+  “An explicit lower bound for a homogeneous rational linear form in
+  logarithms of algebraic numbers”, *Izv. Math.* 64 (2000).
 
 ## Published counts
 
