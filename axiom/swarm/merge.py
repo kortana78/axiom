@@ -29,6 +29,20 @@ def run(pid, queue_path="swarm/queue.json", root="results"):
     if entry.get("kind") == "abc":
         from ..abc.merge import run as run_abc
         return run_abc(entry, root)
+    if entry.get("kind") == "sunit":
+        from .sunit import run_merge
+        return run_merge(entry, root)
+    if entry.get("kind") == "abc_route":
+        out = results_dir(root, pid)
+        old = load_json(os.path.join(out, "status.json"), {}) or {}
+        status = old | {
+            "problem": pid, "kind": "abc_route", "route": entry.get("route", ""),
+            "status": "unproved idea", "note": entry.get("notes", ""),
+            "abc_status": "abc conjecture: OPEN. No result here proves it.",
+        }
+        save_json(os.path.join(out, "status.json"), status)
+        print(f"[merge {pid}] abc proof track: unproved idea (no result)")
+        return status
     st = Setup(entry)
     K = Kernel()
     out = results_dir(root, pid)

@@ -4,6 +4,83 @@
 Lean check job, dashboard) and the idea generator. It also includes a search-only ABC
 triple hunter whose records are re-verified exactly at merge time. See SWARM.md.
 
+0.4 also has a certified S-unit solver with an independent checker, a free-LLM
+idea adapter, a capped work-item scheduler, and an ABC proof track. The abc
+conjecture remains **OPEN**; no result in this repository proves it.
+
+## Certified S-unit solver (`axiom/sunit/`)
+
+For a finite set of primes `S`, the solver finds every coprime positive
+`a + b = c` with every prime factor of `abc` in `S`. It uses an explicit height
+bound, a congruence lattice with LLL reduction, and exhaustive enumeration.
+The certificate is plain data: `S`, stage-a constants, stage-b lattice/LLL
+data, and the stage-c solution list.
+
+```bash
+python -m axiom.sunit.hunt --S 2,3,5 --out /tmp/sunit_2_3_5.json
+python -m axiom.sunit.check --certificate /tmp/sunit_2_3_5.json --S 2,3,5
+```
+
+`axiom.sunit.check` shares no code with the solver. It recomputes the bound,
+the discrete logarithms, the lattice index and LLL conditions, and
+re-enumerates the whole exponent box. Published-list validation is recorded in
+`swarm/sunit_validation.md`; `S={2,3}` (4 triples) and `S={2,3,5}` (17
+triples) reproduce the Matschke–von Känel lists exactly. `S={2,3,5,7}` is not
+certified by this implementation: its `q=2` box has about `2.4e11` points, so
+we stop and report rather than claim it.
+
+Status words are `VALIDATED` (checker accepts and the list matches a published
+anchor exactly) and `CERTIFIED` (checker accepts a complete certificate with
+no exact published anchor here). The Lean export checks each listed triple
+(`a+b=c`, coprimality, explicit S-smooth factorisations); it does **not**
+formalize completeness and is never called a Lean proof of completeness.
+
+## LLM ideas (`axiom/llm/`)
+
+An OpenAI-compatible adapter proposes search ideas only. It reads the current
+`status.json`, `frontier.json`, `ideas_log.json`, and recent failures; it
+never receives published solution lists and never writes proof results, the
+kernel, or the checker.
+
+```bash
+LLM_BASE_URL=https://.../v1 LLM_API_KEY=... LLM_MODEL=... \
+  python -m axiom.llm.ideas --problem erdos_straus --time 300
+python -m axiom.llm.ideas --all --max-problems 10 --time 300
+```
+
+Secrets are `LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL`; multiple providers can
+be supplied as JSON in `LLM_PROVIDERS`. With no key the command skips and
+exits 0. Requests are capped per run and per day, retried with backoff, and
+logged in `results/llm_usage.json`. Output is validated against the
+`swarm/ideas.json` schema (witness), a separate S-unit heuristics schema, and
+a narrow ABC search schema; accepted entries are tagged `source = "llm:<model>"`
+and written to `swarm/llm_ideas.json`, `swarm/sunit_ideas.json`, or
+`swarm/abc_ideas.json`. They still go through workers, merge, the kernel, and
+Lean.
+
+## Work-item scheduler (`axiom/swarm/schedule.py`)
+
+A batch is at most 1000 items `(problem, shard or exponent box, idea)`. Runners
+take items round-robin; each item writes its own shard file; each runner
+records planned/done/carried-over in `results/schedule/runner_<i>.json`, and
+`--summarize` writes `results/schedule.json`. The VM script launches one
+runner per CPU core:
+
+```bash
+WORKERS=4 MINUTES=45 ./deploy/run_swarm.sh
+```
+
+## ABC proof track
+
+`lean/Abc/Statement.lean` fixes the exact statement (`Abc.Statement`) with the
+radical, quality, and finitely-many-exceptions forms. `swarm/abc_routes.md`
+records known routes and partial results with citations (Szpiro,
+Mason–Stothers, Stewart–Yu, explicit abc, IUT described neutrally) and their
+status. Queue entries of kind `abc_route` are proof-track targets, not search
+jobs. A candidate argument is accepted only as a Lean proof of
+`Abc.Statement` with no `sorry` and no new axioms, plus human review. The
+dashboard always shows: **abc conjecture: OPEN. No result here proves it.**
+
 # (0.3 notes) Blind Mathematical Discovery with Certified Reductions
 
 ## What is new in 0.3

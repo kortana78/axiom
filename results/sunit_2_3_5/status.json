@@ -1,0 +1,37 @@
+{
+  "problem": "sunit_2_3_5",
+  "kind": "sunit",
+  "statement": "All coprime positive a + b = c with rad(a*b*c) | 2*3*5 (the S-unit equation for S={2,3,5}). This is a finite completeness certificate; it says nothing about the abc conjecture.",
+  "status": "VALIDATED",
+  "S": [
+    2,
+    3,
+    5
+  ],
+  "solutions": 17,
+  "published_count": 17,
+  "published_source": "Matschke-von Kaenel 2014, solutions_2_3_5.txt, arXiv:1605.06079",
+  "solutions_sha256": "82b410e12d69558ff626bef6b2331f718bffab167c563b8c326c4f8aaf193de1",
+  "published_sha256": "82b410e12d69558ff626bef6b2331f718bffab167c563b8c326c4f8aaf193de1",
+  "published_match": true,
+  "checker": "PASS",
+  "height_bound_B": "525.089850",
+  "exponent_bounds": {
+    "2": 757,
+    "3": 477,
+    "5": 326
+  },
+  "lattice_blocks": 3,
+  "vectors_tested": 1466279,
+  "lean": "solution list exported; completeness is computer-assisted, not Lean-verified",
+  "abc_status": "abc conjecture: OPEN. No result here proves it.",
+  "history": [
+    {
+      "utc": "2026-11-26T20:33:24Z",
+      "shards": 3,
+      "solutions": 17,
+      "checker": "PASS",
+      "status": "VALIDATED"
+    }
+  ]
+}

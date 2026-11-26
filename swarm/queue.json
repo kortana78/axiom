@@ -33,6 +33,50 @@
         }
       },
       "notes": "search-only: coprime a+b=c maximizing q=log(c)/log(rad(abc)); merge re-verifies every triple exactly"
+    },
+    {
+      "id": "sunit_2_3_5",
+      "kind": "sunit",
+      "statement": "All coprime positive a + b = c with rad(a*b*c) | 2*3*5 (the S-unit equation for S={2,3,5}). This is a finite completeness certificate; it says nothing about the abc conjecture.",
+      "active": true,
+      "S": [2, 3, 5],
+      "sunit_shards": {"2": 1, "3": 1, "5": 1},
+      "published_count": 17,
+      "published_sha256": "82b410e12d69558ff626bef6b2331f718bffab167c563b8c326c4f8aaf193de1",
+      "published_source": "Matschke-von Kaenel 2014, solutions_2_3_5.txt, arXiv:1605.06079",
+      "notes": "VALIDATED against the published 17-triple list; merge runs the independent checker; abc conjecture remains OPEN"
+    },
+    {
+      "id": "abc_route_szpiro",
+      "kind": "abc_route",
+      "active": true,
+      "route": "Szpiro",
+      "statement": "Szpiro's conjecture on elliptic curves implies the abc conjecture. No proof is claimed here.",
+      "notes": "unproved idea; any candidate argument must be Lean against lean/Abc/Statement.lean, no sorry, no new axioms"
+    },
+    {
+      "id": "abc_route_mason_stothers",
+      "kind": "abc_route",
+      "active": true,
+      "route": "Mason-Stothers",
+      "statement": "The polynomial abc theorem of Mason and Stothers. It is proved and available in Mathlib but does not imply the integer abc conjecture.",
+      "notes": "polynomial analogue only; Mathlib Polynomial.abc; not a route to the integer statement"
+    },
+    {
+      "id": "abc_route_stewart_yu",
+      "kind": "abc_route",
+      "active": true,
+      "route": "Stewart-Yu",
+      "statement": "Effective upper bounds for c in terms of rad(abc) from linear forms in logarithms. These are partial bounds, not abc.",
+      "notes": "partial result; far weaker than abc; see swarm/abc_routes.md for citations"
+    },
+    {
+      "id": "abc_route_iut",
+      "kind": "abc_route",
+      "active": true,
+      "route": "IUT",
+      "statement": "Mochizuki's inter-universal Teichmuller theory claims a proof of abc. The claim is disputed and is not accepted as a proof here.",
+      "notes": "disputed; described neutrally; no IUT claim is used by this repository"
     }
   ]
 }

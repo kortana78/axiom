@@ -1,0 +1,11 @@
+{
+  "file": "results\\sunit_2_3_5\\lean\\sunit_2_3_5.lean",
+  "theorems": 18,
+  "accepted": 18,
+  "failed": [],
+  "returncode": 0,
+  "sorry_present": false,
+  "seconds": 301.5,
+  "log_tail": "'AxiomSunit.solution_count' does not depend on any axioms\n'AxiomSunit.sol_0' depends on axioms: [propext, Quot.sound]\n",
+  "summary": "Lean accepted 18/18 lemmas"
+}

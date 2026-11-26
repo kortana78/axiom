@@ -1,0 +1,5 @@
+{
+  "comment": "LLM S-unit solver heuristics only. Untrusted proposals; no entry proves anything.",
+  "kind": "sunit",
+  "heuristics": []
+}

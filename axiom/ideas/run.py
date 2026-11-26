@@ -38,6 +38,12 @@ def run(pid, seconds, queue_path="swarm/queue.json", root="results", ideas_path=
     if entry.get("kind") == "abc":
         from ..abc.ideas import run as run_abc_ideas
         return run_abc_ideas(entry, seconds, root, tag=tag)
+    if entry.get("kind") == "sunit":
+        print(f"[ideas {pid}] S-unit certificates are deterministic; use axiom.sunit.heuristics")
+        return {"problem": pid, "kind": "sunit", "skipped": True}
+    if entry.get("kind") == "abc_route":
+        print(f"[ideas {pid}] proof-track entry: use the Lean route, not the witness idea loop")
+        return {"problem": pid, "kind": "abc_route", "skipped": True}
     st = Setup(entry)
     out = results_dir(root, pid)
     frontier = load_json(os.path.join(out, "frontier.json"), None)
@@ -119,6 +125,67 @@ def run(pid, seconds, queue_path="swarm/queue.json", root="results", ideas_path=
     path = os.path.join(out, "shards", f"{pid}__{tag}_{int(start)}.json")
     save_json(path, data)
     print(f"[ideas {pid}] {len(found)} new families from {len(log['tried'])} ideas tried so far -> {path}")
+    return data
+
+
+def run_one(pid, seconds, idea_dict, queue_path="swarm/queue.json",
+            root="results", sample=12, tag="idea"):
+    """Test exactly one idea on a sample of the current open classes.
+
+    Used by the work-item scheduler.  The output is an ordinary untrusted shard
+    file; merge re-checks every family with the kernel.
+    """
+    entry = find_problem(load_queue(queue_path), pid)
+    if entry.get("kind") not in (None, "witness"):
+        raise ValueError(f"single-idea runner is for witness problems, not {entry.get('kind')}")
+    st = Setup(entry)
+    out = results_dir(root, pid)
+    frontier = load_json(os.path.join(out, "frontier.json"), None)
+    if frontier is None:
+        M = int(entry.get("start_modulus", 840))
+        frontier = {"modulus": M, "open": st.relevant(M)}
+    M, open_res = frontier["modulus"], list(frontier["open"])
+    log = load_json(os.path.join(out, "ideas_log.json"),
+                    {"tried": {}, "families": {}, "winners": []})
+    for key, default in (("tried", {}), ("families", {}), ("winners", [])):
+        log.setdefault(key, default)
+    idea = Idea.from_dict(dict(idea_dict))
+    eng = IdeaEngine(st.engine.original if hasattr(st.engine, "original") else st.engine.s, idea)
+    targets = open_res[:max(1, int(sample))]
+    start = time.time()
+    end = start + max(1.0, float(seconds))
+    found, hits = {}, 0
+    for r in targets:
+        if time.time() > end:
+            break
+        for Mj in st.schedule(M):
+            polys, kl, why = eng.search_class(
+                Mj, r % Mj, deadline=min(end, time.time() + max(2.0, seconds / max(1, len(targets)))))
+            if polys is not None:
+                found[f"{Mj}:{r % Mj}"] = {
+                    "M": Mj, "r": r % Mj, "kl": kl,
+                    "polys": [str(p) for p in polys], "idea": idea.key(),
+                }
+                hits += 1
+                break
+    fam = log["families"].setdefault(idea.family(), {"tries": 0, "reward": 0.0, "hits": 0})
+    fam["tries"] += 1
+    fam["reward"] += hits / len(targets) if targets else 0.0
+    fam["hits"] += hits
+    log["tried"][idea.key()] = {
+        "hits": hits, "tested": len(targets), "seconds": round(time.time() - start, 1),
+        "source": idea.source, "note": idea.note,
+    }
+    if hits:
+        log["winners"].append(idea.to_dict())
+    save_json(os.path.join(out, "ideas_log.json"), log)
+    data = {
+        "problem": pid, "modulus": M, "covered": list(found.values()),
+        "open": [], "unattempted": [], "source": "scheduler idea",
+        "idea": idea.key(), "finished_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+    }
+    path = os.path.join(out, "shards", f"{pid}__{tag}_{int(start)}.json")
+    save_json(path, data)
     return data
 
 

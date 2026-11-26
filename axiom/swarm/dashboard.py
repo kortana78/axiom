@@ -8,6 +8,8 @@ import time
 
 from .common import load_json, load_queue
 
+ABC_OPEN = "abc conjecture: OPEN. No result here proves it."
+
 
 def _lean(lean: dict) -> str:
     return lean.get("summary", "Lean not run")
@@ -39,6 +41,30 @@ def _abc_row(p: dict, st: dict, lean: dict) -> list[str]:
             note, _lean(lean)]
 
 
+def _sunit_row(p: dict, st: dict, lean: dict) -> list[str]:
+    if not st:
+        return [p["id"], "no results yet", str(p.get("S", "")), "0",
+                str(p.get("published_count", "")), "", "", _lean(lean)]
+    return [
+        p["id"],
+        st.get("status", "pending"),
+        str(st.get("S", p.get("S", ""))),
+        str(st.get("solutions", 0)),
+        f"{st.get('published_count', '')}"
+        + (" (hash match)" if st.get("published_match") else ""),
+        str(st.get("checker", "")),
+        str(st.get("height_bound_B", "")),
+        _lean(lean),
+    ]
+
+
+def _route_row(p: dict, st: dict) -> list[str]:
+    if not st:
+        return [p["id"], p.get("route", ""), "unproved idea", p.get("notes", "")]
+    return [p["id"], p.get("route", st.get("route", "")),
+            st.get("status", "unproved idea"), st.get("note", p.get("notes", ""))]
+
+
 def _html_table(headers: list[str], rows: list[list[str]]) -> str:
     head = "".join(f"<th>{html.escape(h)}</th>" for h in headers)
     body = "".join("<tr>" + "".join(f"<td>{html.escape(str(x))}</td>" for x in row) + "</tr>"
@@ -55,47 +81,70 @@ def _md_table(headers: list[str], rows: list[list[str]]) -> list[str]:
 
 def build(queue_path="swarm/queue.json", root="results"):
     problems = load_queue(queue_path)
-    witness, abc = [], []
+    witness, abc, sunit, routes = [], [], [], []
     for p in problems:
         st = load_json(os.path.join(root, p["id"], "status.json"), None)
         lean = load_json(os.path.join(root, p["id"], "lean_status.json"), {}) or {}
-        if p.get("kind") == "abc" or (st and st.get("kind") == "abc"):
+        kind = p.get("kind") or (st or {}).get("kind")
+        if kind == "abc":
             abc.append((p, st, lean))
+        elif kind == "sunit":
+            sunit.append((p, st, lean))
+        elif kind == "abc_route":
+            routes.append((p, st))
         else:
             witness.append((p, st, lean))
 
     wheaders = ["problem", "status", "modulus", "open / relevant", "families", "last note", "Lean"]
     aheaders = ["problem", "status", "c max", "best q", "records", "last note", "Lean"]
+    sheaders = ["problem", "status", "S", "solutions", "published", "checker", "B", "Lean"]
+    rheaders = ["target", "route", "status", "note"]
     wrows = [_witness_row(p, st, lean) for p, st, lean in witness]
     arows = [_abc_row(p, st, lean) for p, st, lean in abc]
+    srows = [_sunit_row(p, st, lean) for p, st, lean in sunit]
+    rrows = [_route_row(p, st) for p, st in routes]
 
     updated = time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())
     page = (
         "<!doctype html><html><head><meta charset=utf-8><title>AXIOM swarm</title>"
         "<style>body{font-family:sans-serif;margin:2em}td,th{border:1px solid #999;padding:4px 8px}"
-        "table{border-collapse:collapse;margin-bottom:2em}</style></head><body>"
+        "table{border-collapse:collapse;margin-bottom:2em}"
+        ".open{font-weight:bold;color:#a00}</style></head><body>"
         "<h1>AXIOM swarm</h1>"
+        f"<p class=open>{html.escape(ABC_OPEN)}</p>"
         f"<p>updated {updated}</p>"
         "<h2>Witness reductions</h2>"
         + _html_table(wheaders, wrows)
         + "<h2>ABC triple hunter (search only)</h2>"
         + _html_table(aheaders, arows)
+        + "<h2>S-unit certificates (finite completeness, not abc)</h2>"
+        + _html_table(sheaders, srows)
+        + "<h2>ABC proof track (all targets unproved)</h2>"
+        + _html_table(rheaders, rrows)
         + "<p>Every reduction family is re-checked by the Axiom kernel at merge time. "
         "ABC records are exact integer triples re-checked by the merger (gcd, sum, and "
-        "radical); the hunter does not prove the abc conjecture.</p>"
+        "radical). S-unit lists are independently re-enumerated by `axiom.sunit.check`; "
+        "the Lean export checks only the listed triples, not completeness. No result here "
+        "proves the abc conjecture.</p>"
         "</body></html>")
     os.makedirs(root, exist_ok=True)
     with open(os.path.join(root, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(page)
 
-    md = ["# AXIOM swarm summary", "", f"updated {updated}", "",
+    md = ["# AXIOM swarm summary", "", f"**{ABC_OPEN}**", "", f"updated {updated}", "",
           "## Witness reductions", ""]
     md += _md_table(wheaders, wrows)
     md += ["", "## ABC triple hunter (search only)", ""]
     md += _md_table(aheaders, arows)
+    md += ["", "## S-unit certificates (finite completeness, not abc)", ""]
+    md += _md_table(sheaders, srows)
+    md += ["", "## ABC proof track (all targets unproved)", ""]
+    md += _md_table(rheaders, rrows)
     md += ["", "Every reduction family is re-checked by the Axiom kernel at merge time. "
            "ABC records are exact integer triples re-checked by the merger; the hunter "
-           "does not prove the abc conjecture.", ""]
+           "does not prove the abc conjecture. S-unit certificates are finite complete "
+           "lists for a fixed S, independently re-checked; they say nothing about abc. "
+           "The Lean export checks only the listed triples, not completeness.", ""]
     for p, st, _lean_st in abc:
         if not st:
             continue

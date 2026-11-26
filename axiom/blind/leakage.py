@@ -46,6 +46,15 @@ GENERAL_MODULES = [
 
 # Legacy modules that still contain target-specific mathematics. They are
 # reported, not silently ignored; the blind engine gates them by allowlist.
+# New modules that must also be free of reference-answer signatures.  They are
+# not part of the blind engine, but the audit still scans them so a future
+# import cannot silently leak a known answer.
+NEW_MODULES = [
+    "sunit/hunt.py", "sunit/check.py", "sunit/lean_export.py",
+    "llm/config.py", "llm/client.py", "llm/schema.py", "llm/ideas.py",
+    "llm/usage.py", "swarm/sunit.py", "swarm/schedule.py",
+]
+
 GATED_MODULES = {
     "kernel/inference.py": "contains the 0.1 collatz_descent rule; not in BLIND_ALLOWED_RULES",
     "reasoning/backward.py": "has an unused collatz_descent_auto placeholder in 0.1 DIRECT_RULES; "
@@ -102,7 +111,9 @@ def audit_leakage() -> AuditReport:
                    if f.endswith(".py") and f not in EVALUATION_ONLY]
     general_files = [os.path.join(AXIOM, rel) for rel in GENERAL_MODULES
                      if os.path.exists(os.path.join(AXIOM, rel))]
-    discovery_files = blind_files + general_files
+    new_files = [os.path.join(AXIOM, rel) for rel in NEW_MODULES
+                 if os.path.exists(os.path.join(AXIOM, rel))]
+    discovery_files = blind_files + general_files + new_files
 
     signatures = [(key, val["signature"]) for key, val in answers.CASES.items()
                   if val.get("signature")]

@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import itertools
 import json
+import os
 import random
 from dataclasses import asdict, dataclass, field
 from typing import Iterator, List
@@ -95,15 +96,21 @@ def mutate(idea: Idea, var_names: List[str], rng: random.Random) -> Idea:
     return Idea.from_dict(d)
 
 
-def load_hand_ideas(path="swarm/ideas.json") -> List[Idea]:
-    try:
-        with open(path, encoding="utf-8") as fh:
-            data = json.load(fh)
-    except FileNotFoundError:
-        return []
+def load_hand_ideas(path="swarm/ideas.json", include_llm=True) -> List[Idea]:
+    paths = [path]
+    if include_llm:
+        sibling = os.path.join(os.path.dirname(path), "llm_ideas.json")
+        if os.path.exists(sibling):
+            paths.append(sibling)
     out = []
-    for d in data.get("ideas", []):
-        d = dict(d)
-        d.setdefault("source", "hand")
-        out.append(Idea.from_dict(d))
+    for p in paths:
+        try:
+            with open(p, encoding="utf-8") as fh:
+                data = json.load(fh)
+        except (FileNotFoundError, json.JSONDecodeError):
+            continue
+        for d in data.get("ideas", []):
+            d = dict(d)
+            d.setdefault("source", "hand")
+            out.append(Idea.from_dict(d))
     return out

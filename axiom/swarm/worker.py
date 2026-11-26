@@ -21,6 +21,12 @@ def run(pid, shard, of, seconds, queue_path, root, per_class=None):
     if entry.get("kind") == "abc":
         from ..abc.worker import run as run_abc
         return run_abc(entry, shard, of, seconds, root)
+    if entry.get("kind") == "sunit":
+        from .sunit import run_worker
+        return run_worker(entry, shard, of, seconds, root)
+    if entry.get("kind") == "abc_route":
+        print(f"[{pid}] abc proof-track entry: no search worker; see swarm/abc_routes.md")
+        return {"problem": pid, "kind": "abc_route", "skipped": True}
     st = Setup(entry)
     out_dir = results_dir(root, pid)
     frontier = load_json(os.path.join(out_dir, "frontier.json"), None)
