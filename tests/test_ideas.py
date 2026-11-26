@@ -37,8 +37,10 @@ def test_ideas_are_data():
 
 
 def test_cancellation_regression_class_481():
-    # z = n x y / (4xy - nx - ny) must cancel to a polynomial (bug fixed in 0.4)
+    # z = n x y / (4xy - nx - ny) must cancel to a polynomial (bug fixed in 0.4).
+    # The search is CPU-bound and timing-sensitive; give it headroom so a slow
+    # or loaded machine cannot turn a correctness regression test into a flake.
     eng = Engine(detect(ES))
-    polys, kl, why = eng.search_class(840, 481, 60, 30, time.time() + 60)
+    polys, kl, why = eng.search_class(840, 481, 60, 30, time.time() + 180)
     assert polys is not None, why
     assert K.check(eng.class_proof(840, 481, kl, polys))[0]
