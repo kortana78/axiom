@@ -53,6 +53,7 @@ NEW_MODULES = [
     "sunit/hunt.py", "sunit/check.py", "sunit/lean_export.py",
     "llm/config.py", "llm/client.py", "llm/schema.py", "llm/ideas.py",
     "llm/usage.py", "swarm/sunit.py", "swarm/schedule.py",
+    "abc_proof/__init__.py", "abc_proof/check.py",
 ]
 
 GATED_MODULES = {

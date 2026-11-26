@@ -2,7 +2,9 @@
 
 **abc conjecture: OPEN. No result here proves it.**
 
-updated 2026-11-26 22:32 UTC
+proof alarm: OPEN — lean/Abc/Proof.lean is absent; abc remains OPEN
+
+updated 2026-11-26 22:36 UTC
 
 ## Witness reductions
 
@@ -32,7 +34,7 @@ updated 2026-11-26 22:32 UTC
 | abc_route_stewart_yu | Stewart-Yu | unproved idea | partial result; far weaker than abc; see swarm/abc_routes.md for citations |
 | abc_route_iut | IUT | unproved idea | disputed; described neutrally; no IUT claim is used by this repository |
 
-Every reduction family is re-checked by the Axiom kernel at merge time. ABC records are exact integer triples re-checked by the merger; the hunter does not prove the abc conjecture. S-unit certificates are finite complete lists for a fixed S, independently re-checked; they say nothing about abc. The Lean export checks only the listed triples, not completeness.
+Every reduction family is re-checked by the Axiom kernel at merge time. ABC records are exact integer triples re-checked by the merger; the hunter does not prove the abc conjecture. S-unit certificates are finite complete lists for a fixed S, independently re-checked; they say nothing about abc. The Lean export checks only the listed triples, not completeness. No result here proves the abc conjecture.
 
 - abc: best record 2 + 6436341 = 6436343, rad(abc) = 15042, q = 1.629911684. Search only; no proof.
 

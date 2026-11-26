@@ -6,9 +6,29 @@ import html
 import os
 import time
 
+from ..abc_proof import LEAN_ACCEPTED, OPEN, REJECTED
 from .common import load_json, load_queue
 
 ABC_OPEN = "abc conjecture: OPEN. No result here proves it."
+ABC_REJECTED = "abc conjecture: OPEN. A proof attempt was rejected by Lean (see log)."
+ABC_LEAN_ACCEPTED = (
+    "LEAN ACCEPTED A PROOF OF Abc.Statement (axioms: {axioms}). "
+    "Human review required before any announcement."
+)
+
+
+def abc_banner(proof: dict | None) -> str:
+    """Choose the top line from the proof-alarm status file only."""
+    if not isinstance(proof, dict):
+        proof = {}
+    verdict = proof.get("verdict", OPEN)
+    if verdict == LEAN_ACCEPTED:
+        axioms = proof.get("axioms") or []
+        names = ", ".join(str(x) for x in axioms) if axioms else "none"
+        return ABC_LEAN_ACCEPTED.format(axioms=names)
+    if verdict == REJECTED:
+        return ABC_REJECTED
+    return ABC_OPEN
 
 
 def _lean(lean: dict) -> str:
@@ -104,6 +124,19 @@ def build(queue_path="swarm/queue.json", root="results"):
     srows = [_sunit_row(p, st, lean) for p, st, lean in sunit]
     rrows = [_route_row(p, st) for p, st in routes]
 
+    proof = load_json(os.path.join(root, "abc_proof", "status.json"), None)
+    if not isinstance(proof, dict):
+        proof = {}
+    banner = abc_banner(proof)
+    proof_verdict = str(proof.get("verdict", OPEN))
+    proof_reason = str(proof.get("reason", "no proof-alarm status yet"))
+    accepted = proof_verdict == LEAN_ACCEPTED
+    footer = (
+        "Lean accepted a proof of Abc.Statement; human review is required before "
+        "any announcement." if accepted else
+        "No result here proves the abc conjecture."
+    )
+
     updated = time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())
     page = (
         "<!doctype html><html><head><meta charset=utf-8><title>AXIOM swarm</title>"
@@ -111,7 +144,8 @@ def build(queue_path="swarm/queue.json", root="results"):
         "table{border-collapse:collapse;margin-bottom:2em}"
         ".open{font-weight:bold;color:#a00}</style></head><body>"
         "<h1>AXIOM swarm</h1>"
-        f"<p class=open>{html.escape(ABC_OPEN)}</p>"
+        f"<p class=open>{html.escape(banner)}</p>"
+        f"<p>proof alarm: {html.escape(proof_verdict)} — {html.escape(proof_reason)}</p>"
         f"<p>updated {updated}</p>"
         "<h2>Witness reductions</h2>"
         + _html_table(wheaders, wrows)
@@ -124,15 +158,16 @@ def build(queue_path="swarm/queue.json", root="results"):
         + "<p>Every reduction family is re-checked by the Axiom kernel at merge time. "
         "ABC records are exact integer triples re-checked by the merger (gcd, sum, and "
         "radical). S-unit lists are independently re-enumerated by `axiom.sunit.check`; "
-        "the Lean export checks only the listed triples, not completeness. No result here "
-        "proves the abc conjecture.</p>"
+        "the Lean export checks only the listed triples, not completeness. "
+        + footer + "</p>"
         "</body></html>")
     os.makedirs(root, exist_ok=True)
     with open(os.path.join(root, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(page)
 
-    md = ["# AXIOM swarm summary", "", f"**{ABC_OPEN}**", "", f"updated {updated}", "",
-          "## Witness reductions", ""]
+    md = ["# AXIOM swarm summary", "", f"**{banner}**", "",
+          f"proof alarm: {proof_verdict} — {proof_reason}", "",
+          f"updated {updated}", "", "## Witness reductions", ""]
     md += _md_table(wheaders, wrows)
     md += ["", "## ABC triple hunter (search only)", ""]
     md += _md_table(aheaders, arows)
@@ -144,7 +179,8 @@ def build(queue_path="swarm/queue.json", root="results"):
            "ABC records are exact integer triples re-checked by the merger; the hunter "
            "does not prove the abc conjecture. S-unit certificates are finite complete "
            "lists for a fixed S, independently re-checked; they say nothing about abc. "
-           "The Lean export checks only the listed triples, not completeness.", ""]
+           "The Lean export checks only the listed triples, not completeness. "
+           + footer, ""]
     for p, st, _lean_st in abc:
         if not st:
             continue

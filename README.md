@@ -78,8 +78,35 @@ records known routes and partial results with citations (Szpiro,
 Mason–Stothers, Stewart–Yu, explicit abc, IUT described neutrally) and their
 status. Queue entries of kind `abc_route` are proof-track targets, not search
 jobs. A candidate argument is accepted only as a Lean proof of
-`Abc.Statement` with no `sorry` and no new axioms, plus human review. The
-dashboard always shows: **abc conjecture: OPEN. No result here proves it.**
+`Abc.Statement` with no `sorry` and no new axioms, plus human review.
+
+### Lean-only proof alarm
+
+The alarm lives in `axiom/abc_proof/`. The frozen SHA-256 of the statement is
+in `swarm/abc_statement.sha256`; changing `lean/Abc/Statement.lean` without
+deliberately updating that file makes the alarm `REJECTED`. A proof must be
+placed at `lean/Abc/Proof.lean`:
+
+```lean
+import Abc.Statement
+
+theorem Abc.abc_proved : Abc.Statement := by
+  -- complete proof required
+```
+
+`python -m axiom.abc_proof.check --mathlib /path/to/mathlib4` compiles the
+proof against the frozen statement, rejects `sorry`, `admit`, and axiom
+declarations, and accepts only the axiom list
+`propext, Classical.choice, Quot.sound`. The CI job `abc-proof-check` runs on
+every push and every scheduled run. The dashboard top line is chosen only from
+`results/abc_proof/status.json`:
+
+- `OPEN`: **abc conjecture: OPEN. No result here proves it.**
+- `REJECTED`: **abc conjecture: OPEN. A proof attempt was rejected by Lean (see log).**
+- `LEAN_ACCEPTED`: **LEAN ACCEPTED A PROOF OF Abc.Statement (axioms: ...). Human review required before any announcement.** The workflow opens a GitHub issue with the full status file.
+
+No LLM, worker, script, or hand-edited status file can set `LEAN_ACCEPTED`;
+only a successful Lean check can. A missing `Proof.lean` is `OPEN`.
 
 # (0.3 notes) Blind Mathematical Discovery with Certified Reductions
 

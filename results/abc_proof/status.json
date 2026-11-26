@@ -1,0 +1,27 @@
+{
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "axioms": [],
+  "checked_at": "2026-11-26T22:27:38Z",
+  "ci_ref": "",
+  "ci_sha": "",
+  "commands": [],
+  "commit": "07ee64ce6d99ee2b8c84f0a06806a0e2aa71d0c7",
+  "frozen_sha256": "76b832f2a942b0a74fa5397be4bff15114445d04d1289cbc26d4e24cddd9d2c2",
+  "lean_output": "",
+  "lean_toolchain": "not run",
+  "lean_version": "not run",
+  "mathlib_version": "not run",
+  "proof_path": "lean/Abc/Proof.lean",
+  "proof_present": false,
+  "proof_sha256": null,
+  "reason": "lean/Abc/Proof.lean is absent; abc remains OPEN",
+  "seconds": 0.0,
+  "statement_hash_ok": true,
+  "statement_path": "lean/Abc/Statement.lean",
+  "statement_sha256": "76b832f2a942b0a74fa5397be4bff15114445d04d1289cbc26d4e24cddd9d2c2",
+  "verdict": "OPEN"
+}

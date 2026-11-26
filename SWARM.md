@@ -68,6 +68,27 @@ coprime positive `a + b = c` whose `abc` has no prime factor outside `S`.
 See `swarm/sunit_validation.md` for sources, exact lists, commands, timings,
 and the honest limits.
 
+## ABC proof alarm (`axiom/abc_proof/`)
+
+This is the only path to `LEAN_ACCEPTED`; no worker, LLM, merge step, or
+hand-edited status file may set it.
+
+- The frozen statement hash is `swarm/abc_statement.sha256`. Changing
+  `lean/Abc/Statement.lean` without deliberately updating the freeze makes the
+  alarm `REJECTED`.
+- A proof must be `lean/Abc/Proof.lean` and declare exactly
+  `theorem Abc.abc_proved : Abc.Statement`.
+- The `abc-proof-check` CI job runs on every push and every scheduled run. It
+  rejects `sorry`, `admit`, and axiom declarations, compiles with
+  `lake env lean`, and requires `#print axioms Abc.abc_proved` to list only
+  `propext`, `Classical.choice`, `Quot.sound`.
+- The status file is `results/abc_proof/status.json` with verdict `OPEN`,
+  `REJECTED`, or `LEAN_ACCEPTED`. The dashboard top line reads only that file.
+- On `LEAN_ACCEPTED`, the workflow opens the issue
+  "Lean accepted a proof of abc" with the full status file.
+- A missing proof is `OPEN`; a changed statement is `REJECTED`; a Lean error,
+  a non-allowed axiom, or a wrong target theorem is `REJECTED`.
+
 ## The idea generator (`axiom/ideas/`)
 
 AXIOM searches; the idea generator decides what to search. An idea is plain data

@@ -26,6 +26,32 @@ Analytic Number Theory* (1985); J. Oesterlé, "Nouvelles approches du
 'théorème' de Fermat", *Séminaire Bourbaki* 1987/88, Astérisque 161–162
 (1988), 165–186.
 
+## Proof alarm (Lean only)
+
+The statement is frozen by SHA-256 in `swarm/abc_statement.sha256`. A proof
+must live at `lean/Abc/Proof.lean` and declare
+
+```lean
+theorem Abc.abc_proved : Abc.Statement
+```
+
+`python -m axiom.abc_proof.check --mathlib ...` compiles it against the frozen
+statement and rejects `sorry`, `admit`, axiom declarations, and any axiom list
+outside `propext`, `Classical.choice`, `Quot.sound`. The CI job
+`abc-proof-check` runs on every push and every scheduled run and writes
+`results/abc_proof/status.json`:
+
+| Verdict | Meaning | Dashboard line |
+|---|---|---|
+| `OPEN` | no proof file (or no frozen-statement mismatch) | "abc conjecture: OPEN. No result here proves it." |
+| `REJECTED` | changed statement, source rejection, Lean error, wrong target, or non-allowed axiom | "abc conjecture: OPEN. A proof attempt was rejected by Lean (see log)." |
+| `LEAN_ACCEPTED` | Lean accepted `Abc.abc_proved : Abc.Statement` with only the allowed axioms | "LEAN ACCEPTED A PROOF OF Abc.Statement (axioms: ...). Human review required before any announcement." |
+
+On `LEAN_ACCEPTED` the workflow opens a GitHub issue titled "Lean accepted a
+proof of abc" with the full status file. Human review is still required before
+any announcement. No LLM, worker, script, or manual edit can set
+`LEAN_ACCEPTED`; only the checker's Lean run can.
+
 ## Routes and partial results
 
 | Route | What it gives | Status | Citations / notes |

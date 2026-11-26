@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-26",
+  "providers": {
+    "default": {
+      "completion_tokens": 599,
+      "failures": 0,
+      "last_error": "",
+      "prompt_tokens": 1618,
+      "requests": 1
+    }
+  },
+  "runs": [
+    {
+      "completion_tokens": 599,
+      "ok": true,
+      "problem": "abc",
+      "prompt_tokens": 1618,
+      "provider": "default",
+      "requests": 1,
+      "utc": "2026-11-26T22:29:57Z"
+    }
+  ]
+}

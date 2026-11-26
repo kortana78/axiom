@@ -1,5 +1,31 @@
 {
-  "comment": "LLM ABC search ideas only. Search ideas do not prove the abc conjecture.",
+  "comment": "LLM proposals only. Untrusted; validate through the swarm. No entry proves anything.",
+  "ideas": [
+    {
+      "family": "c_smooth",
+      "min_quality": 1.3,
+      "note": "Raise smooth bound to 29 to allow slightly larger prime factors while keeping the search window manageable; may uncover triples with higher rad and improve q.",
+      "smooth_bound": 29,
+      "source": "llm:openai/gpt-oss-120b",
+      "window": 150000
+    },
+    {
+      "family": "legs_smooth",
+      "min_quality": 1.25,
+      "note": "Extend the legs_smooth window further into the billions with smooth bound 31 to probe larger c values where both legs remain moderately smooth.",
+      "smooth_bound": 31,
+      "source": "llm:openai/gpt-oss-120b",
+      "window": 250000000
+    },
+    {
+      "family": "c_smooth",
+      "min_quality": 1.35,
+      "note": "Use a power-of-two smooth bound (2^5) to target triples where a or b are highly 2\u2011smooth; the narrower window focuses computation on promising ranges.",
+      "smooth_bound": 32,
+      "source": "llm:openai/gpt-oss-120b",
+      "window": 120000
+    }
+  ],
   "kind": "abc",
-  "ideas": []
+  "updated_utc": "2026-11-26T22:29:57Z"
 }
