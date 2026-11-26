@@ -188,6 +188,20 @@
       "seconds": 427.8,
       "source": "mutated",
       "note": "mutation of order=xyz|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=1,2|T=40|D=24"
+    },
+    "order=xyz|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=1,2|T=60|D=36": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 241.2,
+      "source": "mutated",
+      "note": "mutation of order=xyz|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=1,2|T=40|D=24"
+    },
+    "order=yxz|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=60|D=36": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 64.7,
+      "source": "mutated",
+      "note": "mutation of order=yxz|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24"
     }
   },
   "families": {
@@ -222,7 +236,7 @@
       "hits": 10
     },
     "order=yxz|atoms=n,n2,n2v,nv,v,vv|mult=2": {
-      "tries": 1,
+      "tries": 2,
       "reward": 1.0,
       "hits": 12
     },
@@ -232,7 +246,7 @@
       "hits": 12
     },
     "order=xyz|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=2": {
-      "tries": 1,
+      "tries": 2,
       "reward": 0.08333333333333333,
       "hits": 1
     },

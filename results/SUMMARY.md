@@ -1,14 +1,21 @@
 # AXIOM swarm summary
 
-updated 2026-11-26 09:26 UTC
+updated 2026-11-26 15:51 UTC
 
-| problem | status | modulus | open / relevant | families | last note |
-|---|---|---|---|---|---|
-| erdos_straus | open: reduction certified | 840 | 6 / 196 | 39 | no progress: grammar enlarged |
+## Witness reductions
 
-- erdos_straus: target holds for all n >= 2 if it holds for every prime in the open classes mod 840. Open sample: [1, 121, 169, 289, 361, 529]. Lean: Lean accepted 39/39 class lemmas
+| problem | status | modulus | open / relevant | families | last note | Lean |
+|---|---|---|---|---|---|---|
+| erdos_straus | open: reduction certified | 840 | 6 / 196 | 39 | no progress: grammar enlarged | Lean accepted 39/39 class lemmas |
+| sierpinski_5n | open: reduction certified | 840 | 4 / 196 | 15 | no progress: grammar enlarged | Lean accepted 15/15 class lemmas |
 
-| sierpinski_5n | open: reduction certified | 840 | 4 / 196 | 15 | no progress: grammar enlarged |
+## ABC triple hunter (search only)
 
-- sierpinski_5n: target holds for all n >= 2 if it holds for every prime in the open classes mod 840. Open sample: [1, 181, 421, 601]. Lean: Lean accepted 15/15 class lemmas
+| problem | status | c max | best q | records | last note | Lean |
+|---|---|---|---|---|---|---|
+| abc | search only: 200 verified triples; best q=1.629912; no proof of abc | 100,000,000 | 1.629912 | 200 | best 2 + 6436341 = 6436343 (rad 15042); c_smooth incomplete; width 240000 -> 168000; legs_smooth advanced to 300000000 | Lean not run |
+
+Every reduction family is re-checked by the Axiom kernel at merge time. ABC records are exact integer triples re-checked by the merger; the hunter does not prove the abc conjecture.
+
+- abc: best record 2 + 6436341 = 6436343, rad(abc) = 15042, q = 1.629911684. Search only; no proof.
 

@@ -1,0 +1,63 @@
+{
+  "problem": "abc",
+  "kind": "abc",
+  "statement": "abc conjecture (Masser-Oesterle): for every eps > 0 there is K(eps) such that for all coprime positive integers a + b = c, c <= K(eps) * rad(a*b*c)^(1+eps). This queue entry runs the triple hunter, not a proof.",
+  "status": "search only: 200 verified triples; best q=1.629912; no proof of abc",
+  "mode": "abc_triple_hunt",
+  "records_verified": 200,
+  "best_q": 1.6299116841270482,
+  "best_triple": {
+    "a": 2,
+    "b": 6436341,
+    "c": 6436343,
+    "rad": 15042,
+    "q": 1.6299116841270482,
+    "factors": {
+      "a": {
+        "2": 1
+      },
+      "b": {
+        "3": 10,
+        "109": 1
+      },
+      "c": {
+        "23": 5
+      }
+    }
+  },
+  "searched": {
+    "c_max": 100000000,
+    "smooth_bound": 23,
+    "min_quality": 1.2
+  },
+  "cursors": {
+    "c_smooth": {
+      "next": 1,
+      "width": 168000,
+      "exhausted": false
+    },
+    "legs_smooth": {
+      "next": 300000000,
+      "width": 300000000,
+      "exhausted": false
+    }
+  },
+  "batch": 1,
+  "history": [
+    {
+      "utc": "2026-11-26T15:51:10Z",
+      "shards_merged": 2,
+      "candidates": 319,
+      "rejected": 0,
+      "records": 200,
+      "new_records": 200,
+      "best_q": 1.6299116841270482,
+      "note": "c_smooth incomplete; width 240000 -> 168000; legs_smooth advanced to 300000000"
+    }
+  ],
+  "next_frontier": {
+    "c_max": 100000000,
+    "smooth_bound": 23,
+    "min_quality": 1.2
+  }
+}

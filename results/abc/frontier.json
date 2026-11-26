@@ -1,0 +1,31 @@
+{
+  "kind": "abc",
+  "params": {
+    "c_max": 100000000,
+    "smooth_bound": 23,
+    "min_quality": 1.2,
+    "max_records": 200,
+    "families": {
+      "c_smooth": {
+        "width": 240000
+      },
+      "legs_smooth": {
+        "width": 300000000
+      }
+    },
+    "ideas_c_max": 10000000
+  },
+  "families": {
+    "c_smooth": {
+      "next": 1,
+      "width": 168000,
+      "exhausted": false
+    },
+    "legs_smooth": {
+      "next": 300000000,
+      "width": 300000000,
+      "exhausted": false
+    }
+  },
+  "batch": 1
+}
