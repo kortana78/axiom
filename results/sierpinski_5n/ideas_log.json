@@ -272,6 +272,34 @@
       "seconds": 73.2,
       "source": "generated",
       "note": "enumerated"
+    },
+    "order=yxz|atoms=n,n2,n3,nv,v,vv|mult=1|T=40|D=24": {
+      "hits": 8,
+      "tested": 12,
+      "seconds": 1070.7,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xyz|atoms=n,n2,n3,nv,nvv,v,vv|mult=1|T=40|D=24|tie": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 578.5,
+      "source": "mutated",
+      "note": "mutation of order=xyz|atoms=n,n2,n3,nv,nvv,v,vv|mult=1|T=40|D=24"
+    },
+    "order=yxz|atoms=n,n2,n2v,nv,nvv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 428.5,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xyz|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=60|D=36": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 624.7,
+      "source": "mutated",
+      "note": "mutation of order=xyz|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24"
     }
   },
   "families": {
@@ -301,7 +329,7 @@
       "hits": 10
     },
     "order=xyz|atoms=n,n2,n2v,nv,v,vv|mult=2": {
-      "tries": 1,
+      "tries": 2,
       "reward": 0.8333333333333334,
       "hits": 10
     },
@@ -451,6 +479,21 @@
       "hits": 0
     },
     "order=xzy|atoms=n,n2,n2v,nv,nvv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=yxz|atoms=n,n2,n3,nv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.6666666666666666,
+      "hits": 8
+    },
+    "order=xyz|atoms=n,n2,n3,nv,nvv,v,vv|mult=1|tie": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=yxz|atoms=n,n2,n2v,nv,nvv,v,vv|mult=1": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0
@@ -675,6 +718,29 @@
         "v",
         "nv",
         "vv"
+      ],
+      "mult": [
+        1
+      ],
+      "T": 40,
+      "D": 24,
+      "note": "enumerated",
+      "source": "generated",
+      "tie": false
+    },
+    {
+      "order": [
+        "y",
+        "x",
+        "z"
+      ],
+      "atoms": [
+        "n",
+        "n2",
+        "v",
+        "nv",
+        "vv",
+        "n3"
       ],
       "mult": [
         1

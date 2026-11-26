@@ -32,17 +32,17 @@
   },
   "cursors": {
     "c_smooth": {
-      "next": 168001,
-      "width": 98784,
+      "next": 266785,
+      "width": 118540,
       "exhausted": false
     },
     "legs_smooth": {
-      "next": 1320000000,
-      "width": 360000000,
+      "next": 1680000000,
+      "width": 432000000,
       "exhausted": false
     }
   },
-  "batch": 4,
+  "batch": 5,
   "history": [
     {
       "utc": "2026-11-26T15:51:10Z",
@@ -83,6 +83,16 @@
       "new_records": 4,
       "best_q": 1.6299116841270482,
       "note": "c_smooth incomplete; width 141120 -> 98784; legs_smooth advanced to 1320000000"
+    },
+    {
+      "utc": "2026-11-26T22:30:55Z",
+      "shards_merged": 3,
+      "candidates": 93,
+      "rejected": 0,
+      "records": 200,
+      "new_records": 4,
+      "best_q": 1.6299116841270482,
+      "note": "c_smooth advanced to 266785; legs_smooth advanced to 1680000000"
     }
   ],
   "next_frontier": {

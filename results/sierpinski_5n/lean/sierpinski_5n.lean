@@ -141,3 +141,75 @@ theorem cls_840_781 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z
   · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
   · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
   · ring
+
+/-- class n = 2520k + 2101, k = m + 0. Witnesses: ['141120*k**2 + 235816*k + 98514', '504*k + 422', '44808422400*k**4 + 149752592640*k**3 + 187680857616*k**2 + 104540062592*k + 21836169927'] -/
+theorem cls_2520_2101 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(2520*(m:ℤ) + 2101)*x*y - (2520*(m:ℤ) + 2101)*x*z - (2520*(m:ℤ) + 2101)*y*z + 5*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(141120*(m:ℤ)^2 + 235816*(m:ℤ) + 98514), (504*(m:ℤ) + 422), (44808422400*(m:ℤ)^4 + 149752592640*(m:ℤ)^3 + 187680857616*(m:ℤ)^2 + 104540062592*(m:ℤ) + 21836169927), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
+
+/-- class n = 2520k + 1681, k = m + 0. Witnesses: ['141120*k**2 + 188776*k + 63131', '504*k + 338', '179233689600*k**4 + 479521244160*k**3 + 481090103424*k**2 + 214516929032*k + 35869645318'] -/
+theorem cls_2520_1681 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(2520*(m:ℤ) + 1681)*x*y - (2520*(m:ℤ) + 1681)*x*z - (2520*(m:ℤ) + 1681)*y*z + 5*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(141120*(m:ℤ)^2 + 188776*(m:ℤ) + 63131), (504*(m:ℤ) + 338), (179233689600*(m:ℤ)^4 + 479521244160*(m:ℤ)^3 + 481090103424*(m:ℤ)^2 + 214516929032*(m:ℤ) + 35869645318), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
+
+/-- class n = 2520k + 421, k = m + 0. Witnesses: ['141120*k**2 + 47656*k + 4023', '504*k + 86', '179233689600*k**4 + 121053864960*k**3 + 30658771584*k**2 + 3450913928*k + 145656738'] -/
+theorem cls_2520_421 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(2520*(m:ℤ) + 421)*x*y - (2520*(m:ℤ) + 421)*x*z - (2520*(m:ℤ) + 421)*y*z + 5*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(141120*(m:ℤ)^2 + 47656*(m:ℤ) + 4023), (504*(m:ℤ) + 86), (179233689600*(m:ℤ)^4 + 121053864960*(m:ℤ)^3 + 30658771584*(m:ℤ)^2 + 3450913928*(m:ℤ) + 145656738), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
+
+/-- class n = 2520k + 2281, k = m + 0. Witnesses: ['141120*k**2 + 255976*k + 116078', '504*k + 458', '44808422400*k**4 + 162554999040*k**3 + 221142385296*k**2 + 133709063600*k + 30316613611'] -/
+theorem cls_2520_2281 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(2520*(m:ℤ) + 2281)*x*y - (2520*(m:ℤ) + 2281)*x*z - (2520*(m:ℤ) + 2281)*y*z + 5*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(141120*(m:ℤ)^2 + 255976*(m:ℤ) + 116078), (504*(m:ℤ) + 458), (44808422400*(m:ℤ)^4 + 162554999040*(m:ℤ)^3 + 221142385296*(m:ℤ)^2 + 133709063600*(m:ℤ) + 30316613611), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
+
+/-- class n = 2520k + 841, k = m + 0. Witnesses: ['141120*k**2 + 94696*k + 15886', '504*k + 170', '44808422400*k**4 + 60135747840*k**3 + 30264602256*k**2 + 6769438256*k + 567805355'] -/
+theorem cls_2520_841 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(2520*(m:ℤ) + 841)*x*y - (2520*(m:ℤ) + 841)*x*z - (2520*(m:ℤ) + 841)*y*z + 5*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(141120*(m:ℤ)^2 + 94696*(m:ℤ) + 15886), (504*(m:ℤ) + 170), (44808422400*(m:ℤ)^4 + 60135747840*(m:ℤ)^3 + 30264602256*(m:ℤ)^2 + 6769438256*(m:ℤ) + 567805355), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
+
+/-- class n = 2520k + 601, k = m + 0. Witnesses: ['141120*k**2 + 67816*k + 8147', '504*k + 122', '179233689600*k**4 + 172263490560*k**3 + 62085631104*k**2 + 9944877320*k + 597354334'] -/
+theorem cls_2520_601 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(2520*(m:ℤ) + 601)*x*y - (2520*(m:ℤ) + 601)*x*z - (2520*(m:ℤ) + 601)*y*z + 5*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(141120*(m:ℤ)^2 + 67816*(m:ℤ) + 8147), (504*(m:ℤ) + 122), (179233689600*(m:ℤ)^4 + 172263490560*(m:ℤ)^3 + 62085631104*(m:ℤ)^2 + 9944877320*(m:ℤ) + 597354334), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
+
+/-- class n = 2520k + 1021, k = m + 0. Witnesses: ['141120*k**2 + 114856*k + 23370', '504*k + 206', '44808422400*k**4 + 72938154240*k**3 + 44522520336*k**2 + 12078716384*k + 1228829655'] -/
+theorem cls_2520_1021 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(2520*(m:ℤ) + 1021)*x*y - (2520*(m:ℤ) + 1021)*x*z - (2520*(m:ℤ) + 1021)*y*z + 5*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(141120*(m:ℤ)^2 + 114856*(m:ℤ) + 23370), (504*(m:ℤ) + 206), (44808422400*(m:ℤ)^4 + 72938154240*(m:ℤ)^3 + 44522520336*(m:ℤ)^2 + 12078716384*(m:ℤ) + 1228829655), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
+
+/-- class n = 2520k + 1861, k = m + 0. Witnesses: ['141120*k**2 + 208936*k + 77335', '504*k + 374', '179233689600*k**4 + 530730869760*k**3 + 589331401344*k**2 + 290844971144*k + 53826242690'] -/
+theorem cls_2520_1861 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(2520*(m:ℤ) + 1861)*x*y - (2520*(m:ℤ) + 1861)*x*z - (2520*(m:ℤ) + 1861)*y*z + 5*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(141120*(m:ℤ)^2 + 208936*(m:ℤ) + 77335), (504*(m:ℤ) + 374), (179233689600*(m:ℤ)^4 + 530730869760*(m:ℤ)^3 + 589331401344*(m:ℤ)^2 + 290844971144*(m:ℤ) + 53826242690), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
