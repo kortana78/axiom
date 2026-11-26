@@ -17,15 +17,15 @@
   },
   "families": {
     "c_smooth": {
-      "next": 1,
-      "width": 168000,
+      "next": 168001,
+      "width": 201600,
       "exhausted": false
     },
     "legs_smooth": {
-      "next": 300000000,
-      "width": 300000000,
+      "next": 600000000,
+      "width": 360000000,
       "exhausted": false
     }
   },
-  "batch": 1
+  "batch": 2
 }

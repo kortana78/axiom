@@ -181,6 +181,34 @@
       "seconds": 61.1,
       "source": "generated",
       "note": "enumerated"
+    },
+    "order=xyz|atoms=n,n2,n3,nv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 6,
+      "seconds": 815.8,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xzy|atoms=n,n2,n2v,nv,nvv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 6,
+      "seconds": 696.2,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=yzx|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24": {
+      "hits": 0,
+      "tested": 6,
+      "seconds": 1117.1,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xzy|atoms=n,n2,n2v,nv,v,vv|mult=1,2,6|T=40|D=24": {
+      "hits": 0,
+      "tested": 6,
+      "seconds": 76.4,
+      "source": "mutated",
+      "note": "mutation of order=xzy|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24"
     }
   },
   "families": {
@@ -300,6 +328,26 @@
       "hits": 0
     },
     "order=yxz|atoms=n,n2,n2v,nv,v,vv|mult=2": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xyz|atoms=n,n2,n3,nv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xzy|atoms=n,n2,n2v,nv,nvv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=yzx|atoms=n,n2,n2v,nv,v,vv|mult=2": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xzy|atoms=n,n2,n2v,nv,v,vv|mult=3": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0

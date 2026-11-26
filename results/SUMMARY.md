@@ -1,6 +1,6 @@
 # AXIOM swarm summary
 
-updated 2026-11-26 15:53 UTC
+updated 2026-11-26 16:40 UTC
 
 ## Witness reductions
 
@@ -13,7 +13,7 @@ updated 2026-11-26 15:53 UTC
 
 | problem | status | c max | best q | records | last note | Lean |
 |---|---|---|---|---|---|---|
-| abc | search only: 200 verified triples; best q=1.629912; no proof of abc | 100,000,000 | 1.629912 | 200 | best 2 + 6436341 = 6436343 (rad 15042); c_smooth incomplete; width 240000 -> 168000; legs_smooth advanced to 300000000 | Lean accepted 200/200 lemmas |
+| abc | search only: 200 verified triples; best q=1.629912; no proof of abc | 100,000,000 | 1.629912 | 200 | best 2 + 6436341 = 6436343 (rad 15042); c_smooth advanced to 168001; legs_smooth advanced to 600000000 | Lean accepted 200/200 lemmas |
 
 Every reduction family is re-checked by the Axiom kernel at merge time. ABC records are exact integer triples re-checked by the merger; the hunter does not prove the abc conjecture.
 

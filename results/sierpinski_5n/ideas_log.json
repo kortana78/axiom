@@ -202,6 +202,41 @@
       "seconds": 64.7,
       "source": "mutated",
       "note": "mutation of order=yxz|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24"
+    },
+    "order=zyx|atoms=n,n2,nv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 208.2,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=zyx|atoms=n,n2,n3,nv,nvv,v,vv|mult=1|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 500.6,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=xyz|atoms=n,n2,nv,v,vv|mult=1|T=60|D=36": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 455.9,
+      "source": "mutated",
+      "note": "mutation of order=xyz|atoms=n,n2,nv,v,vv|mult=1|T=40|D=24"
+    },
+    "order=zyx|atoms=n,n2,n2v,nv,v,vv|mult=1,2|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 1094.2,
+      "source": "generated",
+      "note": "enumerated"
+    },
+    "order=yzx|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=1,2|T=40|D=24": {
+      "hits": 0,
+      "tested": 4,
+      "seconds": 444.1,
+      "source": "generated",
+      "note": "enumerated"
     }
   },
   "families": {
@@ -221,7 +256,7 @@
       "hits": 12
     },
     "order=xyz|atoms=n,n2,nv,v,vv|mult=1": {
-      "tries": 1,
+      "tries": 2,
       "reward": 0.9166666666666666,
       "hits": 11
     },
@@ -336,6 +371,26 @@
       "hits": 0
     },
     "order=yxz|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=2": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=zyx|atoms=n,n2,nv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=zyx|atoms=n,n2,n3,nv,nvv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=zyx|atoms=n,n2,n2v,nv,v,vv|mult=2": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=yzx|atoms=n,n2,n2v,n3,nv,nvv,v,vv|mult=2": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0
