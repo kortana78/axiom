@@ -4,7 +4,7 @@
 
 proof alarm: OPEN — lean/Abc/Proof.lean is absent; abc remains OPEN
 
-updated 2026-11-27 13:33 UTC
+updated 2026-11-27 13:43 UTC
 
 ## Witness reductions
 
@@ -36,7 +36,7 @@ updated 2026-11-27 13:33 UTC
 
 ## ABC proof attempts (lemmas only, not abc)
 
-checked lemmas: 2; rejected: 4; a checked lemma is not a proof of Abc.Statement.
+checked lemmas: 3; rejected: 4; a checked lemma is not a proof of Abc.Statement.
 
 | lemma | route | status | axioms | checked at |
 |---|---|---|---|---|
@@ -46,6 +46,7 @@ checked lemmas: 2; rejected: 4; a checked lemma is not a proof of Abc.Statement.
 | rad_le | definitions | REJECTED | none | 2026-11-27T12:57:40Z |
 | rad_dvd | definitions | CHECKED | propext, Classical.choice, Quot.sound | 2026-11-27T13:01:38Z |
 | rad_pos | definitions | CHECKED | propext, Classical.choice, Quot.sound | 2026-11-27T13:03:27Z |
+| rad_pos | definitions | CHECKED | propext, Classical.choice, Quot.sound | 2026-11-27T13:43:15Z |
 
 Every reduction family is re-checked by the Axiom kernel at merge time. ABC records are exact integer triples re-checked by the merger; the hunter does not prove the abc conjecture. S-unit certificates are finite complete lists for a fixed S, independently re-checked; they say nothing about abc. The Lean export checks only the listed triples, not completeness. No result here proves the abc conjecture.
 
