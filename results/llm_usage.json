@@ -3,10 +3,10 @@
   "providers": {
     "default": {
       "completion_tokens": 6718,
-      "failures": 4,
-      "last_error": "LLM request failed after retries: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k2jaj0tkffyv99vdq2rk4m48` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7023, Requested 1318. Please try again in 2.5575s. Need more tokens? Upgrade to Dev Tier today at https://con",
+      "failures": 5,
+      "last_error": "response has no text content",
       "prompt_tokens": 12139,
-      "requests": 20
+      "requests": 23
     }
   },
   "runs": [
@@ -189,6 +189,15 @@
       "provider": "default",
       "requests": 1,
       "utc": "2026-11-27T13:00:13Z"
+    },
+    {
+      "completion_tokens": 0,
+      "ok": false,
+      "problem": "abc_proof",
+      "prompt_tokens": 0,
+      "provider": "default",
+      "requests": 3,
+      "utc": "2026-11-27T13:33:10Z"
     }
   ]
 }
