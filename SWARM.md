@@ -110,6 +110,9 @@ python -m axiom.abc_prover.loop --mathlib /path/to/mathlib4 \
   is saved to `results/abc_prover/target_attempt.lean` for human review.
 - The dashboard adds an "ABC proof attempts" table; the top line remains the
   alarm's `OPEN`/`REJECTED`/`LEAN_ACCEPTED` banner.
+- `.github/workflows/abc-prover.yml` runs the loop weekly and on manual
+  dispatch, under the shared `results/llm_usage.json` budget. It fails if the
+  prover touches `lean/Abc/Proof.lean` or `results/abc_proof/status.json`.
 
 ## The idea generator (`axiom/ideas/`)
 

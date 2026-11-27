@@ -127,6 +127,11 @@ never writes the alarm verdict. A checked lemma whose type mentions
 review, never promoted automatically. The dashboard shows the attempt counts;
 the top line still comes only from the alarm.
 
+CI runs the same loop weekly and on manual dispatch
+(`.github/workflows/abc-prover.yml`). It uses the shared
+`results/llm_usage.json` budget and fails the job if the prover touched
+`lean/Abc/Proof.lean` or the alarm status file.
+
 # (0.3 notes) Blind Mathematical Discovery with Certified Reductions
 
 ## What is new in 0.3
