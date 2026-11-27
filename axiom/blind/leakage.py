@@ -54,6 +54,10 @@ NEW_MODULES = [
     "llm/config.py", "llm/client.py", "llm/schema.py", "llm/ideas.py",
     "llm/usage.py", "swarm/sunit.py", "swarm/schedule.py",
     "abc_proof/__init__.py", "abc_proof/check.py",
+    "abc_prover/__init__.py", "abc_prover/routes.py",
+    "abc_prover/proposals.py", "abc_prover/lean.py",
+    "abc_prover/ledger.py", "abc_prover/prompt.py",
+    "abc_prover/loop.py",
 ]
 
 GATED_MODULES = {

@@ -4,7 +4,7 @@
 
 proof alarm: OPEN — lean/Abc/Proof.lean is absent; abc remains OPEN
 
-updated 2026-11-27 09:38 UTC
+updated 2026-11-27 13:07 UTC
 
 ## Witness reductions
 
@@ -33,6 +33,19 @@ updated 2026-11-27 09:38 UTC
 | abc_route_mason_stothers | Mason-Stothers | unproved idea | polynomial analogue only; Mathlib Polynomial.abc; not a route to the integer statement |
 | abc_route_stewart_yu | Stewart-Yu | unproved idea | partial result; far weaker than abc; see swarm/abc_routes.md for citations |
 | abc_route_iut | IUT | unproved idea | disputed; described neutrally; no IUT claim is used by this repository |
+
+## ABC proof attempts (lemmas only, not abc)
+
+checked lemmas: 2; rejected: 4; a checked lemma is not a proof of Abc.Statement.
+
+| lemma | route | status | axioms | checked at |
+|---|---|---|---|---|
+| rad_pos | definitions | REJECTED | none | 2026-11-27T12:31:47Z |
+| rad_mul | definitions | REJECTED | none | 2026-11-27T12:33:21Z |
+| rad_dvd | definitions | REJECTED | none | 2026-11-27T12:56:09Z |
+| rad_le | definitions | REJECTED | none | 2026-11-27T12:57:40Z |
+| rad_dvd | definitions | CHECKED | propext, Classical.choice, Quot.sound | 2026-11-27T13:01:38Z |
+| rad_pos | definitions | CHECKED | propext, Classical.choice, Quot.sound | 2026-11-27T13:03:27Z |
 
 Every reduction family is re-checked by the Axiom kernel at merge time. ABC records are exact integer triples re-checked by the merger; the hunter does not prove the abc conjecture. S-unit certificates are finite complete lists for a fixed S, independently re-checked; they say nothing about abc. The Lean export checks only the listed triples, not completeness. No result here proves the abc conjecture.
 

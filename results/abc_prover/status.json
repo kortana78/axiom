@@ -1,0 +1,20 @@
+{
+  "abc": "OPEN",
+  "checked_lemmas": 2,
+  "note": "Lean-checked auxiliary lemmas only. CHECKED is not a proof of Abc.Statement. The abc alarm remains the only judge.",
+  "open_gaps": [
+    "abc_statement",
+    "iut",
+    "szpiro"
+  ],
+  "rejected_lemmas": 4,
+  "routes": {
+    "definitions": {
+      "checked": 2,
+      "rejected": 4
+    }
+  },
+  "target_attempts": 0,
+  "updated_utc": "2026-11-27T13:03:27Z",
+  "verdict": "NO_PROOF"
+}

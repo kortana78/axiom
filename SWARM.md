@@ -89,6 +89,28 @@ hand-edited status file may set it.
 - A missing proof is `OPEN`; a changed statement is `REJECTED`; a Lean error,
   a non-allowed axiom, or a wrong target theorem is `REJECTED`.
 
+## ABC proof-attempt loop (`axiom/abc_prover/`)
+
+This is a bounded LLM -> Lean loop, not an abc prover:
+
+```bash
+python -m axiom.abc_prover.loop --mathlib /path/to/mathlib4 \
+    --rounds 2 --max-proposals 3 --time 900 --max-requests 2
+```
+
+- The model receives the honest route graph (`swarm/abc_prover_routes.json`),
+  previously checked lemmas, and recent Lean errors.
+- Every proposal is sanitized: `sorry`, `admit`, axiom/constant declarations,
+  imports, namespaces, `set_option`, `native_decide`, and metaprogramming are
+  rejected before Lean runs.
+- A proposal that compiles with only `propext`, `Classical.choice`, and
+  `Quot.sound` is recorded as `CHECKED` in `results/abc_prover/ledger.json`.
+- `CHECKED` is not a proof of `Abc.Statement`. The loop never writes
+  `lean/Abc/Proof.lean` and never writes the alarm verdict. A target-like lemma
+  is saved to `results/abc_prover/target_attempt.lean` for human review.
+- The dashboard adds an "ABC proof attempts" table; the top line remains the
+  alarm's `OPEN`/`REJECTED`/`LEAN_ACCEPTED` banner.
+
 ## The idea generator (`axiom/ideas/`)
 
 AXIOM searches; the idea generator decides what to search. An idea is plain data

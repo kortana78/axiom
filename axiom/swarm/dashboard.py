@@ -124,6 +124,25 @@ def build(queue_path="swarm/queue.json", root="results"):
     srows = [_sunit_row(p, st, lean) for p, st, lean in sunit]
     rrows = [_route_row(p, st) for p, st in routes]
 
+    prover = load_json(os.path.join(root, "abc_prover", "ledger.json"), {}) or {}
+    pattempts = prover.get("attempts", []) if isinstance(prover, dict) else []
+    if not isinstance(pattempts, list):
+        pattempts = []
+    pchecked = [a for a in pattempts
+                if isinstance(a, dict) and a.get("status") == "CHECKED"]
+    prejected = [a for a in pattempts
+                 if isinstance(a, dict) and a.get("status") == "REJECTED"]
+    pheaders = ["lemma", "route", "status", "axioms", "checked at"]
+    prows = [
+        [a.get("name", ""), a.get("route", ""), a.get("status", ""),
+         ", ".join(a.get("axioms") or []) or "none", a.get("checked_at", "")]
+        for a in pattempts[-10:] if isinstance(a, dict)
+    ]
+    prover_note = (
+        f"checked lemmas: {len(pchecked)}; rejected: {len(prejected)}; "
+        "a checked lemma is not a proof of Abc.Statement."
+    )
+
     proof = load_json(os.path.join(root, "abc_proof", "status.json"), None)
     if not isinstance(proof, dict):
         proof = {}
@@ -155,6 +174,9 @@ def build(queue_path="swarm/queue.json", root="results"):
         + _html_table(sheaders, srows)
         + "<h2>ABC proof track (all targets unproved)</h2>"
         + _html_table(rheaders, rrows)
+        + "<h2>ABC proof attempts (lemmas only, not abc)</h2>"
+        + f"<p>{html.escape(prover_note)}</p>"
+        + _html_table(pheaders, prows)
         + "<p>Every reduction family is re-checked by the Axiom kernel at merge time. "
         "ABC records are exact integer triples re-checked by the merger (gcd, sum, and "
         "radical). S-unit lists are independently re-enumerated by `axiom.sunit.check`; "
@@ -175,6 +197,8 @@ def build(queue_path="swarm/queue.json", root="results"):
     md += _md_table(sheaders, srows)
     md += ["", "## ABC proof track (all targets unproved)", ""]
     md += _md_table(rheaders, rrows)
+    md += ["", "## ABC proof attempts (lemmas only, not abc)", "", prover_note, ""]
+    md += _md_table(pheaders, prows)
     md += ["", "Every reduction family is re-checked by the Axiom kernel at merge time. "
            "ABC records are exact integer triples re-checked by the merger; the hunter "
            "does not prove the abc conjecture. S-unit certificates are finite complete "

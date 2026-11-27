@@ -1,0 +1,140 @@
+{
+  "attempts": [
+    {
+      "axioms": [],
+      "checked_at": "2026-11-27T12:31:47Z",
+      "id": "sha256:a857a905c18834a6",
+      "lean": "theorem rad_pos (n : \u2115) (h : 0 < n) : 0 < Abc.rad n := by\n  simpa [Abc.rad] using Nat.rad_pos h",
+      "lean_version": "Lean (version 4.15.0, x86_64-w64-windows-gnu, commit 11651562caae, Release)",
+      "mathlib_version": "e245c598c25c2a1883af6e89a2f411b382aaa1c1",
+      "model": "openai/gpt-oss-120b",
+      "name": "rad_pos",
+      "output_tail": "C:\\Users\\MASAUT~1\\AppData\\Local\\Temp\\axiom_abc_prover_63y9svl7\\Abc\\Attempt.lean:9:24: error: unknown constant 'Nat.rad_pos'\n'AbcProver.rad_pos' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+      "rationale": "Shows positivity of the radical for positive integers, a basic property needed in many arguments.",
+      "reason": "Lean rejected the lemma: C:\\Users\\MASAUT~1\\AppData\\Local\\Temp\\axiom_abc_prover_63y9svl7\\Abc\\Attempt.lean:9:24: error: unknown constant 'Nat.rad_pos'",
+      "round": 1,
+      "route": "definitions",
+      "seconds": 131.6,
+      "signature": "theorem rad_pos (n : \u2115) (h : 0 < n) : 0 < Abc.rad n",
+      "status": "REJECTED",
+      "target_like": false
+    },
+    {
+      "axioms": [],
+      "checked_at": "2026-11-27T12:33:21Z",
+      "id": "sha256:a6a813406507753e",
+      "lean": "theorem rad_mul (a b : \u2115) : Abc.rad (a * b) = Abc.rad a * Abc.rad b := by\n  simpa [Abc.rad] using Nat.rad_mul a b",
+      "lean_version": "Lean (version 4.15.0, x86_64-w64-windows-gnu, commit 11651562caae, Release)",
+      "mathlib_version": "e245c598c25c2a1883af6e89a2f411b382aaa1c1",
+      "model": "openai/gpt-oss-120b",
+      "name": "rad_mul",
+      "output_tail": "C:\\Users\\MASAUT~1\\AppData\\Local\\Temp\\axiom_abc_prover_63y9svl7\\Abc\\Attempt.lean:9:24: error: unknown constant 'Nat.rad_mul'\n'AbcProver.rad_mul' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+      "rationale": "Establishes multiplicativity of the radical, a standard arithmetic fact useful for manipulating radicands.",
+      "reason": "Lean rejected the lemma: C:\\Users\\MASAUT~1\\AppData\\Local\\Temp\\axiom_abc_prover_63y9svl7\\Abc\\Attempt.lean:9:24: error: unknown constant 'Nat.rad_mul'",
+      "round": 1,
+      "route": "definitions",
+      "seconds": 94.1,
+      "signature": "theorem rad_mul (a b : \u2115) : Abc.rad (a * b) = Abc.rad a * Abc.rad b",
+      "status": "REJECTED",
+      "target_like": false
+    },
+    {
+      "axioms": [],
+      "checked_at": "2026-11-27T12:56:09Z",
+      "id": "sha256:d9a3f38f2ad51984",
+      "lean": "theorem rad_dvd (n : \u2115) : Abc.rad n \u2223 n := by\n  simpa [Abc.rad] using Nat.rad_dvd n",
+      "lean_version": "Lean (version 4.15.0, x86_64-w64-windows-gnu, commit 11651562caae, Release)",
+      "mathlib_version": "e245c598c25c2a1883af6e89a2f411b382aaa1c1",
+      "model": "openai/gpt-oss-120b",
+      "name": "rad_dvd",
+      "output_tail": "C:\\Users\\MASAUT~1\\AppData\\Local\\Temp\\axiom_abc_prover_vh_02hrk\\Abc\\Attempt.lean:9:24: error: unknown constant 'Nat.rad_dvd'\n'AbcProver.rad_dvd' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+      "rationale": "Shows the radical divides the original number, using the existing Nat.rad_dvd lemma.",
+      "reason": "Lean rejected the lemma: C:\\Users\\MASAUT~1\\AppData\\Local\\Temp\\axiom_abc_prover_vh_02hrk\\Abc\\Attempt.lean:9:24: error: unknown constant 'Nat.rad_dvd'",
+      "round": 1,
+      "route": "definitions",
+      "seconds": 90.5,
+      "signature": "theorem rad_dvd (n : \u2115) : Abc.rad n \u2223 n",
+      "status": "REJECTED",
+      "target_like": false
+    },
+    {
+      "axioms": [],
+      "checked_at": "2026-11-27T12:57:40Z",
+      "id": "sha256:44a960d3e2424878",
+      "lean": "theorem rad_le (n : \u2115) : Abc.rad n \u2264 n := by\n  simpa [Abc.rad] using Nat.rad_le n",
+      "lean_version": "Lean (version 4.15.0, x86_64-w64-windows-gnu, commit 11651562caae, Release)",
+      "mathlib_version": "e245c598c25c2a1883af6e89a2f411b382aaa1c1",
+      "model": "openai/gpt-oss-120b",
+      "name": "rad_le",
+      "output_tail": "C:\\Users\\MASAUT~1\\AppData\\Local\\Temp\\axiom_abc_prover_vh_02hrk\\Abc\\Attempt.lean:9:24: error: unknown constant 'Nat.rad_le'\n'AbcProver.rad_le' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+      "rationale": "Establishes the basic inequality rad n \u2264 n, directly from Nat.rad_le.",
+      "reason": "Lean rejected the lemma: C:\\Users\\MASAUT~1\\AppData\\Local\\Temp\\axiom_abc_prover_vh_02hrk\\Abc\\Attempt.lean:9:24: error: unknown constant 'Nat.rad_le'",
+      "round": 1,
+      "route": "definitions",
+      "seconds": 91.1,
+      "signature": "theorem rad_le (n : \u2115) : Abc.rad n \u2264 n",
+      "status": "REJECTED",
+      "target_like": false
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "checked_at": "2026-11-27T13:01:38Z",
+      "id": "sha256:085bac120e4b5970",
+      "lean": "theorem rad_dvd (n : \u2115) : Abc.rad n \u2223 n := by\n  dsimp [Abc.rad]\n  simpa using Nat.prod_primeFactors_dvd n",
+      "lean_version": "Lean (version 4.15.0, x86_64-w64-windows-gnu, commit 11651562caae, Release)",
+      "mathlib_version": "e245c598c25c2a1883af6e89a2f411b382aaa1c1",
+      "model": "openai/gpt-oss-120b",
+      "name": "rad_dvd",
+      "output_tail": "",
+      "rationale": "Uses the existing Mathlib lemma `Nat.prod_primeFactors_dvd` which exactly states that the product of the distinct prime factors divides the number.",
+      "reason": "Lean accepted the lemma with only allowed axioms",
+      "round": 1,
+      "route": "definitions",
+      "seconds": 84.3,
+      "signature": "theorem rad_dvd (n : \u2115) : Abc.rad n \u2223 n",
+      "status": "CHECKED",
+      "target_like": false
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "checked_at": "2026-11-27T13:03:27Z",
+      "id": "sha256:81f6c3af43a00ceb",
+      "lean": "theorem rad_pos (n : \u2115) (h : 0 < n) : 0 < Abc.rad n := by\n  dsimp [Abc.rad]\n  have hpos : \u2200 p \u2208 n.primeFactors, (0 : \u2115) < p := by\n    intro p hp\n    have hpprime : p.Prime := Nat.prime_of_mem_primeFactors hp\n    exact hpprime.pos\n  have : 0 < n.primeFactors.prod id := by\n    simpa using Finset.prod_pos (s := n.primeFactors) (f := fun p => p) hpos\n  exact this",
+      "lean_version": "Lean (version 4.15.0, x86_64-w64-windows-gnu, commit 11651562caae, Release)",
+      "mathlib_version": "e245c598c25c2a1883af6e89a2f411b382aaa1c1",
+      "model": "openai/gpt-oss-120b",
+      "name": "rad_pos",
+      "output_tail": "",
+      "rationale": "Shows the radical is positive by proving each prime factor is positive and applying `Finset.prod_pos`; works for all positive n, including n = 1.",
+      "reason": "Lean accepted the lemma with only allowed axioms",
+      "round": 1,
+      "route": "definitions",
+      "seconds": 109.4,
+      "signature": "theorem rad_pos (n : \u2115) (h : 0 < n) : 0 < Abc.rad n",
+      "status": "CHECKED",
+      "target_like": false
+    }
+  ],
+  "comment": "Lean-checked auxiliary lemmas only. CHECKED is not a proof of Abc.Statement. The abc alarm remains the only judge.",
+  "stats": {
+    "checked": 2,
+    "rejected": 4,
+    "routes": {
+      "definitions": {
+        "checked": 2,
+        "rejected": 4
+      }
+    },
+    "target_attempts": 0,
+    "total": 6
+  },
+  "updated_utc": "2026-11-27T13:03:27Z"
+}

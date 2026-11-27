@@ -52,6 +52,22 @@ proof of abc" with the full status file. Human review is still required before
 any announcement. No LLM, worker, script, or manual edit can set
 `LEAN_ACCEPTED`; only the checker's Lean run can.
 
+## Proof-attempt loop (context, not a proof)
+
+`axiom/abc_prover/` runs a bounded LLM -> Lean loop over small auxiliary
+lemmas. It uses `swarm/abc_prover_routes.json` for context and records every
+proposal in `results/abc_prover/ledger.json` as `CHECKED` or `REJECTED`.
+
+- `CHECKED` means Lean accepted that lemma with only `propext`,
+  `Classical.choice`, and `Quot.sound`.
+- It does not mean the route is complete, and it is not a proof of
+  `Abc.Statement`.
+- The loop never writes `lean/Abc/Proof.lean` and never writes the alarm
+  verdict. A checked lemma whose type mentions `Abc.Statement` is saved to
+  `results/abc_prover/target_attempt.lean` for human review only.
+- The dashboard adds an "ABC proof attempts" table. The top line still comes
+  only from `results/abc_proof/status.json`.
+
 ## Routes and partial results
 
 | Route | What it gives | Status | Citations / notes |

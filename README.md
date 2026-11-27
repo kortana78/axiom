@@ -108,6 +108,25 @@ every push and every scheduled run. The dashboard top line is chosen only from
 No LLM, worker, script, or hand-edited status file can set `LEAN_ACCEPTED`;
 only a successful Lean check can. A missing `Proof.lean` is `OPEN`.
 
+### Proof-attempt loop
+
+The bounded loop in `axiom/abc_prover/` asks the configured LLM for small
+Lean lemmas, rejects `sorry`/`admit`/axioms/imports/metaprogramming before
+Lean, compiles each proposal against the frozen statement, and records the
+result in `results/abc_prover/ledger.json`:
+
+```bash
+python -m axiom.abc_prover.loop --mathlib /path/to/mathlib4 \
+    --rounds 2 --max-proposals 3 --time 900 --max-requests 2
+```
+
+`CHECKED` means Lean accepted an auxiliary lemma with only the allowed axioms.
+It is **not** a proof of abc. The loop never writes `lean/Abc/Proof.lean` and
+never writes the alarm verdict. A checked lemma whose type mentions
+`Abc.Statement` is saved to `results/abc_prover/target_attempt.lean` for human
+review, never promoted automatically. The dashboard shows the attempt counts;
+the top line still comes only from the alarm.
+
 # (0.3 notes) Blind Mathematical Discovery with Certified Reductions
 
 ## What is new in 0.3

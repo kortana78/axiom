@@ -1,0 +1,48 @@
+{
+  "comment": "Known abc routes and gaps. Edges are not proofs. The target is lean/Abc/Statement.lean. This graph is context for the proof-attempt loop, not evidence.",
+  "target": "abc_statement",
+  "nodes": {
+    "abc_statement": {
+      "kind": "target",
+      "status": "open",
+      "note": "Masser-Oesterle abc; frozen in lean/Abc/Statement.lean. No proof exists in this repository."
+    },
+    "definitions": {
+      "kind": "foundation",
+      "status": "formalized",
+      "note": "Abc.rad, Abc.quality, Abc.Statement, Abc.FinitelyMany. Only rad_one is proved."
+    },
+    "mason_stothers": {
+      "kind": "theorem",
+      "status": "known",
+      "note": "Polynomial abc; Mathlib has Polynomial.abc. It is an analogue and does not imply integer abc."
+    },
+    "szpiro": {
+      "kind": "conjecture",
+      "status": "open",
+      "note": "Szpiro's conjecture; equivalent to abc over Q (standard). Not formalized here."
+    },
+    "stewart_yu": {
+      "kind": "theorem",
+      "status": "known",
+      "note": "Explicit weaker bound for coprime triples; not the full 1+epsilon statement."
+    },
+    "gyory_yu": {
+      "kind": "theorem",
+      "status": "known",
+      "note": "S-unit and linear-forms bounds; partial results, not abc."
+    },
+    "iut": {
+      "kind": "claimed",
+      "status": "disputed",
+      "note": "Inter-universal Teichmuller theory; claimed proof not accepted by the field."
+    }
+  },
+  "edges": [
+    {"from": "szpiro", "to": "abc_statement", "status": "known_equivalence"},
+    {"from": "iut", "to": "abc_statement", "status": "claimed_disputed"},
+    {"from": "stewart_yu", "to": "abc_statement", "status": "partial_bound"},
+    {"from": "gyory_yu", "to": "abc_statement", "status": "partial_bound"},
+    {"from": "mason_stothers", "to": "abc_statement", "status": "analogue_only"}
+  ]
+}
