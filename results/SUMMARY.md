@@ -4,14 +4,14 @@
 
 proof alarm: OPEN — lean/Abc/Proof.lean is absent; abc remains OPEN
 
-updated 2026-11-27 09:35 UTC
+updated 2026-11-27 09:38 UTC
 
 ## Witness reductions
 
 | problem | status | modulus | open / relevant | families | last note | Lean |
 |---|---|---|---|---|---|---|
 | erdos_straus | open: reduction certified | 840 | 6 / 196 | 39 | grammar ceiling reached: modulus refined 840 -> 2520 | Lean accepted 39/39 lemmas |
-| sierpinski_5n | open: reduction certified | 2520 | 2 / 580 | 24 | progress at current grammar | Lean accepted 23/23 lemmas |
+| sierpinski_5n | open: reduction certified | 2520 | 2 / 580 | 24 | progress at current grammar | Lean accepted 24/24 lemmas |
 
 ## ABC triple hunter (search only)
 
