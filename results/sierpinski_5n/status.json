@@ -5,21 +5,19 @@
   "modulus": 2520,
   "mode": "prime_reduction",
   "relevant_classes": 580,
-  "open_classes": 4,
+  "open_classes": 2,
   "open_sample": [
     1,
-    181,
-    1261,
-    1441
+    1261
   ],
-  "families_verified": 23,
-  "reduction_kernel_check": "reduced to primes in 4 classes mod 2520 by scaling symmetry",
+  "families_verified": 24,
+  "reduction_kernel_check": "reduced to primes in 2 classes mod 2520 by scaling symmetry",
   "reduction_statement": "target holds for all n >= 2 if it holds for every prime in the open classes mod 2520",
   "next_frontier": {
     "modulus": 2520,
     "T": 60,
     "D": 36,
-    "open": 4
+    "open": 2
   },
   "history": [
     {
@@ -142,6 +140,17 @@
       "shards_merged": 2,
       "rejected_families": 0,
       "note": "no progress: grammar enlarged"
+    },
+    {
+      "utc": "2026-11-27T09:35:51Z",
+      "modulus": 2520,
+      "open": 2,
+      "relevant": 580,
+      "T": 60,
+      "D": 36,
+      "shards_merged": 3,
+      "rejected_families": 0,
+      "note": "progress at current grammar"
     }
   ]
 }

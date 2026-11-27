@@ -279,6 +279,27 @@
       "seconds": 60.8,
       "source": "generated",
       "note": "enumerated"
+    },
+    "order=xzy|atoms=n,n3,v|mult=1,3|T=250|D=150": {
+      "hits": 0,
+      "tested": 6,
+      "seconds": 1149.0,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "include cubic term to enlarge search space"
+    },
+    "order=yxz|atoms=n2,nv,nvv|mult=2|T=300|D=180": {
+      "hits": 0,
+      "tested": 6,
+      "seconds": 1131.7,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "use n2 and nvv to capture composite structures"
+    },
+    "order=zyx|atoms=n,n2v,vv|mult=1,2,4|T=200|D=120": {
+      "hits": 0,
+      "tested": 6,
+      "seconds": 436.7,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "mixed multiples to explore scaling symmetry"
     }
   },
   "families": {
@@ -468,6 +489,21 @@
       "hits": 0
     },
     "order=zxy|atoms=n,n2,n3,nv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xzy|atoms=n,n3,v|mult=2": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=yxz|atoms=n2,nv,nvv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=zyx|atoms=n,n2v,vv|mult=3": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0

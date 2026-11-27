@@ -17,8 +17,8 @@
   },
   "families": {
     "c_smooth": {
-      "next": 266785,
-      "width": 82978,
+      "next": 349763,
+      "width": 99573,
       "exhausted": false
     },
     "legs_smooth": {
@@ -27,5 +27,5 @@
       "exhausted": true
     }
   },
-  "batch": 6
+  "batch": 7
 }

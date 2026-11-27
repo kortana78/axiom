@@ -307,6 +307,20 @@
       "seconds": 60.2,
       "source": "generated",
       "note": "enumerated"
+    },
+    "order=xzy|atoms=n,n3,v|mult=1,3|T=250|D=150": {
+      "hits": 2,
+      "tested": 4,
+      "seconds": 1332.3,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "include cubic term to enlarge search space"
+    },
+    "order=yxz|atoms=n2,nv,nvv|mult=2|T=300|D=180": {
+      "hits": 0,
+      "tested": 2,
+      "seconds": 1374.6,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "use n2 and nvv to capture composite structures"
     }
   },
   "families": {
@@ -506,6 +520,16 @@
       "hits": 0
     },
     "order=yzx|atoms=n,n2,n3,nv,v,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xzy|atoms=n,n3,v|mult=2": {
+      "tries": 1,
+      "reward": 0.5,
+      "hits": 2
+    },
+    "order=yxz|atoms=n2,nv,nvv|mult=1": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0
@@ -761,6 +785,27 @@
       "D": 24,
       "note": "enumerated",
       "source": "generated",
+      "tie": false
+    },
+    {
+      "order": [
+        "x",
+        "z",
+        "y"
+      ],
+      "atoms": [
+        "n",
+        "n3",
+        "v"
+      ],
+      "mult": [
+        1,
+        3
+      ],
+      "T": 250,
+      "D": 150,
+      "note": "include cubic term to enlarge search space",
+      "source": "llm:openai/gpt-oss-120b",
       "tie": false
     }
   ]

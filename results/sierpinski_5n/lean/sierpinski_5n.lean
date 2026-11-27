@@ -213,3 +213,12 @@ theorem cls_2520_1861 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤
   · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
   · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
   · ring
+
+/-- class n = 420k + 181, k = m + 0. Witnesses: ['1260*k + 543', '37800*k**2 + 32670*k + 7059', '90*k + 39'] -/
+theorem cls_420_181 (m : ℕ) : ∃ x y z : ℤ, 1 ≤ x ∧ 1 ≤ y ∧ 1 ≤ z ∧ -(420*(m:ℤ) + 181)*x*y - (420*(m:ℤ) + 181)*x*z - (420*(m:ℤ) + 181)*y*z + 5*x*y*z = 0 := by
+  have hm : (0:ℤ) ≤ (m:ℤ) := by positivity
+  refine ⟨(1260*(m:ℤ) + 543), (37800*(m:ℤ)^2 + 32670*(m:ℤ) + 7059), (90*(m:ℤ) + 39), ?_, ?_, ?_, ?_⟩
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · nlinarith [hm, pow_nonneg hm 2, pow_nonneg hm 3, pow_nonneg hm 4, pow_nonneg hm 5, pow_nonneg hm 6, pow_nonneg hm 7, pow_nonneg hm 8]
+  · ring
