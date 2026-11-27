@@ -2,11 +2,11 @@
   "date": "2026-11-27",
   "providers": {
     "default": {
-      "completion_tokens": 6718,
+      "completion_tokens": 7893,
       "failures": 5,
       "last_error": "response has no text content",
-      "prompt_tokens": 12139,
-      "requests": 23
+      "prompt_tokens": 14458,
+      "requests": 24
     }
   },
   "runs": [
@@ -198,6 +198,15 @@
       "provider": "default",
       "requests": 3,
       "utc": "2026-11-27T13:33:10Z"
+    },
+    {
+      "completion_tokens": 1175,
+      "ok": true,
+      "problem": "abc_proof",
+      "prompt_tokens": 2319,
+      "provider": "default",
+      "requests": 1,
+      "utc": "2026-11-27T13:43:12Z"
     }
   ]
 }

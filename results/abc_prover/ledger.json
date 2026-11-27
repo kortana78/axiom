@@ -121,20 +121,43 @@
       "signature": "theorem rad_pos (n : \u2115) (h : 0 < n) : 0 < Abc.rad n",
       "status": "CHECKED",
       "target_like": false
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "checked_at": "2026-11-27T13:43:15Z",
+      "id": "sha256:160cc8695cf2713f",
+      "lean": "theorem rad_pos (n : \u2115) (h : 0 < n) : 0 < Abc.rad n := by\n  dsimp [Abc.rad]\n  have hpos : \u2200 p \u2208 n.primeFactors, (0 : \u2115) < p := by\n    intro p hp\n    have hpprime := Nat.prime_of_mem_primeFactors hp\n    exact hpprime.pos\n  have : 0 < n.primeFactors.prod id := by\n    apply Finset.prod_pos\n    intro p hp\n    exact hpos p hp\n  simpa using this",
+      "lean_version": "Lean (version 4.37.0-rc1, x86_64-unknown-linux-gnu, commit 0b77e12952ad39077d80d8bd6b66d601f225c321, Release)",
+      "mathlib_version": "cf28751adfc7f48c0f7c6c0954a61c38cd957439",
+      "model": "openai/gpt-oss-120b",
+      "name": "rad_pos",
+      "output_tail": "",
+      "rationale": "product of positive prime factors is positive",
+      "reason": "Lean accepted the lemma with only allowed axioms",
+      "round": 1,
+      "route": "definitions",
+      "seconds": 2.7,
+      "signature": "theorem rad_pos (n : \u2115) (h : 0 < n) : 0 < Abc.rad n",
+      "status": "CHECKED",
+      "target_like": false
     }
   ],
   "comment": "Lean-checked auxiliary lemmas only. CHECKED is not a proof of Abc.Statement. The abc alarm remains the only judge.",
   "stats": {
-    "checked": 2,
+    "checked": 3,
     "rejected": 4,
     "routes": {
       "definitions": {
-        "checked": 2,
+        "checked": 3,
         "rejected": 4
       }
     },
     "target_attempts": 0,
-    "total": 6
+    "total": 7
   },
-  "updated_utc": "2026-11-27T13:33:10Z"
+  "updated_utc": "2026-11-27T13:43:15Z"
 }
