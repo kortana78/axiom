@@ -1,0 +1,105 @@
+name: abc-proof-attempts
+
+# Bounded LLM -> Lean auxiliary-lemma loop.  It records CHECKED or REJECTED
+# lemmas in results/abc_prover/.  It never writes lean/Abc/Proof.lean and
+# never writes results/abc_proof/status.json.  The abc alarm remains the only
+# judge of an actual proof.  A missing key skips, it is not a failure.
+
+on:
+  schedule:
+    - cron: "47 4 * * 1"
+  workflow_dispatch:
+    inputs:
+      rounds:
+        description: "LLM rounds"
+        default: "2"
+      max_proposals:
+        description: "proposals per round"
+        default: "2"
+      max_requests:
+        description: "LLM requests this run"
+        default: "1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: abc-proof-attempts
+  cancel-in-progress: false
+
+env:
+  ROUNDS: ${{ github.event.inputs.rounds || '2' }}
+  MAX_PROPOSALS: ${{ github.event.inputs.max_proposals || '2' }}
+  MAX_REQUESTS: ${{ github.event.inputs.max_requests || '1' }}
+
+jobs:
+  attempts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt pytest
+
+      - name: loop tests (fake checker, no Lean)
+        run: python -m pytest tests/test_abc_prover.py -q
+
+      - name: install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: mathlib with cached build (pinned)
+        run: |
+          git init "$RUNNER_TEMP/mathlib4"
+          cd "$RUNNER_TEMP/mathlib4"
+          git remote add origin https://github.com/leanprover-community/mathlib4
+          git fetch --depth 1 origin cf28751adfc7f48c0f7c6c0954a61c38cd957439
+          git checkout --detach FETCH_HEAD
+          lake exe cache get
+
+      - name: bounded proof attempts (skips without a key)
+        env:
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          LLM_MAX_REQUESTS_PER_RUN: "1"
+          LLM_MAX_REQUESTS_PER_DAY: "20"
+          LLM_TOTAL_TIMEOUT: "180"
+        run: |
+          python -m axiom.abc_prover.loop \
+            --mathlib "$RUNNER_TEMP/mathlib4" \
+            --rounds "$ROUNDS" \
+            --max-proposals "$MAX_PROPOSALS" \
+            --time 1800 \
+            --max-requests "$MAX_REQUESTS"
+
+      - name: prover must not touch the alarm
+        run: |
+          if git diff --quiet -- lean/Abc/Proof.lean results/abc_proof/status.json; then
+            echo "alarm untouched"
+          else
+            echo "prover touched an alarm file" >&2
+            git diff -- lean/Abc/Proof.lean results/abc_proof/status.json >&2
+            exit 1
+          fi
+
+      - name: commit attempts
+        if: always() && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "axiom-swarm"
+          git config user.email "axiom-swarm@users.noreply.github.com"
+          git add -A results/abc_prover results/llm_usage.json 2>/dev/null || true
+          git commit -m "abc: proof attempts [skip ci]" || exit 0
+          git pull --rebase
+          git push
+
+      - name: dashboard reflects attempts
+        if: always() && github.ref == 'refs/heads/main'
+        run: |
+          python -m axiom.swarm.dashboard
+          git add results/SUMMARY.md results/index.html
+          git commit -m "abc: attempts dashboard [skip ci]" || exit 0
+          git pull --rebase
+          git push
