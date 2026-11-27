@@ -57,7 +57,9 @@ NEW_MODULES = [
     "abc_prover/__init__.py", "abc_prover/routes.py",
     "abc_prover/proposals.py", "abc_prover/lean.py",
     "abc_prover/ledger.py", "abc_prover/prompt.py",
-    "abc_prover/loop.py",
+    "abc_prover/loop.py", "abc_prover/lock.py",
+    "abc_prover/pool.py", "abc_prover/merge.py",
+    "abc_prover/worker.py", "abc_prover/supervisor.py",
 ]
 
 GATED_MODULES = {

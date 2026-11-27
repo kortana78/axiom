@@ -43,6 +43,18 @@ def save_json(path: str, data: Dict[str, object]) -> None:
     os.replace(tmp, path)
 
 
+def write_target_attempt(path: str, attempt: Dict[str, object]) -> None:
+    """Save a checked target-like lemma for human review, never promotion."""
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", encoding="utf-8", newline="\n") as fh:
+        fh.write(
+            "-- Lean-checked target-like lemma proposed by axiom.abc_prover.\n"
+            "-- This is NOT lean/Abc/Proof.lean and has NOT been promoted.\n"
+            "-- Review it; the abc alarm must verify any proof independently.\n"
+            "\n"
+            + str(attempt.get("lean", "")).rstrip() + "\n")
+
+
 def append_attempt(ledger: Dict[str, object], attempt: Dict[str, object],
                    keep: int = 200) -> None:
     attempts = [a for a in (ledger.get("attempts") or [])

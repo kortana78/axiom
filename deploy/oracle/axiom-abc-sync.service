@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync public abc prover results to GitHub
+
+[Service]
+Type=oneshot
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/axiom
+Environment=PATH=/home/ubuntu/.elan/bin:/opt/axiom/.venv/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/bin/bash /opt/axiom/deploy/oracle/sync-results.sh

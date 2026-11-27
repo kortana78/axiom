@@ -132,6 +132,30 @@ CI runs the same loop weekly and on manual dispatch
 `results/llm_usage.json` budget and fails the job if the prover touched
 `lean/Abc/Proof.lean` or the alarm status file.
 
+### 24/7 fleet (Oracle/VPS)
+
+`axiom.abc_prover.supervisor` keeps N workers alive continuously; each worker
+owns a Lean harness, asks a shared provider pool for a request, checks one
+batch, merges its ledger, and writes a heartbeat:
+
+```bash
+python -m axiom.abc_prover.supervisor --workers 3 --mathlib /path/to/mathlib4 \
+    --root . --health
+python -m axiom.abc_prover.supervisor --health   # 0 = healthy
+```
+
+Providers rotate from `LLM_PROVIDERS` (Groq, OpenRouter, ...) with per-provider
+daily quotas in `results/abc_prover/quota` and shared accounting in
+`results/llm_usage.json`. The fleet never sleeps; systemd restarts it if it
+exits. `deploy/oracle/` contains the installer, systemd units, env template,
+and an hourly result-sync timer. `deploy/pulse/` is an optional Render status
+beacon — monitoring only, not compute.
+
+Keep the worker count realistic: Mathlib checks need ~1–2 GB and ~50 s each, so
+2–3 workers on a 4-core/24 GB Oracle Always Free VM. More agents require more
+instances and more legitimate free-tier keys, not infinite workers on one box.
+See `deploy/oracle/README.md` for scaling and honesty notes.
+
 # (0.3 notes) Blind Mathematical Discovery with Certified Reductions
 
 ## What is new in 0.3

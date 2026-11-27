@@ -24,5 +24,14 @@ TARGET_ATTEMPT_PATH = "results/abc_prover/target_attempt.lean"
 #: Known routes and gaps shown to the model.
 ROUTES_PATH = "swarm/abc_prover_routes.json"
 
+#: Per-worker ledgers and heartbeats for the persistent fleet.
+WORKERS_DIR = "results/abc_prover/workers"
+#: Supervisor heartbeat and worker roster.
+SUPERVISOR_PATH = "results/abc_prover/supervisor.json"
+#: Atomic per-provider daily request reservations.
+QUOTA_DIR = "results/abc_prover/quota"
+#: Shared request/token accounting (also used by the rest of the swarm).
+USAGE_PATH = "results/llm_usage.json"
+
 #: A single proposal larger than this is rejected before Lean runs.
 MAX_LEAN_CHARS = 12000

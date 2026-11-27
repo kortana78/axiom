@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: axiom-abc-pulse
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: "pip install -r deploy/pulse/requirements.txt"
+    startCommand: "python deploy/pulse/app.py"
+    healthCheckPath: /healthz
+    envVars:
+      - key: AXIOM_STATUS_URL
+        value: https://raw.githubusercontent.com/kortana78/axiom/main/results/abc_prover/supervisor.json
+      - key: AXIOM_MAX_AGE
+        value: "21600"

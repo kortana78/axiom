@@ -1,0 +1,6 @@
+# Runtime-only fleet files. Attempts/heartbeats are committed; logs and
+# lock/quota sidecars are not.
+workers/*/worker.log
+workers/*/target_attempt.lean
+quota/
+*.lock

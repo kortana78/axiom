@@ -24,6 +24,7 @@ from . import (
     CHECKED,
     LEDGER_PATH,
     NO_PROOF,
+    QUOTA_DIR,
     REJECTED,
     ROUTES_PATH,
     SKIPPED,
@@ -38,22 +39,12 @@ from .ledger import (
     save_ledger,
     stats,
     utc_now,
+    write_target_attempt,
 )
 from .lean import LeanHarness, LeanUnavailable
 from .prompt import build_prompt
 from .proposals import parse_proposals, signature
 from .routes import load_routes, route_names
-
-
-def _write_target_attempt(path: str, attempt: Dict[str, object]) -> None:
-    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-    with open(path, "w", encoding="utf-8", newline="\n") as fh:
-        fh.write(
-            "-- Lean-checked target-like lemma proposed by axiom.abc_prover.\n"
-            "-- This is NOT lean/Abc/Proof.lean and has NOT been promoted.\n"
-            "-- Review it; the abc alarm must verify any proof independently.\n"
-            "\n"
-            + str(attempt.get("lean", "")).rstrip() + "\n")
 
 
 def _attempt_from(proposal: dict, result: Dict[str, object], round_no: int,
@@ -89,8 +80,16 @@ def run(rounds: int = 2, max_proposals: int = 3, time_budget: float = 600.0,
         usage_path: str = "results/llm_usage.json",
         providers: Optional[List[Provider]] = None,
         client=None, checker=None, transport=None,
-        max_requests: int = 1) -> Dict[str, object]:
-    """Run the bounded loop and return a report.  No proof claim is made."""
+        max_requests: int = 1, pool=None,
+        context_ledger_path: Optional[str] = None,
+        seen_ids: Optional[set] = None) -> Dict[str, object]:
+    """Run the bounded loop and return a report.  No proof claim is made.
+
+    ``pool`` is a :class:`axiom.abc_prover.pool.ProviderPool`.  When supplied,
+    the loop rotates providers per round and the pool enforces shared daily
+    caps.  ``context_ledger_path`` lets a worker read the merged fleet ledger
+    for prompt context while writing attempts to its own ledger.
+    """
     routes = load_routes(routes_path)
     allowed = route_names(routes)
     try:
@@ -99,13 +98,23 @@ def run(rounds: int = 2, max_proposals: int = 3, time_budget: float = 600.0,
     except OSError:
         statement_source = ""
     ledger = load_ledger(ledger_path)
-    attempts = [a for a in (ledger.get("attempts") or [])
-                if isinstance(a, dict)]
-    checked = [a for a in attempts if a.get("status") == CHECKED]
-    failures = [a for a in attempts if a.get("status") == REJECTED]
-    seen = {str(a.get("id", "")) for a in attempts}
+    local_attempts = [a for a in (ledger.get("attempts") or [])
+                      if isinstance(a, dict)]
+    context_ledger = (load_ledger(context_ledger_path)
+                      if context_ledger_path else ledger)
+    context_attempts = [a for a in (context_ledger.get("attempts") or [])
+                        if isinstance(a, dict)]
+    checked = [a for a in context_attempts if a.get("status") == CHECKED]
+    failures = [a for a in context_attempts if a.get("status") == REJECTED]
+    seen = {str(a.get("id", "")) for a in local_attempts}
+    seen |= {str(a.get("id", "")) for a in context_attempts}
+    if seen_ids:
+        seen |= {str(x) for x in seen_ids}
 
-    if client is None:
+    clients: Dict[str, LLMClient] = {}
+    provider = None
+    model = "fake"
+    if client is None and pool is None:
         providers = load_providers() if providers is None else providers
         if not providers:
             status = build_status(ledger, routes)
@@ -117,11 +126,20 @@ def run(rounds: int = 2, max_proposals: int = 3, time_budget: float = 600.0,
                     "abc": "OPEN", "verdict": NO_PROOF}
         provider = providers[0]
         client = LLMClient(provider, transport=transport)
-    else:
-        provider = None
+        model = provider.model
+    elif client is not None:
+        model = getattr(getattr(client, "provider", None), "model", "fake")
 
-    model = getattr(provider, "model", "fake")
-    usage = UsageLedger(usage_path) if provider is not None else None
+    if pool is not None and not getattr(pool, "providers", []):
+        status = build_status(ledger, routes)
+        status.update(verdict=SKIPPED,
+                      note="no LLM providers configured; no attempts this run")
+        save_json(status_path, status)
+        print("[abc-prover] skipped: no LLM providers configured")
+        return {"enabled": False, "reason": "no LLM providers configured",
+                "abc": "OPEN", "verdict": NO_PROOF}
+
+    usage = UsageLedger(usage_path) if (provider is not None and pool is None) else None
     started = time.time()
     deadline = started + max(1.0, float(time_budget))
     errors: List[str] = []
@@ -147,26 +165,52 @@ def run(rounds: int = 2, max_proposals: int = 3, time_budget: float = 600.0,
             if time.time() >= deadline:
                 errors.append("time budget exhausted")
                 break
-            if usage is not None and provider is not None:
-                if not usage.can_request(provider.name,
-                                         provider.max_requests_per_day):
+
+            active_provider = provider
+            active_client = client
+            if pool is not None:
+                lease = pool.acquire()
+                if lease is None:
+                    errors.append(str(getattr(pool, "last_reason",
+                                              "no provider available")))
+                    break
+                active_provider = lease.provider
+                active_client = clients.get(active_provider.name)
+                if active_client is None:
+                    active_client = LLMClient(active_provider,
+                                              transport=transport)
+                    clients[active_provider.name] = active_client
+                model = active_provider.model
+            if active_client is None:
+                errors.append("no LLM client available")
+                break
+            if usage is not None and active_provider is not None:
+                if not usage.can_request(active_provider.name,
+                                         active_provider.max_requests_per_day):
                     errors.append("daily request limit reached")
                     break
+
             messages = build_prompt(routes, checked, failures, max_proposals,
                                     statement_source=statement_source)
             try:
-                resp = client.chat(messages, max_tokens=3500, temperature=0.3)
+                resp = active_client.chat(messages, max_tokens=3500,
+                                          temperature=0.3)
             except LLMError as exc:
-                if usage is not None and provider is not None:
-                    usage.record(provider.name,
-                                 requests=int(provider.max_retries) + 1,
+                if pool is not None and active_provider is not None:
+                    pool.record_failure(active_provider, exc)
+                elif usage is not None and active_provider is not None:
+                    usage.record(active_provider.name,
+                                 requests=int(active_provider.max_retries) + 1,
                                  ok=False, error=str(exc), problem="abc_proof")
                 errors.append(str(exc))
-                break
+                requests_made += 1
+                continue
             requests_made += 1
             rounds_done += 1
-            if usage is not None and provider is not None:
-                usage.record(provider.name, requests=resp.attempts,
+            if pool is not None and active_provider is not None:
+                pool.record_success(active_provider, resp)
+            elif usage is not None and active_provider is not None:
+                usage.record(active_provider.name, requests=resp.attempts,
                              prompt_tokens=resp.prompt_tokens,
                              completion_tokens=resp.completion_tokens,
                              ok=True, problem="abc_proof")
@@ -183,7 +227,8 @@ def run(rounds: int = 2, max_proposals: int = 3, time_budget: float = 600.0,
                     continue
                 seen.add(proposal["id"])
                 result = checker(proposal["lean"], proposal["name"])
-                attempt = _attempt_from(proposal, result, round_no, model)
+                attempt = _attempt_from(proposal, result, round_no,
+                                        getattr(resp, "model", model))
                 append_attempt(ledger, attempt)
                 save_ledger(ledger, ledger_path)
                 new_attempts.append(attempt)
@@ -193,7 +238,7 @@ def run(rounds: int = 2, max_proposals: int = 3, time_budget: float = 600.0,
                           f"({attempt['route']})")
                     if attempt["target_like"]:
                         target_attempts.append(attempt)
-                        _write_target_attempt(target_path, attempt)
+                        write_target_attempt(target_path, attempt)
                         print("[abc-prover] TARGET-LIKE LEMMA CHECKED; saved to "
                               f"{target_path}")
                         print("[abc-prover] NOT promoted to lean/Abc/Proof.lean; "
@@ -256,17 +301,28 @@ def main(argv=None) -> int:
     ap.add_argument("--routes", default=ROUTES_PATH)
     ap.add_argument("--target", default=TARGET_ATTEMPT_PATH)
     ap.add_argument("--usage", default="results/llm_usage.json")
+    ap.add_argument("--quota", default=QUOTA_DIR)
+    ap.add_argument("--context-ledger", default=None,
+                    help="read prompt context/duplicates from this ledger")
+    ap.add_argument("--pool", action="store_true",
+                    help="rotate over LLM_PROVIDERS with shared daily quotas")
     ap.add_argument("--dry-run", action="store_true",
                     help="print the prompt and exit without calling an LLM")
     a = ap.parse_args(argv)
     if a.dry_run:
         routes = load_routes(a.routes)
         print(json.dumps(build_prompt(routes, [], [], a.max_proposals),
-                         indent=2, ensure_ascii=False))
+                         indent=2, ensure_ascii=True))
         return 0
+    pool = None
+    if a.pool:
+        from .pool import build_pool
+
+        pool = build_pool(usage_path=a.usage, quota_dir=a.quota)
     report = run(a.rounds, a.max_proposals, a.time, a.mathlib,
                  a.ledger, a.status, a.routes, a.target, a.usage,
-                 max_requests=a.max_requests)
+                 max_requests=a.max_requests, pool=pool,
+                 context_ledger_path=a.context_ledger)
     print(json.dumps(report, indent=2, default=str))
     return 0 if report.get("enabled") or report.get("reason") == "no LLM_API_KEY" else 1
 

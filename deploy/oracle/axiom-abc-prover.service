@@ -1,0 +1,24 @@
+[Unit]
+Description=AXIOM 24/7 abc proof-attempt fleet (auxiliary lemmas only)
+Documentation=https://github.com/kortana78/axiom
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/axiom
+EnvironmentFile=/etc/axiom/abc-prover.env
+Environment=PATH=/home/ubuntu/.elan/bin:/opt/axiom/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/axiom/.venv/bin/python -m axiom.abc_prover.supervisor --root /opt/axiom
+Restart=always
+RestartSec=10
+KillMode=mixed
+TimeoutStopSec=90
+StandardOutput=append:/var/log/axiom-abc-prover.log
+StandardError=append:/var/log/axiom-abc-prover.log
+
+[Install]
+WantedBy=multi-user.target

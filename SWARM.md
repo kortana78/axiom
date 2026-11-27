@@ -113,6 +113,15 @@ python -m axiom.abc_prover.loop --mathlib /path/to/mathlib4 \
 - `.github/workflows/abc-prover.yml` runs the loop weekly and on manual
   dispatch, under the shared `results/llm_usage.json` budget. It fails if the
   prover touches `lean/Abc/Proof.lean` or `results/abc_proof/status.json`.
+- `axiom.abc_prover.supervisor` runs the same loop 24/7 with N persistent
+  workers. `axiom.abc_prover.pool` rotates free providers, enforces per-provider
+  daily reservations, and cools down failing providers. Each worker merges into
+  the public ledger and writes a heartbeat; the dashboard shows the fleet line.
+- `deploy/oracle/` deploys the fleet on an Oracle Always Free VM with systemd
+  (installer, env template, service, hourly sync timer). `deploy/pulse/` is an
+  optional Render monitoring beacon, not a place to run Lean.
+- Fleet status is always `abc: OPEN` / `NO_PROOF`. Scaling means more instances
+  and more legitimate free keys, not 10k Lean processes on one free VM.
 
 ## The idea generator (`axiom/ideas/`)
 

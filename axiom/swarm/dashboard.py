@@ -142,6 +142,16 @@ def build(queue_path="swarm/queue.json", root="results"):
         f"checked lemmas: {len(pchecked)}; rejected: {len(prejected)}; "
         "a checked lemma is not a proof of Abc.Statement."
     )
+    fleet = load_json(os.path.join(root, "abc_prover", "supervisor.json"),
+                      {}) or {}
+    if not isinstance(fleet, dict):
+        fleet = {}
+    fleet_note = (
+        f"prover fleet: {fleet.get('workers_running', 0)}/"
+        f"{fleet.get('workers_requested', 0)} workers online; "
+        f"heartbeat {fleet.get('updated_utc', 'never')}; "
+        "24/7 fleet checks auxiliary lemmas only."
+    )
 
     proof = load_json(os.path.join(root, "abc_proof", "status.json"), None)
     if not isinstance(proof, dict):
@@ -177,6 +187,8 @@ def build(queue_path="swarm/queue.json", root="results"):
         + "<h2>ABC proof attempts (lemmas only, not abc)</h2>"
         + f"<p>{html.escape(prover_note)}</p>"
         + _html_table(pheaders, prows)
+        + "<h2>ABC prover fleet (24/7, lemmas only, not abc)</h2>"
+        + f"<p>{html.escape(fleet_note)}</p>"
         + "<p>Every reduction family is re-checked by the Axiom kernel at merge time. "
         "ABC records are exact integer triples re-checked by the merger (gcd, sum, and "
         "radical). S-unit lists are independently re-enumerated by `axiom.sunit.check`; "
@@ -199,6 +211,8 @@ def build(queue_path="swarm/queue.json", root="results"):
     md += _md_table(rheaders, rrows)
     md += ["", "## ABC proof attempts (lemmas only, not abc)", "", prover_note, ""]
     md += _md_table(pheaders, prows)
+    md += ["", "## ABC prover fleet (24/7, lemmas only, not abc)", "",
+           fleet_note, ""]
     md += ["", "Every reduction family is re-checked by the Axiom kernel at merge time. "
            "ABC records are exact integer triples re-checked by the merger; the hunter "
            "does not prove the abc conjecture. S-unit certificates are finite complete "
