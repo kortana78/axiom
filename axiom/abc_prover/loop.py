@@ -282,9 +282,10 @@ def run(rounds: int = 2, max_proposals: int = 3, time_budget: float = 600.0,
         "elapsed_s": round(time.time() - started, 1),
         "note": "Checked lemmas are Lean theorems, not a proof of abc.",
     }
-    print(f"[abc-prover] {len(new_attempts)} checked this run; "
-          f"ledger {st['checked']} checked / {st['rejected']} rejected; "
-          "abc remains OPEN")
+    n_checked = sum(1 for a in new_attempts if a.get("status") == CHECKED)
+    print(f"[abc-prover] {n_checked} checked / {len(new_attempts)} attempted "
+          f"this run; ledger {st['checked']} checked / {st['rejected']} "
+          "rejected; abc remains OPEN")
     return report
 
 
