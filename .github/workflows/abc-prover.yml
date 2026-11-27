@@ -65,7 +65,7 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
           LLM_MAX_REQUESTS_PER_RUN: "1"
-          LLM_MAX_REQUESTS_PER_DAY: "20"
+          LLM_MAX_REQUESTS_PER_DAY: "30"
           LLM_TOTAL_TIMEOUT: "180"
         run: |
           python -m axiom.abc_prover.loop \
