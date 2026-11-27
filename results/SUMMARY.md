@@ -4,20 +4,20 @@
 
 proof alarm: OPEN — lean/Abc/Proof.lean is absent; abc remains OPEN
 
-updated 2026-11-27 14:56 UTC
+updated 2026-11-27 22:14 UTC
 
 ## Witness reductions
 
 | problem | status | modulus | open / relevant | families | last note | Lean |
 |---|---|---|---|---|---|---|
-| erdos_straus | open: reduction certified | 840 | 6 / 196 | 39 | grammar ceiling reached: modulus refined 840 -> 2520 | Lean accepted 39/39 lemmas |
-| sierpinski_5n | open: reduction certified | 2520 | 2 / 580 | 24 | progress at current grammar | Lean accepted 24/24 lemmas |
+| erdos_straus | open: reduction certified | 2520 | 18 / 580 | 39 | no progress: grammar enlarged | Lean accepted 39/39 lemmas |
+| sierpinski_5n | open: reduction certified | 2520 | 2 / 580 | 24 | no progress: grammar enlarged | Lean accepted 24/24 lemmas |
 
 ## ABC triple hunter (search only)
 
 | problem | status | c max | best q | records | last note | Lean |
 |---|---|---|---|---|---|---|
-| abc | search only: 200 verified triples; best q=1.629912; no proof of abc | 100,000,000 | 1.629912 | 200 | best 2 + 6436341 = 6436343 (rad 15042); c_smooth advanced to 349763 | Lean accepted 200/200 lemmas |
+| abc | search only: 200 verified triples; best q=1.629912; no proof of abc | 100,000,000 | 1.629912 | 200 | best 2 + 6436341 = 6436343 (rad 15042); c_smooth advanced to 449336 | Lean accepted 200/200 lemmas |
 
 ## S-unit certificates (finite completeness, not abc)
 

@@ -321,6 +321,27 @@
       "seconds": 1374.6,
       "source": "llm:openai/gpt-oss-120b",
       "note": "use n2 and nvv to capture composite structures"
+    },
+    "order=zyx|atoms=n,n2v,vv|mult=1,2,4|T=200|D=120": {
+      "hits": 0,
+      "tested": 2,
+      "seconds": 1589.8,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "mixed multiples to explore scaling symmetry"
+    },
+    "order=yzx|atoms=n2v,nvv,vv|mult=1|T=80|D=48": {
+      "hits": 0,
+      "tested": 2,
+      "seconds": 0.1,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "use higher\u2011power n2v and nvv atoms to capture extra divisibility patterns"
+    },
+    "order=zxy|atoms=n,n3,nv,v|mult=1,2|T=100|D=60": {
+      "hits": 0,
+      "tested": 2,
+      "seconds": 1112.3,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "combine linear and cubic atoms with a double multiplier to broaden the search space"
     }
   },
   "families": {
@@ -530,6 +551,21 @@
       "hits": 2
     },
     "order=yxz|atoms=n2,nv,nvv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=zyx|atoms=n,n2v,vv|mult=3": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=yzx|atoms=n2v,nvv,vv|mult=1": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=zxy|atoms=n,n3,nv,v|mult=2": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0

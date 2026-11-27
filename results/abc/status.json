@@ -32,8 +32,8 @@
   },
   "cursors": {
     "c_smooth": {
-      "next": 349763,
-      "width": 99573,
+      "next": 449336,
+      "width": 119487,
       "exhausted": false
     },
     "legs_smooth": {
@@ -42,7 +42,7 @@
       "exhausted": true
     }
   },
-  "batch": 7,
+  "batch": 8,
   "history": [
     {
       "utc": "2026-11-26T15:51:10Z",
@@ -113,6 +113,16 @@
       "new_records": 0,
       "best_q": 1.6299116841270482,
       "note": "c_smooth advanced to 349763"
+    },
+    {
+      "utc": "2026-11-27T22:14:13Z",
+      "shards_merged": 3,
+      "candidates": 90,
+      "rejected": 0,
+      "records": 200,
+      "new_records": 0,
+      "best_q": 1.6299116841270482,
+      "note": "c_smooth advanced to 449336"
     }
   ],
   "next_frontier": {

@@ -15,8 +15,8 @@
   "reduction_statement": "target holds for all n >= 2 if it holds for every prime in the open classes mod 2520",
   "next_frontier": {
     "modulus": 2520,
-    "T": 60,
-    "D": 36,
+    "T": 90,
+    "D": 54,
     "open": 2
   },
   "history": [
@@ -151,6 +151,17 @@
       "shards_merged": 3,
       "rejected_families": 0,
       "note": "progress at current grammar"
+    },
+    {
+      "utc": "2026-11-27T22:14:13Z",
+      "modulus": 2520,
+      "open": 2,
+      "relevant": 580,
+      "T": 60,
+      "D": 36,
+      "shards_merged": 3,
+      "rejected_families": 0,
+      "note": "no progress: grammar enlarged"
     }
   ]
 }
