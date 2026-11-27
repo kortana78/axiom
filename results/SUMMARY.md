@@ -4,7 +4,7 @@
 
 proof alarm: OPEN — lean/Abc/Proof.lean is absent; abc remains OPEN
 
-updated 2026-11-27 14:54 UTC
+updated 2026-11-27 14:56 UTC
 
 ## Witness reductions
 
@@ -36,7 +36,7 @@ updated 2026-11-27 14:54 UTC
 
 ## ABC proof attempts (lemmas only, not abc)
 
-checked lemmas: 3; rejected: 4; a checked lemma is not a proof of Abc.Statement.
+checked lemmas: 3; rejected: 5; a checked lemma is not a proof of Abc.Statement.
 
 | lemma | route | status | axioms | checked at |
 |---|---|---|---|---|
@@ -47,6 +47,7 @@ checked lemmas: 3; rejected: 4; a checked lemma is not a proof of Abc.Statement.
 | rad_dvd | definitions | CHECKED | propext, Classical.choice, Quot.sound | 2026-11-27T13:01:38Z |
 | rad_pos | definitions | CHECKED | propext, Classical.choice, Quot.sound | 2026-11-27T13:03:27Z |
 | rad_pos | definitions | CHECKED | propext, Classical.choice, Quot.sound | 2026-11-27T13:43:15Z |
+| rad_le | definitions | REJECTED | none | 2026-11-27T14:56:53Z |
 
 ## ABC prover fleet (24/7, lemmas only, not abc)
 
