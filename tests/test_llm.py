@@ -76,6 +76,26 @@ def test_client_retries_and_returns_usage():
     assert sleeps and "chat/completions" in calls[0]
 
 
+def test_client_retries_empty_content():
+    p = config.Provider("p", "https://example.test/v1", "k", "m",
+                        max_retries=1, total_timeout=10)
+    calls = []
+
+    def transport(url, headers, payload, timeout):
+        calls.append(url)
+        if len(calls) == 1:
+            return 200, {}, json.dumps({
+                "choices": [{"message": {"content": ""}}],
+            })
+        return 200, {}, json.dumps({
+            "choices": [{"message": {"content": "{\"ok\": true}"}}],
+        })
+
+    c = client.LLMClient(p, transport=transport, sleep=lambda _s: None)
+    r = c.chat([{"role": "user", "content": "hi"}])
+    assert r.attempts == 2 and r.text == "{\"ok\": true}"
+
+
 def test_client_gives_up_after_retries():
     p = config.Provider("p", "https://example.test/v1", "k", "m",
                         max_retries=1, total_timeout=10)

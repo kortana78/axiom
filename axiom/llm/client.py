@@ -69,7 +69,9 @@ def _content(data: dict) -> str:
     if text is None:
         text = choice.get("text")
     if not isinstance(text, str) or not text.strip():
-        raise LLMError("response has no text content")
+        # A 200 response with empty content is usually a transient provider
+        # glitch or a reasoning-model truncation; retry it like a 5xx.
+        raise TransientError("response has no text content")
     return text
 
 
