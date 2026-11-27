@@ -126,8 +126,200 @@
       ],
       "source": "llm:openai/gpt-oss-120b",
       "tie": true
+    },
+    {
+      "D": 120,
+      "T": 200,
+      "atoms": [
+        "n",
+        "n2",
+        "nv",
+        "v"
+      ],
+      "mult": [
+        1,
+        2
+      ],
+      "note": "add n2 and v together with n and nv to broaden search space while keeping moderate T/D",
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
+    },
+    {
+      "D": 90,
+      "T": 150,
+      "atoms": [
+        "n",
+        "n3",
+        "nv",
+        "vv"
+      ],
+      "mult": [
+        1
+      ],
+      "note": "focus on n3 and vv atoms which may capture structures for larger prime residues",
+      "order": [
+        "y",
+        "z",
+        "x"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": true
+    },
+    {
+      "D": 180,
+      "T": 300,
+      "atoms": [
+        "n",
+        "n2v",
+        "nvv"
+      ],
+      "mult": [
+        2
+      ],
+      "note": "use mult=2 to exploit scaling symmetry and target the remaining open residue classes",
+      "order": [
+        "z",
+        "x",
+        "y"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
+    },
+    {
+      "D": 80,
+      "T": 120,
+      "atoms": [
+        "n",
+        "n2v",
+        "nvv"
+      ],
+      "mult": [
+        1,
+        3
+      ],
+      "note": "Add nvv and a scaling factor 3 to explore deeper residue classes",
+      "order": [
+        "x",
+        "z",
+        "y"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
+    },
+    {
+      "D": 130,
+      "T": 200,
+      "atoms": [
+        "n",
+        "n2",
+        "n3",
+        "v",
+        "nv",
+        "n2v",
+        "vv",
+        "nvv"
+      ],
+      "mult": [
+        2
+      ],
+      "note": "Use the full atom set with a uniform multiplier to broaden the search space",
+      "order": [
+        "x",
+        "y",
+        "z"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
+    },
+    {
+      "D": 70,
+      "T": 100,
+      "atoms": [
+        "n",
+        "v",
+        "nv"
+      ],
+      "mult": [
+        1
+      ],
+      "note": "Reverse variable order focusing on simple atom kinds for a different symmetry",
+      "order": [
+        "z",
+        "y",
+        "x"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
+    },
+    {
+      "D": 48,
+      "T": 80,
+      "atoms": [
+        "n2",
+        "n3",
+        "nv",
+        "nvv"
+      ],
+      "mult": [
+        1
+      ],
+      "note": "explore deeper search with mixed n2/n3 atoms",
+      "order": [
+        "z",
+        "x",
+        "y"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
+    },
+    {
+      "D": 60,
+      "T": 100,
+      "atoms": [
+        "n",
+        "n2v",
+        "vv"
+      ],
+      "mult": [
+        1,
+        3
+      ],
+      "note": "allow triple multiplier to capture larger denominators",
+      "order": [
+        "y",
+        "z",
+        "x"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": true
+    },
+    {
+      "D": 54,
+      "T": 90,
+      "atoms": [
+        "n2",
+        "n2v",
+        "nvv",
+        "vv"
+      ],
+      "mult": [
+        2
+      ],
+      "note": "use doubled multiplier with extended atom set",
+      "order": [
+        "x",
+        "z",
+        "y"
+      ],
+      "source": "llm:openai/gpt-oss-120b",
+      "tie": false
     }
   ],
   "kind": "witness",
-  "updated_utc": "2026-11-26T22:44:14Z"
+  "updated_utc": "2026-11-27T08:50:14Z"
 }

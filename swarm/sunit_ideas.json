@@ -53,8 +53,60 @@
       "q": null,
       "rationale": "Banding refines the height bound region, focusing LLL searches on promising strips.",
       "source": "llm:openai/gpt-oss-120b"
+    },
+    {
+      "S": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "method": "p_adic_log",
+      "parameters": {
+        "max_iterations": 1000,
+        "precision": 40
+      },
+      "priority": 1,
+      "q": 2,
+      "rationale": "p-adic logarithms give linear forms with small denominators, reducing the search space for the extra prime 7.",
+      "source": "llm:openai/gpt-oss-120b"
+    },
+    {
+      "S": [
+        2,
+        3,
+        5,
+        11
+      ],
+      "method": "sieving",
+      "parameters": {
+        "bucket_size": 500,
+        "moduli_limit": 10000
+      },
+      "priority": 2,
+      "q": null,
+      "rationale": "A modular sieve on residues modulo many small composites quickly discards impossible exponent vectors before lattice reduction.",
+      "source": "llm:openai/gpt-oss-120b"
+    },
+    {
+      "S": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "method": "banding",
+      "parameters": {
+        "band_width": 10,
+        "height_cutoff": 600
+      },
+      "priority": 3,
+      "q": null,
+      "rationale": "Banding groups exponent vectors by similar heights, allowing tighter LLL runs on each band and improving overall completeness.",
+      "source": "llm:openai/gpt-oss-120b"
     }
   ],
   "kind": "sunit",
-  "updated_utc": "2026-11-26T22:44:25Z"
+  "updated_utc": "2026-11-27T08:50:26Z"
 }

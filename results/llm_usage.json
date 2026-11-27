@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "providers": {
     "default": {
-      "completion_tokens": 3195,
+      "completion_tokens": 2537,
       "failures": 4,
-      "last_error": "LLM request failed after retries: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k2jaj0tkffyv99vdq2rk4m48` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6972, Requested 1625. Please try again in 4.4775s. Need more tokens? Upgrade to Dev Tier today at https://con",
-      "prompt_tokens": 8534,
+      "last_error": "LLM request failed after retries: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k2jaj0tkffyv99vdq2rk4m48` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7023, Requested 1318. Please try again in 2.5575s. Need more tokens? Upgrade to Dev Tier today at https://con",
+      "prompt_tokens": 7197,
       "requests": 17
     }
   },
@@ -90,6 +90,78 @@
       "provider": "default",
       "requests": 3,
       "utc": "2026-11-26T22:44:25Z"
+    },
+    {
+      "completion_tokens": 538,
+      "ok": true,
+      "problem": "erdos_straus",
+      "prompt_tokens": 2013,
+      "provider": "default",
+      "requests": 1,
+      "utc": "2026-11-27T08:50:07Z"
+    },
+    {
+      "completion_tokens": 809,
+      "ok": true,
+      "problem": "erdos_straus",
+      "prompt_tokens": 2013,
+      "provider": "default",
+      "requests": 1,
+      "utc": "2026-11-27T08:50:09Z"
+    },
+    {
+      "completion_tokens": 633,
+      "ok": true,
+      "problem": "sierpinski_5n",
+      "prompt_tokens": 2034,
+      "provider": "default",
+      "requests": 1,
+      "utc": "2026-11-27T08:50:11Z"
+    },
+    {
+      "completion_tokens": 0,
+      "ok": false,
+      "problem": "sierpinski_5n",
+      "prompt_tokens": 0,
+      "provider": "default",
+      "requests": 3,
+      "utc": "2026-11-27T08:50:14Z"
+    },
+    {
+      "completion_tokens": 0,
+      "ok": false,
+      "problem": "abc",
+      "prompt_tokens": 0,
+      "provider": "default",
+      "requests": 3,
+      "utc": "2026-11-27T08:50:17Z"
+    },
+    {
+      "completion_tokens": 0,
+      "ok": false,
+      "problem": "abc",
+      "prompt_tokens": 0,
+      "provider": "default",
+      "requests": 3,
+      "utc": "2026-11-27T08:50:21Z"
+    },
+    {
+      "completion_tokens": 557,
+      "ok": true,
+      "problem": "sunit_2_3_5",
+      "prompt_tokens": 1137,
+      "provider": "default",
+      "requests": 2,
+      "utc": "2026-11-27T08:50:23Z"
+    },
+    {
+      "completion_tokens": 0,
+      "ok": false,
+      "problem": "sunit_2_3_5",
+      "prompt_tokens": 0,
+      "provider": "default",
+      "requests": 3,
+      "utc": "2026-11-27T08:50:26Z"
     }
   ]
 }
