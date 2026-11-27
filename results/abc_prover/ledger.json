@@ -144,20 +144,39 @@
       "signature": "theorem rad_pos (n : \u2115) (h : 0 < n) : 0 < Abc.rad n",
       "status": "CHECKED",
       "target_like": false
+    },
+    {
+      "axioms": [],
+      "checked_at": "2026-11-27T14:56:53Z",
+      "id": "sha256:60b8af484072d2b7",
+      "lean": "theorem rad_le (n : \u2115) (h : 0 < n) : Abc.rad n \u2264 n := by\n  have hdvd : Abc.rad n \u2223 n := rad_dvd n\n  exact Nat.le_of_dvd h hdvd",
+      "lean_version": "Lean (version 4.37.0-rc1, x86_64-unknown-linux-gnu, commit 0b77e12952ad39077d80d8bd6b66d601f225c321, Release)",
+      "mathlib_version": "cf28751adfc7f48c0f7c6c0954a61c38cd957439",
+      "model": "openai/gpt-oss-120b",
+      "name": "rad_le",
+      "output_tail": "/tmp/axiom_abc_prover_v_g3rzw8/Abc/Attempt.lean:9:31: error(lean.unknownIdentifier): Unknown identifier `rad_dvd`\n'AbcProver.rad_le' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+      "rationale": "From `rad_dvd` and positivity of `n` we obtain the obvious inequality `rad n \u2264 n`.",
+      "reason": "Lean rejected the lemma",
+      "round": 1,
+      "route": "definitions",
+      "seconds": 2.0,
+      "signature": "theorem rad_le (n : \u2115) (h : 0 < n) : Abc.rad n \u2264 n",
+      "status": "REJECTED",
+      "target_like": false
     }
   ],
   "comment": "Lean-checked auxiliary lemmas only. CHECKED is not a proof of Abc.Statement. The abc alarm remains the only judge.",
   "stats": {
     "checked": 3,
-    "rejected": 4,
+    "rejected": 5,
     "routes": {
       "definitions": {
         "checked": 3,
-        "rejected": 4
+        "rejected": 5
       }
     },
     "target_attempts": 0,
-    "total": 7
+    "total": 8
   },
-  "updated_utc": "2026-11-27T13:43:15Z"
+  "updated_utc": "2026-11-27T14:56:53Z"
 }

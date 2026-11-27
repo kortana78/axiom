@@ -7,14 +7,14 @@
     "iut",
     "szpiro"
   ],
-  "rejected_lemmas": 4,
+  "rejected_lemmas": 5,
   "routes": {
     "definitions": {
       "checked": 3,
-      "rejected": 4
+      "rejected": 5
     }
   },
   "target_attempts": 0,
-  "updated_utc": "2026-11-27T13:43:15Z",
+  "updated_utc": "2026-11-27T14:56:53Z",
   "verdict": "NO_PROOF"
 }
