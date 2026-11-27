@@ -4,7 +4,7 @@
 
 proof alarm: OPEN — lean/Abc/Proof.lean is absent; abc remains OPEN
 
-updated 2026-11-27 22:14 UTC
+updated 2026-11-27 22:16 UTC
 
 ## Witness reductions
 
