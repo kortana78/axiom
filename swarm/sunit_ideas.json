@@ -105,8 +105,62 @@
       "q": null,
       "rationale": "Banding groups exponent vectors by similar heights, allowing tighter LLL runs on each band and improving overall completeness.",
       "source": "llm:openai/gpt-oss-120b"
+    },
+    {
+      "S": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "method": "p_adic_log",
+      "parameters": {
+        "max_exponent": 1000,
+        "precision": 40
+      },
+      "priority": 2,
+      "q": 2,
+      "rationale": "p-adic logarithms give linear forms in logs that can prune exponent ranges for the added prime 7.",
+      "source": "llm:openai/gpt-oss-120b"
+    },
+    {
+      "S": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "method": "sieving",
+      "parameters": {
+        "bucket_size": 10000,
+        "modulus_limit": 500000
+      },
+      "priority": 3,
+      "q": null,
+      "rationale": "A modular sieve over the enlarged set quickly eliminates impossible residue classes before lattice reduction.",
+      "source": "llm:openai/gpt-oss-120b"
+    },
+    {
+      "S": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "method": "height_bound",
+      "parameters": {
+        "bound_factor": 1.2,
+        "target_height": 600
+      },
+      "priority": 4,
+      "q": null,
+      "rationale": "Improving the global height bound reduces the search space for larger S, making subsequent lattice or p\u2011adic steps feasible.",
+      "source": "llm:openai/gpt-oss-120b"
     }
   ],
   "kind": "sunit",
-  "updated_utc": "2026-11-27T08:50:26Z"
+  "updated_utc": "2026-11-28T08:07:09Z"
 }
