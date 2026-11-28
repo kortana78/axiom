@@ -4,7 +4,7 @@
 
 proof alarm: OPEN — lean/Abc/Proof.lean is absent; abc remains OPEN
 
-updated 2026-11-27 22:16 UTC
+updated 2026-11-28 08:52 UTC
 
 ## Witness reductions
 
@@ -17,7 +17,7 @@ updated 2026-11-27 22:16 UTC
 
 | problem | status | c max | best q | records | last note | Lean |
 |---|---|---|---|---|---|---|
-| abc | search only: 200 verified triples; best q=1.629912; no proof of abc | 100,000,000 | 1.629912 | 200 | best 2 + 6436341 = 6436343 (rad 15042); c_smooth advanced to 449336 | Lean accepted 200/200 lemmas |
+| abc | search only: 200 verified triples; best q=1.629912; no proof of abc | 100,000,000 | 1.629912 | 200 | best 2 + 6436341 = 6436343 (rad 15042); c_smooth advanced to 568823 | Lean accepted 200/200 lemmas |
 
 ## S-unit certificates (finite completeness, not abc)
 

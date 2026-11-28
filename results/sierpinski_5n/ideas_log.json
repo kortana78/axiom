@@ -342,6 +342,20 @@
       "seconds": 1112.3,
       "source": "llm:openai/gpt-oss-120b",
       "note": "combine linear and cubic atoms with a double multiplier to broaden the search space"
+    },
+    "order=xyz|atoms=n2,nvv,vv|mult=1,3|T=120|D=72|tie": {
+      "hits": 0,
+      "tested": 2,
+      "seconds": 1368.9,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "include triple multiplier to explore scaling symmetry across the remaining open classes"
+    },
+    "order=xyz|atoms=n,n2,nv,v|mult=1,2|T=200|D=120": {
+      "hits": 0,
+      "tested": 2,
+      "seconds": 1337.0,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "add n2 and v together with n and nv to broaden search space while keeping moderate T/D"
     }
   },
   "families": {
@@ -566,6 +580,16 @@
       "hits": 0
     },
     "order=zxy|atoms=n,n3,nv,v|mult=2": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xyz|atoms=n2,nvv,vv|mult=2|tie": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xyz|atoms=n,n2,nv,v|mult=2": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0

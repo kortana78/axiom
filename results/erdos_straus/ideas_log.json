@@ -321,6 +321,20 @@
       "seconds": 1321.2,
       "source": "llm:openai/gpt-oss-120b",
       "note": "include triple multiplier to explore scaling symmetry across the remaining open classes"
+    },
+    "order=xyz|atoms=n,n2,nv,v|mult=1,2|T=200|D=120": {
+      "hits": 0,
+      "tested": 12,
+      "seconds": 1695.7,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "add n2 and v together with n and nv to broaden search space while keeping moderate T/D"
+    },
+    "order=yzx|atoms=n,n3,nv,vv|mult=1|T=150|D=90|tie": {
+      "hits": 0,
+      "tested": 12,
+      "seconds": 1007.1,
+      "source": "llm:openai/gpt-oss-120b",
+      "note": "focus on n3 and vv atoms which may capture structures for larger prime residues"
     }
   },
   "families": {
@@ -540,6 +554,16 @@
       "hits": 0
     },
     "order=xyz|atoms=n2,nvv,vv|mult=2|tie": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=xyz|atoms=n,n2,nv,v|mult=2": {
+      "tries": 1,
+      "reward": 0.0,
+      "hits": 0
+    },
+    "order=yzx|atoms=n,n3,nv,vv|mult=1|tie": {
       "tries": 1,
       "reward": 0.0,
       "hits": 0
