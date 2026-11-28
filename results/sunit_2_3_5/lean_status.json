@@ -5,7 +5,7 @@
   "failed": [],
   "returncode": 0,
   "sorry_present": false,
-  "seconds": 2.9,
+  "seconds": 2.5,
   "log_tail": "'AxiomSunit.solution_count' does not depend on any axioms\n'AxiomSunit.sol_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
   "summary": "Lean accepted 18/18 lemmas"
 }
